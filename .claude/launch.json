@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "din-org",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "cd /d C:\\CLAUDE SOFTWARE\\din-org && npx next dev --port 3021"],
+      "port": 3021
+    }
+  ]
+}

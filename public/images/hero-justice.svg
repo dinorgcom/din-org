@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" fill="none">
+  <defs>
+    <linearGradient id="jg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff313" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#fff313" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Central pillar -->
+  <line x1="300" y1="80" x2="300" y2="310" stroke="#f5f1e8" stroke-width="2" stroke-opacity="0.6"/>
+
+  <!-- Top fulcrum diamond -->
+  <polygon points="300,70 310,80 300,90 290,80" fill="#fff313"/>
+
+  <!-- Balance beam -->
+  <line x1="140" y1="140" x2="460" y2="140" stroke="#f5f1e8" stroke-width="1.5" stroke-opacity="0.8"/>
+
+  <!-- Left scale pan - geometric -->
+  <line x1="180" y1="140" x2="140" y2="220" stroke="#fff313" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="180" y1="140" x2="220" y2="220" stroke="#fff313" stroke-width="1" stroke-opacity="0.7"/>
+  <path d="M130 220 Q180 245 230 220" stroke="#fff313" stroke-width="1.5" fill="none" stroke-opacity="0.8"/>
+
+  <!-- Left scale inner geometry -->
+  <rect x="160" y="195" width="40" height="2" fill="#fff313" fill-opacity="0.3"/>
+  <rect x="170" y="205" width="20" height="2" fill="#fff313" fill-opacity="0.2"/>
+
+  <!-- Right scale pan - geometric -->
+  <line x1="420" y1="140" x2="380" y2="220" stroke="#fff313" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="420" y1="140" x2="460" y2="220" stroke="#fff313" stroke-width="1" stroke-opacity="0.7"/>
+  <path d="M370 220 Q420 245 470 220" stroke="#fff313" stroke-width="1.5" fill="none" stroke-opacity="0.8"/>
+
+  <!-- Right scale inner geometry -->
+  <rect x="400" y="195" width="40" height="2" fill="#fff313" fill-opacity="0.3"/>
+  <rect x="410" y="205" width="20" height="2" fill="#fff313" fill-opacity="0.2"/>
+
+  <!-- Base pedestal -->
+  <rect x="260" y="310" width="80" height="3" rx="1" fill="#f5f1e8" fill-opacity="0.5"/>
+  <rect x="240" y="318" width="120" height="3" rx="1" fill="#f5f1e8" fill-opacity="0.3"/>
+
+  <!-- Circuit-like decorative lines - left -->
+  <polyline points="80,160 110,160 120,150 140,150" stroke="#2a2a2a" stroke-width="1" fill="none"/>
+  <polyline points="60,180 90,180 100,190 130,190" stroke="#2a2a2a" stroke-width="1" fill="none"/>
+  <circle cx="80" cy="160" r="2" fill="#fff313" fill-opacity="0.5"/>
+  <circle cx="60" cy="180" r="2" fill="#fff313" fill-opacity="0.3"/>
+
+  <!-- Circuit-like decorative lines - right -->
+  <polyline points="520,160 490,160 480,150 460,150" stroke="#2a2a2a" stroke-width="1" fill="none"/>
+  <polyline points="540,180 510,180 500,190 470,190" stroke="#2a2a2a" stroke-width="1" fill="none"/>
+  <circle cx="520" cy="160" r="2" fill="#fff313" fill-opacity="0.5"/>
+  <circle cx="540" cy="180" r="2" fill="#fff313" fill-opacity="0.3"/>
+
+  <!-- Floating geometric accents -->
+  <rect x="100" y="100" width="8" height="8" transform="rotate(45 104 104)" stroke="#fff313" stroke-width="0.5" fill="none" stroke-opacity="0.4"/>
+  <rect x="480" y="100" width="8" height="8" transform="rotate(45 484 104)" stroke="#fff313" stroke-width="0.5" fill="none" stroke-opacity="0.4"/>
+
+  <!-- Subtle grid dots -->
+  <circle cx="150" cy="280" r="1" fill="#f5f1e8" fill-opacity="0.15"/>
+  <circle cx="180" cy="280" r="1" fill="#f5f1e8" fill-opacity="0.15"/>
+  <circle cx="210" cy="280" r="1" fill="#f5f1e8" fill-opacity="0.15"/>
+  <circle cx="390" cy="280" r="1" fill="#f5f1e8" fill-opacity="0.15"/>
+  <circle cx="420" cy="280" r="1" fill="#f5f1e8" fill-opacity="0.15"/>
+  <circle cx="450" cy="280" r="1" fill="#f5f1e8" fill-opacity="0.15"/>
+
+  <circle cx="150" cy="300" r="1" fill="#f5f1e8" fill-opacity="0.1"/>
+  <circle cx="180" cy="300" r="1" fill="#f5f1e8" fill-opacity="0.1"/>
+  <circle cx="210" cy="300" r="1" fill="#f5f1e8" fill-opacity="0.1"/>
+  <circle cx="390" cy="300" r="1" fill="#f5f1e8" fill-opacity="0.1"/>
+  <circle cx="420" cy="300" r="1" fill="#f5f1e8" fill-opacity="0.1"/>
+  <circle cx="450" cy="300" r="1" fill="#f5f1e8" fill-opacity="0.1"/>
+
+  <!-- Horizontal measurement lines -->
+  <line x1="200" y1="260" x2="280" y2="260" stroke="#2a2a2a" stroke-width="0.5" stroke-dasharray="4 4"/>
+  <line x1="320" y1="260" x2="400" y2="260" stroke="#2a2a2a" stroke-width="0.5" stroke-dasharray="4 4"/>
+
+  <!-- Glow effect on fulcrum -->
+  <circle cx="300" cy="80" r="20" fill="url(#jg1)"/>
+</svg>

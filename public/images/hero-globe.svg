@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" fill="none">
+  <defs>
+    <radialGradient id="gg1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff313" stop-opacity="0.08"/>
+      <stop offset="70%" stop-color="#fff313" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#fff313" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background glow -->
+  <circle cx="300" cy="200" r="180" fill="url(#gg1)"/>
+
+  <!-- Main globe circle -->
+  <circle cx="300" cy="200" r="130" stroke="#f5f1e8" stroke-width="1.5" fill="none" stroke-opacity="0.6"/>
+
+  <!-- Latitude lines -->
+  <ellipse cx="300" cy="200" rx="130" ry="25" stroke="#2a2a2a" stroke-width="0.7" fill="none"/>
+  <ellipse cx="300" cy="200" rx="130" ry="65" stroke="#2a2a2a" stroke-width="0.7" fill="none"/>
+  <ellipse cx="300" cy="200" rx="130" ry="100" stroke="#2a2a2a" stroke-width="0.5" fill="none"/>
+
+  <!-- Longitude / meridian curves -->
+  <ellipse cx="300" cy="200" rx="25" ry="130" stroke="#2a2a2a" stroke-width="0.7" fill="none"/>
+  <ellipse cx="300" cy="200" rx="65" ry="130" stroke="#2a2a2a" stroke-width="0.7" fill="none"/>
+  <ellipse cx="300" cy="200" rx="100" ry="130" stroke="#2a2a2a" stroke-width="0.5" fill="none"/>
+
+  <!-- Equator highlight -->
+  <ellipse cx="300" cy="200" rx="130" ry="3" stroke="#fff313" stroke-width="1" fill="none" stroke-opacity="0.6"/>
+
+  <!-- Prime meridian highlight -->
+  <line x1="300" y1="70" x2="300" y2="330" stroke="#fff313" stroke-width="0.8" stroke-opacity="0.4"/>
+
+  <!-- Connection nodes on globe surface -->
+  <circle cx="245" cy="130" r="3" fill="#fff313" fill-opacity="0.8"/>
+  <circle cx="355" cy="150" r="3" fill="#fff313" fill-opacity="0.8"/>
+  <circle cx="380" cy="220" r="3" fill="#fff313" fill-opacity="0.6"/>
+  <circle cx="230" cy="240" r="3" fill="#fff313" fill-opacity="0.6"/>
+  <circle cx="310" cy="280" r="3" fill="#fff313" fill-opacity="0.5"/>
+  <circle cx="270" cy="170" r="3" fill="#fff313" fill-opacity="0.7"/>
+
+  <!-- Connection arcs between nodes -->
+  <path d="M245 130 Q300 120 355 150" stroke="#fff313" stroke-width="0.8" fill="none" stroke-opacity="0.5"/>
+  <path d="M355 150 Q390 185 380 220" stroke="#fff313" stroke-width="0.8" fill="none" stroke-opacity="0.4"/>
+  <path d="M230 240 Q270 270 310 280" stroke="#fff313" stroke-width="0.8" fill="none" stroke-opacity="0.35"/>
+  <path d="M270 170 Q240 200 230 240" stroke="#fff313" stroke-width="0.8" fill="none" stroke-opacity="0.4"/>
+  <path d="M245 130 Q250 150 270 170" stroke="#fff313" stroke-width="0.6" fill="none" stroke-opacity="0.3"/>
+
+  <!-- Orbiting ring -->
+  <ellipse cx="300" cy="200" rx="165" ry="50" transform="rotate(-20 300 200)"
+           stroke="#f5f1e8" stroke-width="0.6" fill="none" stroke-opacity="0.2" stroke-dasharray="8 6"/>
+
+  <!-- Satellite dots on orbit -->
+  <circle cx="465" cy="178" r="2.5" fill="#f5f1e8" fill-opacity="0.4"/>
+  <circle cx="135" cy="222" r="2" fill="#f5f1e8" fill-opacity="0.3"/>
+
+  <!-- External connection lines radiating outward -->
+  <line x1="245" y1="130" x2="120" y2="70" stroke="#f5f1e8" stroke-width="0.4" stroke-opacity="0.15" stroke-dasharray="3 5"/>
+  <circle cx="120" cy="70" r="1.5" fill="#f5f1e8" fill-opacity="0.2"/>
+
+  <line x1="355" y1="150" x2="500" y2="80" stroke="#f5f1e8" stroke-width="0.4" stroke-opacity="0.15" stroke-dasharray="3 5"/>
+  <circle cx="500" cy="80" r="1.5" fill="#f5f1e8" fill-opacity="0.2"/>
+
+  <line x1="380" y1="220" x2="520" y2="300" stroke="#f5f1e8" stroke-width="0.4" stroke-opacity="0.15" stroke-dasharray="3 5"/>
+  <circle cx="520" cy="300" r="1.5" fill="#f5f1e8" fill-opacity="0.2"/>
+
+  <line x1="230" y1="240" x2="80" y2="310" stroke="#f5f1e8" stroke-width="0.4" stroke-opacity="0.15" stroke-dasharray="3 5"/>
+  <circle cx="80" cy="310" r="1.5" fill="#f5f1e8" fill-opacity="0.2"/>
+
+  <!-- Subtle grid dots scattered -->
+  <circle cx="100" cy="120" r="0.8" fill="#f5f1e8" fill-opacity="0.1"/>
+  <circle cx="500" cy="140" r="0.8" fill="#f5f1e8" fill-opacity="0.1"/>
+  <circle cx="80" cy="200" r="0.8" fill="#f5f1e8" fill-opacity="0.1"/>
+  <circle cx="520" cy="200" r="0.8" fill="#f5f1e8" fill-opacity="0.1"/>
+  <circle cx="100" cy="280" r="0.8" fill="#f5f1e8" fill-opacity="0.1"/>
+  <circle cx="500" cy="260" r="0.8" fill="#f5f1e8" fill-opacity="0.1"/>
+
+  <!-- Corner brackets -->
+  <polyline points="50,55 50,45 60,45" stroke="#f5f1e8" stroke-width="0.6" fill="none" stroke-opacity="0.15"/>
+  <polyline points="540,55 540,45 550,45" stroke="#f5f1e8" stroke-width="0.6" fill="none" stroke-opacity="0.15"/>
+  <polyline points="50,355 50,365 60,365" stroke="#f5f1e8" stroke-width="0.6" fill="none" stroke-opacity="0.15"/>
+  <polyline points="540,355 540,365 550,365" stroke="#f5f1e8" stroke-width="0.6" fill="none" stroke-opacity="0.15"/>
+</svg>

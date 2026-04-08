@@ -110,6 +110,7 @@ export default function NewsPage() {
 
       {/* Articles — card grid */}
       <section className="px-6 md:px-10 pb-32">
+        <h2 className="sr-only">Latest articles</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
           {articles.map((a) => (
             <article
@@ -121,7 +122,7 @@ export default function NewsPage() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={a.image}
-                  alt=""
+                  alt={a.title}
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <span className="absolute bottom-2 left-2 inline-block rounded-full bg-ink/70 backdrop-blur-sm text-accent text-[10px] font-medium px-2.5 py-0.5 group-hover:bg-accent group-hover:text-ink transition-colors duration-200">
@@ -136,9 +137,9 @@ export default function NewsPage() {
                   <span className="w-1 h-1 rounded-full bg-bone/30 group-hover:bg-ink/30" />
                   <span>{a.date}</span>
                 </div>
-                <h2 className="display text-base md:text-lg font-semibold mb-2 group-hover:text-ink transition-colors duration-200">
+                <h3 className="display text-base md:text-lg font-semibold mb-2 group-hover:text-ink transition-colors duration-200">
                   {a.title}
-                </h2>
+                </h3>
                 <p className="text-bone/60 text-sm group-hover:text-ink/70 transition-colors duration-200">
                   {a.body}
                 </p>

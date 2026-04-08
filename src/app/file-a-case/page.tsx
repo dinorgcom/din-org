@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "File a Case — din.org",
+  description:
+    "File your dispute on din.org for free. Describe what happened, notify the other party, and receive a reasoned AI ruling.",
+};
+
 export default function FileACasePage() {
   return (
     <section className="px-6 md:px-10 pt-24 pb-24 md:pt-32 md:pb-40">

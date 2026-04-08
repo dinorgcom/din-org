@@ -34,7 +34,7 @@ export default function Home() {
             </p>
             <div className="flex items-center gap-3">
               <Link
-                href="/login"
+                href="https://app.din.org/login"
                 className="inline-flex items-center gap-2 rounded-full bg-accent text-ink px-6 py-3 text-base font-medium hover:bg-accent-hot transition-colors whitespace-nowrap"
               >
                 Log in

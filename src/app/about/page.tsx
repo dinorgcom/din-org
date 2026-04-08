@@ -6,6 +6,61 @@ export const metadata: Metadata = {
     "Learn about din.org, the international AI-powered arbitration platform delivering fair, fast, and affordable dispute resolution.",
 };
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Is a din.org ruling legally binding?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. din.org operates as an arbitration platform. When both parties agree to participate, the resulting ruling is binding under international arbitration conventions, including the New York Convention.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do I need a lawyer to use din.org?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. Every participant is assigned an AI lawyer within the system that guides you through the entire process.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I appeal an AI ruling?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. You can request a second ruling that involves human arbiters. You can add up to 7 human arbiters to the appeal panel.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does the AI judge make decisions?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The AI judge analyzes all submitted evidence, reviews applicable law, and conducts live cross-examination of all parties via video. It produces a written, cited ruling with full legal reasoning.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What types of disputes can din.org handle?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "din.org handles commercial disputes, contract disagreements, service disputes, payment conflicts, and other civil matters. It is not designed for criminal cases.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How is my data protected?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "All data is protected with AES-256 encryption at rest and TLS 1.3 in transit. Case information is stored in SOC 2 compliant data centers.",
+      },
+    },
+  ],
+};
+
 export default function AboutPage() {
   const features: { title: string; body: string; detail: string }[] = [
     {
@@ -66,6 +121,10 @@ export default function AboutPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero */}
       <section className="reveal px-6 md:px-10 pt-24 pb-20 md:pt-32 md:pb-32">
         <div className="max-w-6xl">

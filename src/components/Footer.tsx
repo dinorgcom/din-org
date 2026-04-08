@@ -6,9 +6,9 @@ export function Footer() {
       <div className="relative overflow-hidden rounded-[32px] md:rounded-[48px] bg-accent text-ink">
         <div className="grain absolute inset-0 opacity-40" />
         <div className="relative px-8 md:px-16 pt-16 md:pt-24 pb-10 md:pb-14">
-          <h2 className="display text-5xl md:text-8xl font-semibold max-w-4xl">
+          <p className="display text-5xl md:text-8xl font-semibold max-w-4xl">
             Justice, without the wait.
-          </h2>
+          </p>
 
           <div className="mt-12 md:mt-20 grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12">
             <div>

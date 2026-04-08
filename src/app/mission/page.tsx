@@ -55,7 +55,7 @@ export default function MissionPage() {
               <p className="mt-4 text-base md:text-lg text-bone/70 max-w-sm">
                 {s.label}
               </p>
-              <p className="mt-2 text-xs text-bone/40">{s.source}</p>
+              <p className="mt-2 text-xs text-bone/55">{s.source}</p>
             </div>
           ))}
         </div>
@@ -118,9 +118,9 @@ export default function MissionPage() {
               <p className="display text-4xl md:text-6xl font-semibold text-accent mb-1">
                 {p.stat}
               </p>
-              <p className="text-sm text-bone/50 mb-6">{p.statLabel}</p>
+              <p className="text-sm text-bone/60 mb-6">{p.statLabel}</p>
               <p className="text-bone/70 text-base md:text-lg">{p.body}</p>
-              <p className="mt-4 text-xs text-bone/30">{p.source}</p>
+              <p className="mt-4 text-xs text-bone/60">{p.source}</p>
             </article>
           ))}
         </div>
@@ -219,7 +219,7 @@ export default function MissionPage() {
               key={f.problem}
               className="group rounded-3xl bg-ink-card p-8 md:p-10 border border-bone/15 hover:bg-accent hover:border-accent transition-all duration-200 cursor-default"
             >
-              <p className="text-sm text-bone/40 line-through mb-1 group-hover:text-ink/40 transition-colors duration-200">
+              <p className="text-sm text-bone/55 line-through mb-1 group-hover:text-ink/40 transition-colors duration-200">
                 {f.problem}
               </p>
               <h3 className="text-xl md:text-2xl font-semibold mb-3 text-accent group-hover:text-ink transition-colors duration-200">
@@ -304,7 +304,7 @@ export default function MissionPage() {
             </article>
           ))}
         </div>
-        <p className="mt-6 text-xs text-bone/30 max-w-3xl">
+        <p className="mt-6 text-xs text-bone/60 max-w-3xl">
           Sources: World Justice Project, U.S. Chamber of Commerce, Legal
           Services Corporation, CS Monitor, Hughes Hubbard, TRAC Reports,
           GOV.UK, Innocence Project, House of Lords Library

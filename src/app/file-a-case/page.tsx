@@ -64,7 +64,7 @@ export default function FileACasePage() {
               Open case file
               <span aria-hidden>→</span>
             </button>
-            <p className="mt-4 text-sm text-bone/50">
+            <p className="mt-4 text-sm text-bone/60">
               By filing, you agree to din.org&apos;s terms and confirm the
               information above is truthful to the best of your knowledge.
             </p>

@@ -54,7 +54,7 @@ export default function InvestorsPage() {
               <p className="mt-4 text-base md:text-lg text-bone/70 max-w-sm">
                 {s.label}
               </p>
-              <p className="mt-2 text-xs text-bone/40">{s.source}</p>
+              <p className="mt-2 text-xs text-bone/55">{s.source}</p>
             </div>
           ))}
         </div>
@@ -158,10 +158,10 @@ export default function InvestorsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <article className="rounded-3xl bg-ink-card p-8 md:p-12 border border-bone/15">
-            <h3 className="display text-2xl md:text-3xl font-semibold text-bone/40 mb-6">
+            <h3 className="display text-2xl md:text-3xl font-semibold text-bone/55 mb-6">
               What people believe
             </h3>
-            <ul className="space-y-4 text-bone/50 text-base md:text-lg">
+            <ul className="space-y-4 text-bone/60 text-base md:text-lg">
               <li>A judge carefully reads every document</li>
               <li>Each case receives thorough, individual attention</li>
               <li>Legal reasoning is rigorous and consistent</li>

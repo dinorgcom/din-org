@@ -50,7 +50,7 @@ body {
 .reveal-delay-3 { transition-delay: 0.3s; }
 
 .digital-num {
-  font-family: "Orbitron", monospace;
+  font-family: var(--font-orbitron), monospace;
   letter-spacing: 0.05em;
 }
 

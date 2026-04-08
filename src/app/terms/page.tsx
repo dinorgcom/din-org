@@ -187,7 +187,7 @@ export default function TermsPage() {
             </p>
           </Section>
 
-          <div className="border-t border-bone/10 pt-8 text-sm text-bone/50">
+          <div className="border-t border-bone/10 pt-8 text-sm text-bone/60">
             By using the DIN.ORG Platform, you acknowledge that you have read,
             understood, and agree to be bound by these Terms of Service.
           </div>

@@ -132,7 +132,7 @@ export default function NewsPage() {
 
               {/* Content */}
               <div className="p-6 flex flex-col flex-1">
-                <div className="flex items-center gap-3 text-xs text-bone/40 mb-2 group-hover:text-ink/40 transition-colors duration-200">
+                <div className="flex items-center gap-3 text-xs text-bone/55 mb-2 group-hover:text-ink/40 transition-colors duration-200">
                   <span>{a.source}</span>
                   <span className="w-1 h-1 rounded-full bg-bone/30 group-hover:bg-ink/30" />
                   <span>{a.date}</span>

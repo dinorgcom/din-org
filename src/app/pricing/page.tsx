@@ -136,7 +136,7 @@ export default function PricingPage() {
                 </span>
                 <span
                   className={`text-lg ${
-                    p.highlight ? "opacity-60" : "text-bone/50"
+                    p.highlight ? "opacity-60" : "text-bone/60"
                   }`}
                 >
                   tokens
@@ -158,7 +158,7 @@ export default function PricingPage() {
               </p>
               <p
                 className={`text-xs mb-8 ${
-                  p.highlight ? "opacity-50" : "text-bone/40"
+                  p.highlight ? "opacity-50" : "text-bone/55"
                 }`}
               >
                 {p.example}
@@ -202,7 +202,7 @@ export default function PricingPage() {
                 <p className="display text-5xl md:text-7xl font-semibold text-accent group-hover:text-ink transition-colors duration-200">
                   {t.cost}
                 </p>
-                <p className="text-bone/50 text-sm group-hover:text-ink/50 transition-colors duration-200">
+                <p className="text-bone/60 text-sm group-hover:text-ink/50 transition-colors duration-200">
                   tokens {t.unit}
                 </p>
               </div>
@@ -259,7 +259,7 @@ export default function PricingPage() {
                 </span>
               </div>
             </div>
-            <p className="mt-6 text-bone/40 text-sm">
+            <p className="mt-6 text-bone/55 text-sm">
               This case fits within the Standard package (200 tokens for
               &euro;150) — with 30 tokens to spare.
             </p>
@@ -338,10 +338,10 @@ export default function PricingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div className="rounded-3xl bg-ink-card p-8 md:p-12 border border-bone/15">
-              <h3 className="display text-2xl md:text-3xl font-semibold text-bone/40 mb-8">
+              <h3 className="display text-2xl md:text-3xl font-semibold text-bone/55 mb-8">
                 Traditional Litigation
               </h3>
-              <ul className="space-y-4 text-bone/50 text-base md:text-lg">
+              <ul className="space-y-4 text-bone/60 text-base md:text-lg">
                 <li>$91,000 median contract dispute</li>
                 <li>29.8 months to trial</li>
                 <li>Lawyer retainer required</li>

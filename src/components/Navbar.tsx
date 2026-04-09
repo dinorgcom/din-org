@@ -40,12 +40,12 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* File a case — yellow CTA box */}
+        {/* Early access — yellow CTA box */}
         <Link
-          href="/file-a-case"
+          href="/early-access"
           className="hidden md:flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-xs font-medium text-ink hover:bg-accent-hot transition-colors shrink-0"
         >
-          File a case
+          Early access
           <span aria-hidden>→</span>
         </Link>
 
@@ -87,11 +87,11 @@ export function Navbar() {
             </Link>
           ))}
           <Link
-            href="/file-a-case"
+            href="/early-access"
             onClick={() => setOpen(false)}
             className="flex items-center gap-2 px-4 py-3 rounded-lg bg-accent text-sm font-medium text-ink hover:bg-accent-hot transition-colors"
           >
-            File a case
+            Early access
             <span aria-hidden>→</span>
           </Link>
         </div>

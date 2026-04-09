@@ -40,10 +40,10 @@ export default function Home() {
                 Log in
               </Link>
               <Link
-                href="/file-a-case"
+                href="/early-access"
                 className="inline-flex items-center gap-2 rounded-full bg-accent text-ink px-6 py-3 text-base font-medium hover:bg-accent-hot transition-colors whitespace-nowrap"
               >
-                File a case
+                Request early access
                 <span aria-hidden>&rarr;</span>
               </Link>
             </div>

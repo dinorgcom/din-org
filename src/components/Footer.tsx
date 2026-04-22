@@ -36,6 +36,11 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/use-cases" className="hover:underline">
+                    Use cases
+                  </Link>
+                </li>
+                <li>
                   <Link href="/about" className="hover:underline">
                     About
                   </Link>

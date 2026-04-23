@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   title: "Mission — din.org",
   description:
     "The legal system is broken. 5.1 billion people have unmet justice needs. din.org is here to fix it.",
+  alternates: {
+    canonical: "https://din.org/mission",
+    languages: {
+      en: "https://din.org/mission",
+      de: "https://din.org/de/mission",
+      "x-default": "https://din.org/mission",
+    },
+  },
 };
 
 export default function MissionPage() {

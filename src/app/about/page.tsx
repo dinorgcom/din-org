@@ -4,6 +4,14 @@ export const metadata: Metadata = {
   title: "About — din.org",
   description:
     "Learn about din.org, the international AI-powered arbitration platform delivering fair, fast, and affordable dispute resolution.",
+  alternates: {
+    canonical: "https://din.org/about",
+    languages: {
+      en: "https://din.org/about",
+      de: "https://din.org/de/ueber-uns",
+      "x-default": "https://din.org/about",
+    },
+  },
 };
 
 const faqJsonLd = {

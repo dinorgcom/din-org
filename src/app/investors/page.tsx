@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   title: "Investors — din.org",
   description:
     "Invest in the future of justice. din.org is building the world's first AI court — a $1 trillion opportunity.",
+  alternates: {
+    canonical: "https://din.org/investors",
+    languages: {
+      en: "https://din.org/investors",
+      de: "https://din.org/de/investoren",
+      "x-default": "https://din.org/investors",
+    },
+  },
 };
 
 export default function InvestorsPage() {

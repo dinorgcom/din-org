@@ -4,6 +4,14 @@ export const metadata: Metadata = {
   title: "News — din.org",
   description:
     "The latest developments in AI, law, and the future of dispute resolution.",
+  alternates: {
+    canonical: "https://din.org/news",
+    languages: {
+      en: "https://din.org/news",
+      de: "https://din.org/de/news",
+      "x-default": "https://din.org/news",
+    },
+  },
 };
 
 const articles = [

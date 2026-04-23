@@ -14,7 +14,14 @@ export const metadata: Metadata = {
     "online dispute resolution software",
     "B2B arbitration",
   ],
-  alternates: { canonical: "https://din.org/enterprise" },
+  alternates: {
+    canonical: "https://din.org/enterprise",
+    languages: {
+      en: "https://din.org/enterprise",
+      de: "https://din.org/de/unternehmen",
+      "x-default": "https://din.org/enterprise",
+    },
+  },
   openGraph: {
     title: "Enterprise Arbitration Software — AI Dispute Resolution | din.org",
     description:

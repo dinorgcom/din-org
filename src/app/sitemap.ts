@@ -27,5 +27,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/de/anwendungsfaelle`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/de/was-ist-schiedsgerichtsbarkeit`, lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/de/ki-verordnung-schiedsgerichtsbarkeit`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/de/ueber-uns`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/de/mission`, lastModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/de/unternehmen`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/de/preise`, lastModified, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/de/fruehzugang`, lastModified, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/de/news`, lastModified, changeFrequency: "weekly", priority: 0.7 },
+    { url: `${baseUrl}/de/investoren`, lastModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/de/fall-einreichen`, lastModified, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/de/datenschutz`, lastModified, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${baseUrl}/de/agb`, lastModified, changeFrequency: "yearly", priority: 0.3 },
   ];
 }

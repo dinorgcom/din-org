@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "How It Works — din.org",
+  title: "How AI Arbitration Works — din.org",
   description:
-    "Nine steps from dispute to resolution. Learn how din.org's AI court process works — from filing to ruling.",
+    "How din.org's AI arbitration process works, step by step. From filing a case to AI-issued ruling and optional human-judge appeal. Nine steps, days not years.",
+  keywords: [
+    "how AI arbitration works",
+    "AI arbitration process",
+    "online arbitration process",
+    "AI judge",
+    "online dispute resolution",
+  ],
+  alternates: { canonical: "https://din.org/how-it-works" },
+  openGraph: {
+    title: "How AI Arbitration Works — din.org",
+    description:
+      "Nine steps from dispute to reasoned ruling. Filing, notice, evidence, AI examination, arbitration proposal, binding AI ruling, human-judge appeal.",
+    url: "https://din.org/how-it-works",
+  },
 };
 
 export default function HowItWorksPage() {

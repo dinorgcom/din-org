@@ -2,9 +2,25 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Enterprise — din.org",
+  title: "Enterprise Arbitration Software — AI Dispute Resolution | din.org",
   description:
-    "Enterprise dispute resolution solutions. Resolve disputes in days, not years, while saving 90% on costs.",
+    "Enterprise AI arbitration software and dispute resolution platform. Resolve commercial disputes in days, not years, at 1–5% of court costs. For insurers, marketplaces, B2B SaaS.",
+  keywords: [
+    "arbitration software",
+    "dispute resolution software",
+    "enterprise dispute resolution",
+    "AI arbitration platform",
+    "AI dispute resolution",
+    "online dispute resolution software",
+    "B2B arbitration",
+  ],
+  alternates: { canonical: "https://din.org/enterprise" },
+  openGraph: {
+    title: "Enterprise Arbitration Software — AI Dispute Resolution | din.org",
+    description:
+      "The AI arbitration platform for enterprise. 90% cost reduction, 100x dispute throughput. Pilot programmes for insurers, marketplaces, B2B platforms.",
+    url: "https://din.org/enterprise",
+  },
 };
 
 export default function EnterprisePage() {

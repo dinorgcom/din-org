@@ -1,26 +1,56 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { getAlternateLocalePath } from "@/lib/i18n/paths";
 
 // Primary links — shown as pills on desktop
-const primaryLinks = [
-  { href: "/how-it-works", label: "How it works" },
-  { href: "/about", label: "About" },
-  { href: "/enterprise", label: "Enterprise" },
-  { href: "/mission", label: "Mission" },
-];
+const primaryLinksByLocale = {
+  en: [
+    { href: "/how-it-works", label: "How it works" },
+    { href: "/about", label: "About" },
+    { href: "/enterprise", label: "Enterprise" },
+    { href: "/mission", label: "Mission" },
+  ],
+  de: [
+    { href: "/de/so-funktionierts", label: "So funktioniert es" },
+    { href: "/de/ueber-uns", label: "Über uns" },
+    { href: "/de/unternehmen", label: "Unternehmen" },
+    { href: "/de/mission", label: "Mission" },
+  ],
+} as const;
 
 // Secondary links — tucked into the "More" dropdown
-const moreLinks = [
-  { href: "/use-cases", label: "Use cases" },
-  { href: "/news", label: "News" },
-];
+const moreLinksByLocale = {
+  en: [
+    { href: "/use-cases", label: "Use cases" },
+    { href: "/news", label: "News" },
+  ],
+  de: [
+    { href: "/de/anwendungsfaelle", label: "Anwendungsfälle" },
+    { href: "/de/news", label: "News" },
+  ],
+} as const;
+
+const ctaByLocale = {
+  en: { login: "Login", early: "Early access", menu: "Toggle menu", more: "More" },
+  de: { login: "Anmelden", early: "Frühzugang", menu: "Menü öffnen", more: "Mehr" },
+} as const;
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const moreRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname() ?? "/";
+  const { locale } = getAlternateLocalePath(pathname);
+  const primaryLinks = primaryLinksByLocale[locale];
+  const moreLinks = moreLinksByLocale[locale];
+  const cta = ctaByLocale[locale];
+  const homeHref = locale === "de" ? "/de" : "/";
+  const loginHref = locale === "de" ? "/de/anmelden" : "/login";
+  const earlyHref = locale === "de" ? "/de/fruehzugang" : "/early-access";
 
   // Close More on outside click
   useEffect(() => {
@@ -38,7 +68,7 @@ export function Navbar() {
       <nav className="flex items-stretch gap-1.5">
         {/* Logo box */}
         <Link
-          href="/"
+          href={homeHref}
           className="flex items-center justify-center rounded-lg bg-accent px-3 py-2 shrink-0"
         >
           <span className="display text-base md:text-lg font-bold tracking-tight text-ink leading-none">
@@ -67,7 +97,7 @@ export function Navbar() {
               aria-haspopup="true"
               aria-expanded={moreOpen}
             >
-              More
+              {cta.more}
               <span className={`text-[10px] transition-transform ${moreOpen ? "rotate-180" : ""}`}>▾</span>
             </button>
             {moreOpen && (
@@ -90,31 +120,41 @@ export function Navbar() {
           </div>
         </div>
 
+        {/* Language switcher — desktop */}
+        <div className="hidden md:flex shrink-0">
+          <LanguageSwitcher />
+        </div>
+
         {/* Login */}
         <Link
-          href="/login"
+          href={loginHref}
           className="hidden md:flex items-center gap-2 rounded-lg bg-bone/10 backdrop-blur-xl px-4 py-2 text-xs font-medium text-bone hover:bg-bone/20 transition-colors shrink-0"
         >
-          Login
+          {cta.login}
         </Link>
 
         {/* Early access — yellow CTA box */}
         <Link
-          href="/early-access"
+          href={earlyHref}
           className="hidden md:flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-xs font-medium text-ink hover:bg-accent-hot transition-colors shrink-0"
         >
-          Early access
+          {cta.early}
           <span aria-hidden>→</span>
         </Link>
 
         {/* Mobile spacer */}
         <div className="flex-1 md:hidden" />
 
+        {/* Language switcher — mobile (between spacer and hamburger) */}
+        <div className="md:hidden flex shrink-0">
+          <LanguageSwitcher />
+        </div>
+
         {/* Hamburger — mobile */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg bg-bone/10 backdrop-blur-xl"
-          aria-label="Toggle menu"
+          aria-label={cta.menu}
         >
           <div className="flex flex-col gap-1.5 items-center justify-center w-5">
             <span
@@ -158,11 +198,11 @@ export function Navbar() {
             ))}
           </div>
           <Link
-            href="/early-access"
+            href={earlyHref}
             onClick={() => setOpen(false)}
             className="flex items-center gap-2 px-4 py-3 rounded-lg bg-accent text-sm font-medium text-ink hover:bg-accent-hot transition-colors"
           >
-            Early access
+            {cta.early}
             <span aria-hidden>→</span>
           </Link>
         </div>

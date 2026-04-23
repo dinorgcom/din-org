@@ -29,7 +29,14 @@ export const metadata: Metadata = {
     "alternative dispute resolution",
   ],
   metadataBase: new URL("https://din.org"),
-  alternates: { canonical: "https://din.org" },
+  alternates: {
+    canonical: "https://din.org",
+    languages: {
+      en: "https://din.org",
+      de: "https://din.org/de",
+      "x-default": "https://din.org",
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",

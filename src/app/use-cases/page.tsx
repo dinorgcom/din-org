@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   title: "Use Cases — din.org",
   description:
     "Beyond court cases. din.org handles any decision process: grant applications, permits, licences, benefits, competitions, tenders, and more. Same fair, fast, auditable engine.",
+  alternates: {
+    canonical: "https://din.org/use-cases",
+    languages: {
+      en: "https://din.org/use-cases",
+      de: "https://din.org/de/anwendungsfaelle",
+      "x-default": "https://din.org/use-cases",
+    },
+  },
 };
 
 const useCases = [

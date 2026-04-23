@@ -14,7 +14,14 @@ export const metadata: Metadata = {
     "AI Act Annex III arbitration",
     "AI arbitration enforceability",
   ],
-  alternates: { canonical: "https://din.org/eu-ai-act-arbitration" },
+  alternates: {
+    canonical: "https://din.org/eu-ai-act-arbitration",
+    languages: {
+      en: "https://din.org/eu-ai-act-arbitration",
+      de: "https://din.org/de/ki-verordnung-schiedsgerichtsbarkeit",
+      "x-default": "https://din.org/eu-ai-act-arbitration",
+    },
+  },
   openGraph: {
     type: "article",
     title: "EU AI Act and Arbitration: What Changes on August 2, 2026",

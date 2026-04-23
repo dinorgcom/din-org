@@ -11,7 +11,14 @@ export const metadata: Metadata = {
     "AI judge",
     "online dispute resolution",
   ],
-  alternates: { canonical: "https://din.org/how-it-works" },
+  alternates: {
+    canonical: "https://din.org/how-it-works",
+    languages: {
+      en: "https://din.org/how-it-works",
+      de: "https://din.org/de/so-funktionierts",
+      "x-default": "https://din.org/how-it-works",
+    },
+  },
   openGraph: {
     title: "How AI Arbitration Works — din.org",
     description:

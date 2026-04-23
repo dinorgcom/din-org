@@ -15,7 +15,14 @@ export const metadata: Metadata = {
     "online arbitration",
     "alternative dispute resolution",
   ],
-  alternates: { canonical: "https://din.org/what-is-arbitration" },
+  alternates: {
+    canonical: "https://din.org/what-is-arbitration",
+    languages: {
+      en: "https://din.org/what-is-arbitration",
+      de: "https://din.org/de/was-ist-schiedsgerichtsbarkeit",
+      "x-default": "https://din.org/what-is-arbitration",
+    },
+  },
   openGraph: {
     type: "article",
     title: "What Is Arbitration? A Plain-English Guide (2026)",

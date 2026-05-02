@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/use-cases`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/what-is-arbitration`, lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/eu-ai-act-arbitration`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/lawyer-counsel`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/privacy`, lastModified, changeFrequency: "yearly", priority: 0.3 },
     { url: `${baseUrl}/terms`, lastModified, changeFrequency: "yearly", priority: 0.3 },
     // German pages
@@ -27,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/de/anwendungsfaelle`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/de/was-ist-schiedsgerichtsbarkeit`, lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/de/ki-verordnung-schiedsgerichtsbarkeit`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/de/anwaltliche-vertretung`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/de/ueber-uns`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/de/mission`, lastModified, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/de/unternehmen`, lastModified, changeFrequency: "monthly", priority: 0.8 },

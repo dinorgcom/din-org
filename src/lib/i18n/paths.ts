@@ -22,6 +22,7 @@ export const localePathPairs: PathPair[] = [
   { en: "/use-cases", de: "/de/anwendungsfaelle" },
   { en: "/what-is-arbitration", de: "/de/was-ist-schiedsgerichtsbarkeit" },
   { en: "/eu-ai-act-arbitration", de: "/de/ki-verordnung-schiedsgerichtsbarkeit" },
+  { en: "/lawyer-counsel", de: "/de/anwaltliche-vertretung" },
   { en: "/privacy", de: "/de/datenschutz" },
   { en: "/terms", de: "/de/agb" },
 ];

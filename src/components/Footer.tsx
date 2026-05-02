@@ -18,6 +18,7 @@ const copy = {
       home: { href: "/", label: "Home" },
       how: { href: "/how-it-works", label: "How it works" },
       use: { href: "/use-cases", label: "Use cases" },
+      lawyer: { href: "/lawyer-counsel", label: "Lawyer counsel" },
       about: { href: "/about", label: "About" },
       enterprise: { href: "/enterprise", label: "Enterprise" },
       pricing: { href: "/pricing", label: "Pricing" },
@@ -41,6 +42,7 @@ const copy = {
       home: { href: "/de", label: "Start" },
       how: { href: "/de/so-funktionierts", label: "So funktioniert es" },
       use: { href: "/de/anwendungsfaelle", label: "Anwendungsfälle" },
+      lawyer: { href: "/de/anwaltliche-vertretung", label: "Anwaltliche Vertretung" },
       about: { href: "/de/ueber-uns", label: "Über uns" },
       enterprise: { href: "/de/unternehmen", label: "Unternehmen" },
       pricing: { href: "/de/preise", label: "Preise" },
@@ -83,6 +85,7 @@ export function Footer() {
                 <li><Link href={t.nav.home.href} className="hover:underline">{t.nav.home.label}</Link></li>
                 <li><Link href={t.nav.how.href} className="hover:underline">{t.nav.how.label}</Link></li>
                 <li><Link href={t.nav.use.href} className="hover:underline">{t.nav.use.label}</Link></li>
+                <li><Link href={t.nav.lawyer.href} className="hover:underline">{t.nav.lawyer.label}</Link></li>
                 <li><Link href={t.nav.about.href} className="hover:underline">{t.nav.about.label}</Link></li>
                 <li><Link href={t.nav.enterprise.href} className="hover:underline">{t.nav.enterprise.label}</Link></li>
                 <li><Link href={t.nav.pricing.href} className="hover:underline">{t.nav.pricing.label}</Link></li>

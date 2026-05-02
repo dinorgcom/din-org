@@ -26,10 +26,12 @@ const primaryLinksByLocale = {
 const moreLinksByLocale = {
   en: [
     { href: "/use-cases", label: "Use cases" },
+    { href: "/lawyer-counsel", label: "Lawyer counsel" },
     { href: "/news", label: "News" },
   ],
   de: [
     { href: "/de/anwendungsfaelle", label: "Anwendungsfälle" },
+    { href: "/de/anwaltliche-vertretung", label: "Anwaltliche Vertretung" },
     { href: "/de/news", label: "News" },
   ],
 } as const;

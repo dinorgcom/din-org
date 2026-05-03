@@ -292,7 +292,7 @@ export default function AnwaltlicheVertretungPage() {
         </div>
       </section>
 
-      {/* DUAL CTA */}
+      {/* DUAL FORMS */}
       <section className="reveal bg-accent text-ink px-6 md:px-10 py-20 md:py-32">
         <div className="max-w-6xl">
           <h2 className="display text-3xl md:text-5xl font-semibold max-w-3xl mb-12">
@@ -300,50 +300,168 @@ export default function AnwaltlicheVertretungPage() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="rounded-3xl bg-ink text-bone p-8 md:p-10">
+            {/* USER REFERRAL FORM */}
+            <div id="user-form" className="rounded-3xl bg-ink text-bone p-8 md:p-10">
               <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-accent mb-4">
                 Ich brauche einen Anwalt
               </p>
               <h3 className="display text-2xl md:text-3xl font-semibold mb-4">
                 Für Nutzer
               </h3>
-              <p className="text-base text-bone/70 leading-relaxed mb-6">
-                Erzählen Sie uns von Ihrem Fall. Sobald unsere Empfehlungsliste
-                aktiv ist, vermitteln wir Sie an passende Anwälte. In der
-                Zwischenzeit stellt unser Team den Kontakt zu schiedserfahrenen
-                Anwälten in Ihrer Jurisdiktion her.
+              <p className="text-sm text-bone/70 leading-relaxed mb-6">
+                Sagen Sie uns ein paar Eckdaten — wir vermitteln Sie an einen
+                schiedserfahrenen Anwalt in Ihrer Jurisdiktion.
               </p>
-              <a
-                href="mailto:counsel@din.org?subject=Anwaltsempfehlung%20angefragt"
-                className="inline-flex items-center gap-2 rounded-full bg-accent text-ink px-6 py-3 text-base font-medium hover:bg-accent-hot transition-colors"
+
+              <form
+                action="https://formspree.io/f/xreowgee"
+                method="POST"
+                className="space-y-4"
               >
-                Empfehlung anfragen
-                <span aria-hidden>→</span>
-              </a>
+                <input type="hidden" name="_subject" value="Anwaltsempfehlung angefragt — din.org" />
+                <input type="hidden" name="form_type" value="lawyer_referral_request" />
+                <input type="hidden" name="_language" value="de" />
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    placeholder="Ihr Name"
+                    className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone placeholder:text-bone/40 focus:outline-none focus:border-accent"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="Ihre E-Mail"
+                    className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone placeholder:text-bone/40 focus:outline-none focus:border-accent"
+                  />
+                </div>
+                <select
+                  name="jurisdiction"
+                  required
+                  className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone focus:outline-none focus:border-accent"
+                >
+                  <option value="">Jurisdiktion</option>
+                  <option value="AT">Österreich</option>
+                  <option value="DE">Deutschland</option>
+                  <option value="CH">Schweiz</option>
+                  <option value="EU">Andere EU</option>
+                  <option value="UK">Vereinigtes Königreich</option>
+                  <option value="US">USA</option>
+                  <option value="other">Andere</option>
+                </select>
+                <select
+                  name="dispute_value_range"
+                  required
+                  className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone focus:outline-none focus:border-accent"
+                >
+                  <option value="">Streitwert</option>
+                  <option value="under_15k">Unter 15.000 €</option>
+                  <option value="15k_50k">15.000 € – 50.000 €</option>
+                  <option value="50k_250k">50.000 € – 250.000 €</option>
+                  <option value="over_250k">Über 250.000 €</option>
+                  <option value="unknown">Noch unklar</option>
+                </select>
+                <textarea
+                  name="description"
+                  rows={3}
+                  placeholder="Kurze Beschreibung Ihres Falls (optional)"
+                  className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone placeholder:text-bone/40 focus:outline-none focus:border-accent resize-none"
+                />
+                <button
+                  type="submit"
+                  className="w-full rounded-full bg-accent text-ink px-6 py-3 text-base font-medium hover:bg-accent-hot transition-colors"
+                >
+                  Empfehlung anfragen
+                </button>
+              </form>
             </div>
 
-            <div className="rounded-3xl bg-ink text-bone p-8 md:p-10">
+            {/* LAW FIRM PARTNERSHIP FORM */}
+            <div id="firm-form" className="rounded-3xl bg-ink text-bone p-8 md:p-10">
               <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-accent mb-4">
                 Ich bin Anwalt / Anwältin
               </p>
               <h3 className="display text-2xl md:text-3xl font-semibold mb-4">
                 Für Kanzleien
               </h3>
-              <p className="text-base text-bone/70 leading-relaxed mb-6">
-                Bewerben Sie sich für unsere Empfehlungsliste. Strategische
-                Partnerschaften für Kanzleien mit Erfahrung in
-                Schiedsgerichtsbarkeit, EU-KI-Verordnung und
-                grenzüberschreitenden Handelsstreitigkeiten.
+              <p className="text-sm text-bone/70 leading-relaxed mb-6">
+                Bewerben Sie sich für unsere Empfehlungsliste. Wir prüfen jede
+                Bewerbung individuell.
               </p>
-              <a
-                href="mailto:partnerships@din.org?subject=Kanzlei-Partnerschaft"
-                className="inline-flex items-center gap-2 rounded-full bg-accent text-ink px-6 py-3 text-base font-medium hover:bg-accent-hot transition-colors"
+
+              <form
+                action="https://formspree.io/f/xreowgee"
+                method="POST"
+                className="space-y-4"
               >
-                Partner werden
-                <span aria-hidden>→</span>
-              </a>
+                <input type="hidden" name="_subject" value="Kanzlei-Partnerschaftsbewerbung — din.org" />
+                <input type="hidden" name="form_type" value="law_firm_partnership" />
+                <input type="hidden" name="_language" value="de" />
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="firm_name"
+                    required
+                    placeholder="Kanzleiname"
+                    className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone placeholder:text-bone/40 focus:outline-none focus:border-accent"
+                  />
+                  <input
+                    type="text"
+                    name="contact_name"
+                    required
+                    placeholder="Ansprechperson"
+                    className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone placeholder:text-bone/40 focus:outline-none focus:border-accent"
+                  />
+                </div>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="Kontakt-E-Mail"
+                  className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone placeholder:text-bone/40 focus:outline-none focus:border-accent"
+                />
+                <input
+                  type="text"
+                  name="jurisdictions"
+                  placeholder="Jurisdiktionen (z. B. AT, DE, CH)"
+                  className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone placeholder:text-bone/40 focus:outline-none focus:border-accent"
+                />
+                <input
+                  type="text"
+                  name="specialization"
+                  placeholder="Spezialisierung (z. B. Wirtschaft / Handel / IP-Schiedsverfahren)"
+                  className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone placeholder:text-bone/40 focus:outline-none focus:border-accent"
+                />
+                <input
+                  type="url"
+                  name="website"
+                  placeholder="Webseite der Kanzlei (optional)"
+                  className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone placeholder:text-bone/40 focus:outline-none focus:border-accent"
+                />
+                <textarea
+                  name="note"
+                  rows={3}
+                  placeholder="Kurze Notiz zu Ihrer Schiedserfahrung (optional)"
+                  className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone placeholder:text-bone/40 focus:outline-none focus:border-accent resize-none"
+                />
+                <button
+                  type="submit"
+                  className="w-full rounded-full bg-accent text-ink px-6 py-3 text-base font-medium hover:bg-accent-hot transition-colors"
+                >
+                  Bewerbung senden
+                </button>
+              </form>
             </div>
           </div>
+
+          <p className="mt-8 text-xs opacity-60 text-center">
+            Beide Formulare gehen an unser Partnerschaftsteam. Antwort innerhalb
+            von 5 Werktagen.
+          </p>
         </div>
       </section>
 

@@ -288,7 +288,7 @@ export default function LawyerCounselPage() {
         </div>
       </section>
 
-      {/* DUAL CTA */}
+      {/* DUAL FORMS */}
       <section className="reveal bg-accent text-ink px-6 md:px-10 py-20 md:py-32">
         <div className="max-w-6xl">
           <h2 className="display text-3xl md:text-5xl font-semibold max-w-3xl mb-12">
@@ -296,49 +296,167 @@ export default function LawyerCounselPage() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="rounded-3xl bg-ink text-bone p-8 md:p-10">
+            {/* USER REFERRAL FORM */}
+            <div id="user-form" className="rounded-3xl bg-ink text-bone p-8 md:p-10">
               <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-accent mb-4">
                 I need a lawyer
               </p>
               <h3 className="display text-2xl md:text-3xl font-semibold mb-4">
                 For users
               </h3>
-              <p className="text-base text-bone/70 leading-relaxed mb-6">
-                Tell us about your case. Once our recommended firms list is
-                live, we will introduce you to suitable counsel. In the
-                meantime, our team can connect you with arbitration-experienced
-                lawyers in your jurisdiction.
+              <p className="text-sm text-bone/70 leading-relaxed mb-6">
+                Tell us a few things and we&apos;ll connect you with an
+                arbitration-experienced lawyer in your jurisdiction.
               </p>
-              <a
-                href="mailto:counsel@din.org?subject=Lawyer%20referral%20request"
-                className="inline-flex items-center gap-2 rounded-full bg-accent text-ink px-6 py-3 text-base font-medium hover:bg-accent-hot transition-colors"
+
+              <form
+                action="https://formspree.io/f/xreowgee"
+                method="POST"
+                className="space-y-4"
               >
-                Request a referral
-                <span aria-hidden>→</span>
-              </a>
+                <input type="hidden" name="_subject" value="Lawyer referral request — din.org" />
+                <input type="hidden" name="form_type" value="lawyer_referral_request" />
+                <input type="hidden" name="_language" value="en" />
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    placeholder="Your name"
+                    className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone placeholder:text-bone/40 focus:outline-none focus:border-accent"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="Your email"
+                    className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone placeholder:text-bone/40 focus:outline-none focus:border-accent"
+                  />
+                </div>
+                <select
+                  name="jurisdiction"
+                  required
+                  className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone focus:outline-none focus:border-accent"
+                >
+                  <option value="">Jurisdiction</option>
+                  <option value="AT">Austria</option>
+                  <option value="DE">Germany</option>
+                  <option value="CH">Switzerland</option>
+                  <option value="EU">Other EU</option>
+                  <option value="UK">United Kingdom</option>
+                  <option value="US">United States</option>
+                  <option value="other">Other</option>
+                </select>
+                <select
+                  name="dispute_value_range"
+                  required
+                  className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone focus:outline-none focus:border-accent"
+                >
+                  <option value="">Dispute value range</option>
+                  <option value="under_15k">Under €15,000</option>
+                  <option value="15k_50k">€15,000 – €50,000</option>
+                  <option value="50k_250k">€50,000 – €250,000</option>
+                  <option value="over_250k">Over €250,000</option>
+                  <option value="unknown">Not sure yet</option>
+                </select>
+                <textarea
+                  name="description"
+                  rows={3}
+                  placeholder="Brief description of your dispute (optional)"
+                  className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone placeholder:text-bone/40 focus:outline-none focus:border-accent resize-none"
+                />
+                <button
+                  type="submit"
+                  className="w-full rounded-full bg-accent text-ink px-6 py-3 text-base font-medium hover:bg-accent-hot transition-colors"
+                >
+                  Request a referral
+                </button>
+              </form>
             </div>
 
-            <div className="rounded-3xl bg-ink text-bone p-8 md:p-10">
+            {/* LAW FIRM PARTNERSHIP FORM */}
+            <div id="firm-form" className="rounded-3xl bg-ink text-bone p-8 md:p-10">
               <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-accent mb-4">
                 I am a lawyer
               </p>
               <h3 className="display text-2xl md:text-3xl font-semibold mb-4">
                 For law firms
               </h3>
-              <p className="text-base text-bone/70 leading-relaxed mb-6">
-                Apply to join our recommended-firms list. Strategic
-                partnerships available for firms experienced with arbitration,
-                AI-act compliance, and cross-border commercial disputes.
+              <p className="text-sm text-bone/70 leading-relaxed mb-6">
+                Apply to join the recommended-firms list. We review every
+                application individually.
               </p>
-              <a
-                href="mailto:partnerships@din.org?subject=Law%20firm%20partnership"
-                className="inline-flex items-center gap-2 rounded-full bg-accent text-ink px-6 py-3 text-base font-medium hover:bg-accent-hot transition-colors"
+
+              <form
+                action="https://formspree.io/f/xreowgee"
+                method="POST"
+                className="space-y-4"
               >
-                Partner with din.org
-                <span aria-hidden>→</span>
-              </a>
+                <input type="hidden" name="_subject" value="Law firm partnership application — din.org" />
+                <input type="hidden" name="form_type" value="law_firm_partnership" />
+                <input type="hidden" name="_language" value="en" />
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="firm_name"
+                    required
+                    placeholder="Firm name"
+                    className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone placeholder:text-bone/40 focus:outline-none focus:border-accent"
+                  />
+                  <input
+                    type="text"
+                    name="contact_name"
+                    required
+                    placeholder="Contact name"
+                    className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone placeholder:text-bone/40 focus:outline-none focus:border-accent"
+                  />
+                </div>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="Contact email"
+                  className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone placeholder:text-bone/40 focus:outline-none focus:border-accent"
+                />
+                <input
+                  type="text"
+                  name="jurisdictions"
+                  placeholder="Jurisdictions (e.g. AT, DE, CH)"
+                  className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone placeholder:text-bone/40 focus:outline-none focus:border-accent"
+                />
+                <input
+                  type="text"
+                  name="specialization"
+                  placeholder="Specialization (e.g. corporate / commercial / IP arbitration)"
+                  className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone placeholder:text-bone/40 focus:outline-none focus:border-accent"
+                />
+                <input
+                  type="url"
+                  name="website"
+                  placeholder="Firm website (optional)"
+                  className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone placeholder:text-bone/40 focus:outline-none focus:border-accent"
+                />
+                <textarea
+                  name="note"
+                  rows={3}
+                  placeholder="Brief note on your arbitration experience (optional)"
+                  className="w-full rounded-xl border border-bone/15 bg-ink-card px-4 py-3 text-sm text-bone placeholder:text-bone/40 focus:outline-none focus:border-accent resize-none"
+                />
+                <button
+                  type="submit"
+                  className="w-full rounded-full bg-accent text-ink px-6 py-3 text-base font-medium hover:bg-accent-hot transition-colors"
+                >
+                  Submit application
+                </button>
+              </form>
             </div>
           </div>
+
+          <p className="mt-8 text-xs opacity-60 text-center">
+            Both forms go to our partnerships team. We respond within 5 business days.
+          </p>
         </div>
       </section>
 

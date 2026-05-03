@@ -302,7 +302,7 @@ export default function AnwendungsfaellePage() {
           </p>
           <div className="mt-12 flex flex-col sm:flex-row gap-4">
             <Link
-              href="/de/fruehzugang"
+              href="/de/early-access"
               className="inline-flex items-center gap-2 rounded-full bg-ink text-bone px-6 py-4 text-base font-medium hover:bg-ink/85 transition-colors"
             >
               Pilot anfragen

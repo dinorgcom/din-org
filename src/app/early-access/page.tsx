@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     canonical: "https://din.org/early-access",
     languages: {
       en: "https://din.org/early-access",
-      de: "https://din.org/de/fruehzugang",
+      de: "https://din.org/de/early-access",
       "x-default": "https://din.org/early-access",
     },
   },

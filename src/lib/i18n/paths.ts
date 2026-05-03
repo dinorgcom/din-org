@@ -17,7 +17,7 @@ export const localePathPairs: PathPair[] = [
   { en: "/news", de: "/de/news" },
   { en: "/pricing", de: "/de/preise" },
   { en: "/investors", de: "/de/investoren" },
-  { en: "/early-access", de: "/de/fruehzugang" },
+  { en: "/early-access", de: "/de/early-access" },
   { en: "/file-a-case", de: "/de/fall-einreichen" },
   { en: "/use-cases", de: "/de/anwendungsfaelle" },
   { en: "/what-is-arbitration", de: "/de/was-ist-schiedsgerichtsbarkeit" },

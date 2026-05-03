@@ -38,7 +38,7 @@ const moreLinksByLocale = {
 
 const ctaByLocale = {
   en: { login: "Login", early: "Early access", menu: "Toggle menu", more: "More" },
-  de: { login: "Anmelden", early: "Frühzugang", menu: "Menü öffnen", more: "Mehr" },
+  de: { login: "Anmelden", early: "Early Access", menu: "Menü öffnen", more: "Mehr" },
 } as const;
 
 export function Navbar() {
@@ -52,7 +52,7 @@ export function Navbar() {
   const cta = ctaByLocale[locale];
   const homeHref = locale === "de" ? "/de" : "/";
   const loginHref = locale === "de" ? "/de/anmelden" : "/login";
-  const earlyHref = locale === "de" ? "/de/fruehzugang" : "/early-access";
+  const earlyHref = locale === "de" ? "/de/early-access" : "/early-access";
 
   // Close More on outside click
   useEffect(() => {

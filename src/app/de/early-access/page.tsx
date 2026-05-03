@@ -1,41 +1,41 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Frühzugang — din.org",
+  title: "Early Access — din.org",
   description:
-    "Sichern Sie sich Frühzugang zu din.org — dem ersten KI-gestützten Gericht der Welt. Gehören Sie zu den ersten, die Streitigkeiten mit KI lösen.",
+    "Sichern Sie sich Early Access zu din.org — dem ersten KI-gestützten Gericht der Welt. Gehören Sie zu den ersten, die Streitigkeiten mit KI lösen.",
   alternates: {
-    canonical: "https://din.org/de/fruehzugang",
+    canonical: "https://din.org/de/early-access",
     languages: {
       en: "https://din.org/early-access",
-      de: "https://din.org/de/fruehzugang",
+      de: "https://din.org/de/early-access",
       "x-default": "https://din.org/early-access",
     },
   },
   openGraph: {
     type: "website",
     locale: "de_DE",
-    title: "Frühzugang — din.org",
+    title: "Early Access — din.org",
     description:
-      "Sichern Sie sich Frühzugang zu din.org — dem ersten KI-gestützten Gericht der Welt.",
-    url: "https://din.org/de/fruehzugang",
+      "Sichern Sie sich Early Access zu din.org — dem ersten KI-gestützten Gericht der Welt.",
+    url: "https://din.org/de/early-access",
   },
 };
 
-export default function FruehzugangPage() {
+export default function EarlyAccessPage() {
   return (
     <>
       {/* Hero */}
       <section className="reveal px-6 md:px-10 pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="max-w-6xl">
           <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-accent mb-6">
-            Frühzugang
+            Early Access
           </p>
           <h1 className="display text-5xl md:text-8xl font-semibold max-w-5xl">
             Gehören Sie zu den Ersten, die das KI-Gericht nutzen.
           </h1>
           <p className="mt-10 text-lg md:text-2xl max-w-3xl text-bone/80">
-            din.org startet bald. Beantragen Sie Frühzugang und reichen Sie als
+            din.org startet bald. Beantragen Sie Early Access und reichen Sie als
             Erste einen Fall ein, legen Sie Beweise vor und erhalten Sie ein
             begründetes KI-Urteil — vor allen anderen.
           </p>
@@ -46,7 +46,7 @@ export default function FruehzugangPage() {
       <section className="reveal border-y border-bone/10 px-6 md:px-10 py-16 md:py-24">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {[
-            { k: "Gratis", v: "Frühzugang ist kostenlos" },
+            { k: "Gratis", v: "Early Access ist kostenlos" },
             { k: "Zuerst", v: "Bevorzugtes Onboarding" },
             { k: "Direkt", v: "Direkter Kontakt zu Gründern" },
             { k: "Gestalten", v: "Produkt mitprägen" },
@@ -157,7 +157,7 @@ export default function FruehzugangPage() {
               type="submit"
               className="w-full rounded-full bg-accent text-ink px-8 py-4 text-base font-medium hover:bg-accent-hot transition-colors"
             >
-              Frühzugang beantragen
+              Early Access beantragen
             </button>
 
             <p className="text-xs text-bone/55 text-center">
@@ -171,7 +171,7 @@ export default function FruehzugangPage() {
       <section className="reveal px-6 md:px-10 py-24 md:py-36 border-t border-bone/10">
         <div className="max-w-6xl mb-16 md:mb-24">
           <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-accent mb-6">
-            Was Frühzugang umfasst
+            Was Early Access umfasst
           </p>
           <h2 className="display text-4xl md:text-7xl font-semibold max-w-4xl">
             Alles. Vor allen anderen.
@@ -182,10 +182,10 @@ export default function FruehzugangPage() {
           {[
             { title: "Voller Plattform-Zugang", body: "Reichen Sie echte Fälle ein, legen Sie Beweise vor, erhalten Sie KI-Sprüche. Keine Demo — das echte System." },
             { title: "KI-Anwalt & KI-Richter", body: "Ihr KI-Anwalt führt Sie durch jeden Schritt. Der KI-Richter verhört alle Parteien und liefert einen zitierten Spruch." },
-            { title: "Kostenloses Token-Paket", body: "Frühzugangs-Nutzer erhalten ein kostenloses Token-Paket, um den vollen Fallprozess gratis zu testen." },
+            { title: "Kostenloses Token-Paket", body: "Early-Access-Nutzer erhalten ein kostenloses Token-Paket, um den vollen Fallprozess gratis zu testen." },
             { title: "Bevorzugter Support", body: "Direkter Zugang zum Gründerteam. Ihr Feedback prägt das Produkt vor dem öffentlichen Start." },
             { title: "Founder-Community", body: "Werden Sie Teil einer privaten Gruppe früher Nutzer — Anwältinnen, Unternehmen, Innovatorinnen, die die Zukunft der Justiz gestalten." },
-            { title: "Vorteile auf Lebenszeit", body: "Frühzugangs-Nutzer erhalten dauerhafte Rabatte auf Token-Pakete und priorisierten Zugang zu neuen Funktionen." },
+            { title: "Vorteile auf Lebenszeit", body: "Early-Access-Nutzer erhalten dauerhafte Rabatte auf Token-Pakete und priorisierten Zugang zu neuen Funktionen." },
           ].map((f) => (
             <article
               key={f.title}

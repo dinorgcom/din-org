@@ -406,10 +406,10 @@ export default function WasIstSchiedsgerichtsbarkeitPage() {
               <span aria-hidden>&rarr;</span>
             </Link>
             <Link
-              href="/de/fruehzugang"
+              href="/de/early-access"
               className="inline-flex items-center gap-2 rounded-full border-2 border-ink text-ink px-6 py-4 text-base font-medium hover:bg-ink hover:text-bone transition-colors"
             >
-              Frühzugang anfordern
+              Early Access anfordern
             </Link>
           </div>
         </div>

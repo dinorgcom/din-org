@@ -33,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/de/mission`, lastModified, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/de/unternehmen`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/de/preise`, lastModified, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/de/fruehzugang`, lastModified, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/de/early-access`, lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/de/news`, lastModified, changeFrequency: "weekly", priority: 0.7 },
     { url: `${baseUrl}/de/investoren`, lastModified, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/de/fall-einreichen`, lastModified, changeFrequency: "monthly", priority: 0.9 },

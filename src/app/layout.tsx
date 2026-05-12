@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Orbitron } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { Providers } from "@/components/Providers";
+import { ConditionalChrome } from "@/components/ConditionalChrome";
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -135,16 +135,16 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-ink text-bone antialiased">
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:rounded-full focus:bg-accent focus:text-ink focus:px-4 focus:py-2 focus:text-sm focus:font-medium"
-        >
-          Skip to main content
-        </a>
-        <Navbar />
-        <main id="main-content">{children}</main>
-        <Footer />
-        <ScrollReveal />
+        <Providers>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:rounded-full focus:bg-accent focus:text-ink focus:px-4 focus:py-2 focus:text-sm focus:font-medium"
+          >
+            Skip to main content
+          </a>
+          <ConditionalChrome>{children}</ConditionalChrome>
+          <ScrollReveal />
+        </Providers>
       </body>
     </html>
   );

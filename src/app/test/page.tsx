@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+const LOGIN_URL = "https://app.din.org/login";
+
 export default function TestHomePage() {
   return (
     <>
@@ -14,17 +16,30 @@ export default function TestHomePage() {
             din.org
           </Link>
           <nav
-            className="hidden md:flex items-center gap-10 text-sm"
+            className="hidden md:flex items-center gap-8 text-sm"
             style={{ color: "rgba(245,241,234,0.75)" }}
           >
+            <a href="#principles" className="hover:opacity-100 transition-opacity">
+              Principles
+            </a>
             <a href="#how" className="hover:opacity-100 transition-opacity">
               How it works
             </a>
             <a href="#who" className="hover:opacity-100 transition-opacity">
               Who uses it
             </a>
+            <a href="#audit" className="hover:opacity-100 transition-opacity">
+              Audit
+            </a>
             <a href="#pricing" className="hover:opacity-100 transition-opacity">
               Pricing
+            </a>
+            <a
+              href={LOGIN_URL}
+              className="hover:opacity-100 transition-opacity"
+              style={{ color: "rgba(245,241,234,0.65)" }}
+            >
+              Login
             </a>
             <a
               href="#access"
@@ -58,7 +73,7 @@ export default function TestHomePage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(20,19,15,0.55) 0%, rgba(20,19,15,0.4) 45%, rgba(20,19,15,0.85) 100%)",
+              "linear-gradient(to bottom, rgba(20,19,15,0.55) 0%, rgba(20,19,15,0.4) 45%, rgba(20,19,15,0.88) 100%)",
           }}
         />
         <div className="d-grain" />
@@ -92,11 +107,12 @@ export default function TestHomePage() {
 
             <p
               className="mt-10 text-lg md:text-xl max-w-2xl leading-relaxed font-light"
-              style={{ color: "rgba(245,241,234,0.8)" }}
+              style={{ color: "rgba(245,241,234,0.82)" }}
             >
               din.org renders reasoned, auditable rulings on the disputes,
               claims, and decisions your organization no longer wants to make
-              in-house. Submit the case. Receive the verdict. Ship the outcome.
+              in-house — from a marketplace refund to a public procurement
+              award. Submit the case. Receive the verdict. Ship the outcome.
             </p>
 
             <div className="mt-12 flex flex-col sm:flex-row items-start gap-4">
@@ -108,18 +124,18 @@ export default function TestHomePage() {
                   color: "var(--d-ink)",
                 }}
               >
-                Request API access
+                Request access
                 <span aria-hidden>→</span>
               </a>
               <a
-                href="#how"
+                href="#sandbox"
                 className="inline-flex items-center gap-3 rounded-full border px-7 py-4 text-sm font-medium transition-colors"
                 style={{
                   borderColor: "rgba(245,241,234,0.4)",
                   color: "var(--d-bone)",
                 }}
               >
-                See a decision
+                Run a case in the sandbox
               </a>
             </div>
 
@@ -128,14 +144,14 @@ export default function TestHomePage() {
               style={{ color: "rgba(245,241,234,0.55)" }}
             >
               Used internally by din.org&apos;s own AI arbitration tribunal ·
-              Pilot programs with marketplaces, insurers &amp; arbitration
-              institutions
+              In design with public-sector pilots, marketplaces, insurers
+              &amp; institutional tribunals
             </p>
           </div>
         </div>
       </section>
 
-      {/* TRUST BAR — placeholder partner logos */}
+      {/* TRUST BAR */}
       <section
         className="d-rule-top px-6 md:px-10 py-10 md:py-14"
         style={{ borderBottom: "1px solid var(--d-line)" }}
@@ -149,11 +165,11 @@ export default function TestHomePage() {
           </p>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-10 items-center">
             {[
-              "Marketplace EU",
+              "Public sector pilot",
               "Insurer · DACH",
-              "Arbitration Body",
-              "B2B Platform",
-              "Fintech",
+              "Marketplace · EU",
+              "Arbitration body",
+              "B2B platform",
             ].map((label) => (
               <div
                 key={label}
@@ -167,9 +183,9 @@ export default function TestHomePage() {
         </div>
       </section>
 
-      {/* WHO USES IT — three pillars */}
+      {/* THREE PRINCIPLES */}
       <section
-        id="who"
+        id="principles"
         className="px-6 md:px-10 py-28 md:py-40"
         style={{ background: "var(--d-bone)" }}
       >
@@ -182,9 +198,101 @@ export default function TestHomePage() {
               className="inline-block w-8 h-px align-middle mr-3"
               style={{ background: "var(--d-ink-muted)", opacity: 0.6 }}
             />
+            Three principles. In this order.
+          </p>
+          <h2 className="d-display text-[clamp(2.25rem,5vw,4.5rem)] max-w-[26ch] leading-[1.05] mb-16">
+            Every ruling is derived from three principles —{" "}
+            <span
+              className="italic font-light"
+              style={{ color: "var(--d-ink-muted)" }}
+            >
+              weighed openly, recorded for audit.
+            </span>
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+            {[
+              {
+                num: "I",
+                eyebrow: "The law",
+                title: "What is the correct decision under the applicable rules?",
+                body:
+                  "Statute, contract, regulation, platform policy — whichever rule set governs. The first question is always whether the ruling is defensible on legal grounds. If a higher court reviewed it, would it stand?",
+              },
+              {
+                num: "II",
+                eyebrow: "The parties",
+                title: "What is the best outcome for the people in this dispute?",
+                body:
+                  "Within what the law allows, what serves the actual humans involved — the buyer and the seller, the claimant and the insurer, the citizen and the agency? Fairness is not the same as formal correctness.",
+              },
+              {
+                num: "III",
+                eyebrow: "The whole",
+                title:
+                  "What is the best decision for the wider community affected?",
+                body:
+                  "Decisions create precedent. A ruling that punishes one bad actor changes incentives for thousands. The third principle keeps every individual ruling tethered to the system it helps shape.",
+              },
+            ].map((p) => (
+              <article key={p.num} className="flex flex-col">
+                <p
+                  className="d-display italic text-6xl md:text-7xl mb-5 leading-none"
+                  style={{ color: "var(--d-accent)" }}
+                >
+                  {p.num}
+                </p>
+                <p
+                  className="text-[10px] uppercase tracking-[0.25em] mb-4"
+                  style={{ color: "var(--d-ink-muted)" }}
+                >
+                  {p.eyebrow}
+                </p>
+                <h3
+                  className="d-display text-xl md:text-2xl leading-[1.2] mb-4"
+                  style={{ color: "var(--d-ink)" }}
+                >
+                  {p.title}
+                </h3>
+                <p
+                  className="text-[15px] md:text-base leading-relaxed font-light"
+                  style={{ color: "var(--d-ink-muted)" }}
+                >
+                  {p.body}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <p
+            className="mt-16 max-w-2xl text-base md:text-lg leading-relaxed font-light italic"
+            style={{ color: "var(--d-ink-muted)" }}
+          >
+            The order matters. Law first protects legal defensibility. Parties
+            second protects fairness. Society third anchors every ruling to the
+            world it lives in.
+          </p>
+        </div>
+      </section>
+
+      {/* WHO USES IT — four pillars, public sector first */}
+      <section
+        id="who"
+        className="px-6 md:px-10 py-28 md:py-40"
+        style={{ background: "var(--d-bone-soft)" }}
+      >
+        <div className="mx-auto max-w-[1400px]">
+          <p
+            className="text-[11px] uppercase tracking-[0.3em] mb-8"
+            style={{ color: "var(--d-ink-muted)" }}
+          >
+            <span
+              className="inline-block w-8 h-px align-middle mr-3"
+              style={{ background: "var(--d-ink-muted)", opacity: 0.6 }}
+            />
             Who uses it
           </p>
-          <h2 className="d-display text-[clamp(2.25rem,5vw,4.5rem)] max-w-[28ch] leading-[1.05] mb-16 md:mb-24">
+          <h2 className="d-display text-[clamp(2.25rem,5vw,4.5rem)] max-w-[28ch] leading-[1.05] mb-16">
             Organizations that make decisions{" "}
             <span
               className="italic font-light"
@@ -194,50 +302,81 @@ export default function TestHomePage() {
             </span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
             {[
               {
-                eyebrow: "Marketplaces & Platforms",
-                title: "Buyer-seller disputes, refund decisions, content appeals.",
+                eyebrow: "Public sector & high-integrity decisions",
+                badge: "In development with municipal pilots",
+                title:
+                  "Tenders, grants, building permits, public-office vetting.",
                 body:
-                  "Trust & safety teams escalate edge cases to din.org instead of arguing with two upset users. Every refund denial, every seller suspension, every removed listing comes with a reasoned, third-party ruling the user can read and challenge — not a customer-service form letter.",
-                vol: "Typical volume: 200 — 50,000 decisions / month",
+                  "The decisions where conflict of interest matters more than speed. Every input recorded, every step auditable, every ruling appealable. Designed for jurisdictions where the perception of fairness is as critical as fairness itself — and where the absence of an independent third party historically distorts public outcomes.",
+                vol: "Typical use: 10 — 5,000 decisions / month",
               },
               {
-                eyebrow: "Insurance & Banks",
-                title: "Claim adjudication, complaint review, fraud-flag escalation.",
+                eyebrow: "Insurance & banks",
+                badge: "Pilots in DACH",
+                title:
+                  "Claim adjudication, complaint review, fraud-flag escalation.",
                 body:
                   "Adjusters use din.org for first-pass decisions on contested claims. The reasoned ruling becomes the artifact the customer sees — not the adjuster&apos;s name. Speeds up cycle time, removes the personal-blame surface, gives the regulator a paper trail.",
-                vol: "Typical volume: 1,000 — 250,000 decisions / month",
+                vol: "Typical use: 1,000 — 250,000 decisions / month",
               },
               {
-                eyebrow: "Institutions & Tribunals",
+                eyebrow: "Marketplaces & platforms",
+                badge: "Pilots in design",
+                title:
+                  "Buyer-seller disputes, refunds, content-moderation appeals.",
+                body:
+                  "Trust &amp; safety teams escalate edge cases to din.org instead of arguing with two upset users. Every refund denial, every seller suspension comes with a reasoned, third-party ruling the user can read and challenge — not a customer-service form letter.",
+                vol: "Typical use: 200 — 50,000 decisions / month",
+              },
+              {
+                eyebrow: "Institutions & tribunals",
+                badge: "Reference partners",
                 title:
                   "Arbitration bodies, ombudsmen, grant committees, sports tribunals.",
                 body:
-                  "Existing institutions integrate din.org as their AI tier — for triage, for first-instance rulings, for parallel sanity-checks against human decisions. The institution retains brand and authority; din.org provides the engine, the speed, and the audit trail.",
-                vol: "Typical volume: 50 — 5,000 decisions / month",
+                  "Existing institutions integrate din.org as their AI tier — for triage, first-instance rulings, parallel sanity-checks against human decisions. The institution retains brand and authority; din.org provides the engine, speed, and audit trail.",
+                vol: "Typical use: 50 — 5,000 decisions / month",
               },
             ].map((p) => (
-              <article key={p.eyebrow} className="flex flex-col">
-                <p
-                  className="text-[10px] uppercase tracking-[0.25em] mb-5"
-                  style={{ color: "var(--d-accent)" }}
-                >
-                  {p.eyebrow}
-                </p>
+              <article
+                key={p.eyebrow}
+                className="rounded-2xl p-8 md:p-10 flex flex-col"
+                style={{
+                  background: "var(--d-bone)",
+                  border: "1px solid var(--d-line)",
+                }}
+              >
+                <div className="flex items-start justify-between mb-5 gap-3">
+                  <p
+                    className="text-[10px] uppercase tracking-[0.25em]"
+                    style={{ color: "var(--d-accent)" }}
+                  >
+                    {p.eyebrow}
+                  </p>
+                  <p
+                    className="text-[10px] uppercase tracking-[0.2em] whitespace-nowrap"
+                    style={{
+                      color: "var(--d-ink-muted)",
+                      borderLeft: "1px solid var(--d-line)",
+                      paddingLeft: "0.75rem",
+                    }}
+                  >
+                    {p.badge}
+                  </p>
+                </div>
                 <h3
                   className="d-display text-2xl md:text-3xl leading-[1.15] mb-5"
                   style={{ color: "var(--d-ink)" }}
-                >
-                  {p.title}
-                </h3>
+                  dangerouslySetInnerHTML={{ __html: p.title }}
+                />
                 <p
                   className="text-base md:text-[17px] leading-relaxed font-light mb-6"
                   style={{ color: "var(--d-ink-muted)" }}
-                >
-                  {p.body}
-                </p>
+                  dangerouslySetInnerHTML={{ __html: p.body }}
+                />
                 <p
                   className="d-mono text-[11px] uppercase tracking-wider mt-auto pt-4"
                   style={{
@@ -284,7 +423,6 @@ export default function TestHomePage() {
           </h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* REQUEST */}
             <div
               className="rounded-2xl overflow-hidden"
               style={{
@@ -334,7 +472,6 @@ export default function TestHomePage() {
               </pre>
             </div>
 
-            {/* RESPONSE */}
             <div
               className="rounded-2xl overflow-hidden"
               style={{
@@ -363,6 +500,12 @@ export default function TestHomePage() {
   "amount_awarded": {
     "value": 620, "currency": "EUR"
   },
+  "principles_applied": {
+    "law":     "marketplace_policy_4.2.1, BGB §437",
+    "parties": "buyer harm vs. seller good-faith listing",
+    "society": "incentive against misrepresentation,
+                discouraging stale claims"
+  },
   "reasoning": "The listing describes the item as
     'as new — used twice'. Buyer evidence shows
     visible cosmetic wear inconsistent with that
@@ -390,12 +533,12 @@ export default function TestHomePage() {
               {
                 label: "Reasoned",
                 body:
-                  "Every ruling ships with the chain of reasoning, weighted citations, and a confidence score — not a black-box verdict.",
+                  "Every ruling ships with the chain of reasoning, weighted citations, the three principles weighed against each other, and a confidence score — not a black-box verdict.",
               },
               {
                 label: "Auditable",
                 body:
-                  "Each decision has a signed audit trail URL. Inputs, intermediate steps, and final ruling are reproducible on replay.",
+                  "Each decision has a signed audit trail URL. Inputs, intermediate steps, and final ruling are reproducible on replay. See &quot;Open to audit&quot; below.",
               },
               {
                 label: "Appealable",
@@ -413,22 +556,82 @@ export default function TestHomePage() {
                 <p
                   className="text-[15px] leading-relaxed font-light"
                   style={{ color: "rgba(245,241,234,0.78)" }}
-                >
-                  {f.body}
-                </p>
+                  dangerouslySetInnerHTML={{ __html: f.body }}
+                />
               </div>
             ))}
+          </div>
+
+          <div className="mt-16 flex flex-col sm:flex-row gap-4">
+            <a
+              href="#sandbox"
+              className="inline-flex items-center gap-3 rounded-full px-7 py-4 text-sm font-medium transition-colors"
+              style={{
+                background: "var(--d-bone)",
+                color: "var(--d-ink)",
+              }}
+            >
+              Try it in the sandbox
+              <span aria-hidden>→</span>
+            </a>
+            <a
+              href="#access"
+              className="inline-flex items-center gap-3 rounded-full border px-7 py-4 text-sm font-medium transition-colors"
+              style={{
+                borderColor: "rgba(245,241,234,0.4)",
+                color: "var(--d-bone)",
+              }}
+            >
+              Request API access
+            </a>
           </div>
         </div>
       </section>
 
-      {/* WHY OUTSOURCE — verantwortung */}
+      {/* SAME CARE FOR EVERYONE */}
+      <section
+        className="px-6 md:px-10 py-24 md:py-32"
+        style={{ background: "var(--d-bone)" }}
+      >
+        <div className="mx-auto max-w-[1100px]">
+          <p
+            className="text-[11px] uppercase tracking-[0.3em] mb-8"
+            style={{ color: "var(--d-ink-muted)" }}
+          >
+            <span
+              className="inline-block w-8 h-px align-middle mr-3"
+              style={{ background: "var(--d-ink-muted)", opacity: 0.6 }}
+            />
+            The economics of care
+          </p>
+          <h2 className="d-display text-[clamp(2rem,4.5vw,4rem)] leading-[1.05] mb-10">
+            A €40 dispute receives the same engine{" "}
+            <span
+              className="italic font-light"
+              style={{ color: "var(--d-ink-muted)" }}
+            >
+              as a €40 million one.
+            </span>
+          </h2>
+          <p
+            className="text-lg md:text-xl leading-relaxed font-light max-w-3xl"
+            style={{ color: "var(--d-ink-muted)" }}
+          >
+            No queue priority by case value. No &quot;small cases get shorter
+            reasoning.&quot; One decision pipeline, identical rigor, identical
+            depth — regardless of who is filing or what is at stake. The
+            marginal cost of justice approaches zero. We allocate the same care
+            to everyone.
+          </p>
+        </div>
+      </section>
+
+      {/* WHY OUTSOURCE — three pillars + video */}
       <section
         className="px-6 md:px-10 py-28 md:py-40"
         style={{ background: "var(--d-bone-soft)" }}
       >
         <div className="mx-auto max-w-[1400px] grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-          {/* Left text column */}
           <div className="lg:col-span-7">
             <p
               className="text-[11px] uppercase tracking-[0.3em] mb-8"
@@ -454,10 +657,11 @@ export default function TestHomePage() {
               style={{ color: "var(--d-ink-muted)" }}
             >
               An internal &quot;AI decision tool&quot; is still your decision.
-              An adjuster, a moderator, a committee. The customer still hears it
-              from you. din.org is the structural opposite: a third party your
-              customer sees as the source of the ruling — with the audit trail,
-              independence, and appeal mechanism to back it up.
+              An adjuster, a moderator, a committee, a procurement officer.
+              The customer or the citizen still hears it from you. din.org is
+              the structural opposite: a third party seen as the source of the
+              ruling — with the audit trail, independence, and appeal mechanism
+              to back it up.
             </p>
 
             <div className="space-y-8">
@@ -466,7 +670,7 @@ export default function TestHomePage() {
                   num: "01",
                   title: "Independent third party",
                   body:
-                    "Your decision isn&apos;t your decision anymore. The ruling comes from din.org, with a verifiable audit URL the customer can inspect. You executed; we decided.",
+                    "Your decision isn&apos;t your decision anymore. The ruling comes from din.org with a verifiable audit URL the affected party can inspect. You executed; we decided.",
                 },
                 {
                   num: "02",
@@ -478,7 +682,7 @@ export default function TestHomePage() {
                   num: "03",
                   title: "Appeal built in",
                   body:
-                    "Every ruling is appeal-eligible. Customers don&apos;t escalate to your CEO; they escalate to a din.org human-judge panel. The conflict leaves your org.",
+                    "Every ruling is appeal-eligible. Customers and citizens don&apos;t escalate to your CEO; they escalate to a din.org human-judge panel. The conflict leaves your organization.",
                 },
               ].map((p) => (
                 <div
@@ -509,7 +713,6 @@ export default function TestHomePage() {
             </div>
           </div>
 
-          {/* Right video tile */}
           <div className="lg:col-span-5 lg:sticky lg:top-10">
             <div
               className="relative aspect-[4/5] rounded-2xl overflow-hidden"
@@ -557,6 +760,100 @@ export default function TestHomePage() {
         </div>
       </section>
 
+      {/* OPEN TO AUDIT — Big Four */}
+      <section
+        id="audit"
+        className="px-6 md:px-10 py-28 md:py-40"
+        style={{ background: "var(--d-ink)", color: "var(--d-bone)" }}
+      >
+        <div className="mx-auto max-w-[1400px]">
+          <p
+            className="text-[11px] uppercase tracking-[0.3em] mb-8"
+            style={{ color: "rgba(245,241,234,0.6)" }}
+          >
+            <span
+              className="inline-block w-8 h-px align-middle mr-3"
+              style={{ background: "rgba(245,241,234,0.5)" }}
+            />
+            Open to audit
+          </p>
+          <h2
+            className="d-display text-[clamp(2.25rem,5vw,4.5rem)] max-w-[24ch] leading-[1.05] mb-10"
+            style={{ color: "var(--d-bone)" }}
+          >
+            Audited by a Big Four firm.{" "}
+            <span
+              className="italic font-light"
+              style={{ color: "rgba(245,241,234,0.75)" }}
+            >
+              The report is yours.
+            </span>
+          </h2>
+
+          <p
+            className="text-lg md:text-xl leading-relaxed font-light max-w-3xl mb-16"
+            style={{ color: "rgba(245,241,234,0.78)" }}
+          >
+            The decision mechanism — model architecture, training corpus,
+            weighting model, per-case reasoning trails, the application of
+            the three principles — is subject to independent annual audit by
+            a Big Four accounting firm. Clients receive the full audit report
+            on request, including findings, exceptions, and management
+            responses.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-12">
+            {[
+              {
+                label: "What is audited",
+                body:
+                  "Architecture · training data sources · weighting model · per-case audit trails · principle application · appeal frequency · disagreement rate with human reviewers.",
+              },
+              {
+                label: "Who audits",
+                body:
+                  "A Big Four firm under formal audit engagement. Auditor identity disclosed in the report. Annual cadence. Findings published to clients verbatim.",
+              },
+              {
+                label: "Why this matters",
+                body:
+                  "The question isn&apos;t &quot;can the AI decide?&quot; — it&apos;s &quot;can someone verify the AI decided correctly?&quot; The audit is what makes the ruling defensible in front of a regulator, a court, a board, or a public.",
+              },
+            ].map((p) => (
+              <div
+                key={p.label}
+                className="rounded-2xl p-6 md:p-8"
+                style={{
+                  background: "rgba(245,241,234,0.04)",
+                  border: "1px solid rgba(245,241,234,0.1)",
+                }}
+              >
+                <p
+                  className="text-[10px] uppercase tracking-[0.25em] mb-4"
+                  style={{ color: "var(--d-accent-hot)" }}
+                >
+                  {p.label}
+                </p>
+                <p
+                  className="text-[15px] leading-relaxed font-light"
+                  style={{ color: "rgba(245,241,234,0.82)" }}
+                  dangerouslySetInnerHTML={{ __html: p.body }}
+                />
+              </div>
+            ))}
+          </div>
+
+          <p
+            className="text-lg leading-relaxed font-light italic max-w-3xl"
+            style={{ color: "rgba(245,241,234,0.7)" }}
+          >
+            We sell a mechanism, not a marketing claim. Anything we say about
+            how a din.org decision is reached should be verifiable by a
+            third-party auditor. That is the entire business model.
+          </p>
+        </div>
+      </section>
+
       {/* WHERE IT'S USED — decision-types grid */}
       <section
         className="px-6 md:px-10 py-28 md:py-40"
@@ -579,7 +876,7 @@ export default function TestHomePage() {
               className="italic font-light"
               style={{ color: "var(--d-ink-muted)" }}
             >
-              Many decisions you no longer have to own.
+              Every decision you no longer want to own.
             </span>
           </h2>
 
@@ -588,32 +885,37 @@ export default function TestHomePage() {
             style={{ borderTop: "1px solid var(--d-line)" }}
           >
             {[
-              ["Marketplace refund disputes", "consumer · platform"],
+              ["Public procurement / tender awards", "public sector · high-integrity"],
+              ["Grant &amp; subsidy allocation", "public sector · selection"],
+              ["Building permit appeals", "public sector · regulatory"],
+              ["Public-office candidate vetting", "public sector · integrity"],
+              ["Whistleblower complaint review", "public sector · protected"],
+              ["Electoral &amp; campaign-finance disputes", "public sector · sensitive"],
+              ["Insurance claim adjudication", "insurance · first-pass"],
+              ["Insurance fraud-flag review", "insurance · automated triage"],
+              ["Bank complaint resolution", "banking · consumer protection"],
+              ["Marketplace refund disputes", "platform · consumer"],
+              ["Marketplace trust &amp; safety appeals", "platform · seller bans"],
               ["B2B contract disputes", "commercial · cross-border"],
-              ["Insurance claim adjudication", "first-pass · contested"],
-              ["Bank complaint resolution", "consumer protection"],
-              ["Marketplace trust &amp; safety escalations", "seller bans · removals"],
-              ["Sports & federation tribunals", "doping · eligibility"],
-              ["HR disciplinary review", "neutral first instance"],
-              ["Academic plagiarism rulings", "exam · thesis"],
-              ["Scholarship & grant decisions", "selection · appeals"],
-              ["Competition & jury awards", "structured judging"],
-              ["IP & patent first-look", "infringement · validity"],
-              ["Consumer ombudsman cases", "B2C · regulated"],
-              ["Inheritance pre-assessments", "non-binding"],
-              ["Procurement pre-review", "tender · qualification"],
-              ["Regulatory escalations", "compliance · audit"],
-              ["Insurance fraud-flag review", "automated triage"],
-            ].map(([title, sub], i) => (
+              ["Sports &amp; federation tribunals", "institutional · eligibility"],
+              ["Consumer ombudsman cases", "institutional · regulated"],
+              ["HR disciplinary first-instance", "internal · neutralization"],
+              ["Academic plagiarism / exam appeals", "institutional · academic"],
+              ["Scholarship &amp; award juries", "institutional · selection"],
+              ["IP &amp; patent first-look", "commercial · technical"],
+              ["Inheritance pre-assessments", "private · non-binding"],
+              ["Regulatory &amp; compliance escalations", "regulatory · audit"],
+            ].map(([title, sub], i, arr) => (
               <div
                 key={String(title)}
                 className="py-6 md:py-7 px-4 md:px-6 flex flex-col"
                 style={{
-                  borderBottom: "1px solid var(--d-line)",
-                  borderRight:
-                    i % 4 === 3
-                      ? "none"
+                  borderBottom:
+                    i >= arr.length - (arr.length % 4 || 4)
+                      ? "1px solid var(--d-line)"
                       : "1px solid var(--d-line)",
+                  borderRight:
+                    i % 4 === 3 ? "none" : "1px solid var(--d-line)",
                 }}
               >
                 <p
@@ -635,9 +937,124 @@ export default function TestHomePage() {
             style={{ color: "var(--d-ink-muted)" }}
           >
             Same API. Different framework parameter. If your decision domain
-            isn&apos;t listed, we&apos;ve probably already trained a framework
+            isn&apos;t listed, we&apos;ve probably already designed a framework
             for it — ask.
           </p>
+        </div>
+      </section>
+
+      {/* SANDBOX */}
+      <section
+        id="sandbox"
+        className="px-6 md:px-10 py-28 md:py-40"
+        style={{ background: "var(--d-bone-soft)" }}
+      >
+        <div className="mx-auto max-w-[1400px] grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          <div className="lg:col-span-7">
+            <p
+              className="text-[11px] uppercase tracking-[0.3em] mb-8"
+              style={{ color: "var(--d-ink-muted)" }}
+            >
+              <span
+                className="inline-block w-8 h-px align-middle mr-3"
+                style={{ background: "var(--d-ink-muted)", opacity: 0.6 }}
+              />
+              The sandbox
+            </p>
+            <h2 className="d-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1.05] mb-8">
+              Play your case through.{" "}
+              <span
+                className="italic font-light"
+                style={{ color: "var(--d-ink-muted)" }}
+              >
+                See the ruling before you ship.
+              </span>
+            </h2>
+            <p
+              className="text-lg md:text-xl leading-relaxed font-light mb-8"
+              style={{ color: "var(--d-ink-muted)" }}
+            >
+              The sandbox runs your real case end-to-end on the same engine
+              that produces production rulings. Submit the facts, attach
+              evidence, present your strongest argument and your opponent&apos;s
+              — the engine returns a full reasoned ruling, the principles it
+              weighed, and the confidence behind every step.
+            </p>
+            <p
+              className="text-base md:text-lg leading-relaxed font-light mb-10"
+              style={{ color: "var(--d-ink-muted)" }}
+            >
+              No commitment. No integration required. The same audit trail you
+              would receive in production — but the outcome is yours to keep,
+              act on, or discard.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href={LOGIN_URL}
+                className="inline-flex items-center gap-3 rounded-full px-7 py-4 text-sm font-medium transition-colors"
+                style={{
+                  background: "var(--d-ink)",
+                  color: "var(--d-bone)",
+                }}
+              >
+                Open the sandbox
+                <span aria-hidden>→</span>
+              </a>
+              <a
+                href="#access"
+                className="inline-flex items-center gap-3 rounded-full border px-7 py-4 text-sm font-medium transition-colors"
+                style={{
+                  borderColor: "var(--d-ink)",
+                  color: "var(--d-ink)",
+                }}
+              >
+                Request a guided run
+              </a>
+            </div>
+          </div>
+
+          <div className="lg:col-span-5">
+            <div
+              className="rounded-2xl p-8 md:p-10"
+              style={{
+                background: "var(--d-ink)",
+                color: "var(--d-bone)",
+                border: "1px solid var(--d-line)",
+              }}
+            >
+              <p
+                className="text-[10px] uppercase tracking-[0.25em] mb-6"
+                style={{ color: "var(--d-accent-hot)" }}
+              >
+                Sandbox · what you get
+              </p>
+              <ul
+                className="space-y-4 text-[15px] leading-relaxed font-light"
+                style={{ color: "rgba(245,241,234,0.85)" }}
+              >
+                <li>
+                  <span className="d-mono text-[11px] mr-3" style={{ color: "var(--d-accent-hot)" }}>01</span>
+                  Submit case facts, parties, and evidence.
+                </li>
+                <li>
+                  <span className="d-mono text-[11px] mr-3" style={{ color: "var(--d-accent-hot)" }}>02</span>
+                  Optional: have the engine cross-examine your story for weak points.
+                </li>
+                <li>
+                  <span className="d-mono text-[11px] mr-3" style={{ color: "var(--d-accent-hot)" }}>03</span>
+                  Receive a full reasoned ruling — citations, confidence, principle weights.
+                </li>
+                <li>
+                  <span className="d-mono text-[11px] mr-3" style={{ color: "var(--d-accent-hot)" }}>04</span>
+                  Inspect the signed audit trail.
+                </li>
+                <li>
+                  <span className="d-mono text-[11px] mr-3" style={{ color: "var(--d-accent-hot)" }}>05</span>
+                  Keep, escalate to a verified proceeding, or discard.
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -680,7 +1097,6 @@ export default function TestHomePage() {
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Base */}
             <div
               className="rounded-2xl p-8 md:p-10"
               style={{
@@ -713,6 +1129,7 @@ export default function TestHomePage() {
                 <li>· Every reasoned ruling</li>
                 <li>· Signed audit trail URL</li>
                 <li>· Citations &amp; confidence score</li>
+                <li>· Three-principles weighting included</li>
                 <li>· Unlimited integration volume</li>
               </ul>
               <p
@@ -726,7 +1143,6 @@ export default function TestHomePage() {
               </p>
             </div>
 
-            {/* Appeals */}
             <div
               className="rounded-2xl p-8 md:p-10 relative overflow-hidden"
               style={{
@@ -772,7 +1188,6 @@ export default function TestHomePage() {
               </p>
             </div>
 
-            {/* Verified */}
             <div
               className="rounded-2xl p-8 md:p-10"
               style={{
@@ -885,17 +1300,29 @@ export default function TestHomePage() {
               on top of this decision endpoint. You can see how the engine
               performs at full depth before you wire it into your own product.
             </p>
-            <Link
-              href="/"
-              className="inline-flex items-center gap-3 rounded-full px-7 py-4 text-sm font-medium transition-colors"
-              style={{
-                background: "var(--d-ink)",
-                color: "var(--d-bone)",
-              }}
-            >
-              Visit the tribunal
-              <span aria-hidden>→</span>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-3 rounded-full px-7 py-4 text-sm font-medium transition-colors"
+                style={{
+                  background: "var(--d-ink)",
+                  color: "var(--d-bone)",
+                }}
+              >
+                Visit the tribunal
+                <span aria-hidden>→</span>
+              </Link>
+              <a
+                href={LOGIN_URL}
+                className="inline-flex items-center gap-3 rounded-full border px-7 py-4 text-sm font-medium transition-colors"
+                style={{
+                  borderColor: "var(--d-ink)",
+                  color: "var(--d-ink)",
+                }}
+              >
+                Login
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -916,7 +1343,7 @@ export default function TestHomePage() {
                 className="inline-block w-8 h-px align-middle mr-3"
                 style={{ background: "var(--d-ink-muted)", opacity: 0.6 }}
               />
-              Request API access
+              Request access
             </p>
             <h2 className="d-display text-[clamp(2rem,4vw,3.5rem)] leading-[1.05] mb-6">
               Tell us the decision{" "}
@@ -928,12 +1355,26 @@ export default function TestHomePage() {
               </span>
             </h2>
             <p
-              className="text-base md:text-lg leading-relaxed font-light"
+              className="text-base md:text-lg leading-relaxed font-light mb-6"
               style={{ color: "var(--d-ink-muted)" }}
             >
               Early-access partners get full integration support, a dedicated
               decision framework for their use case, and lifetime volume terms
               on appeal and verification billing.
+            </p>
+            <p
+              className="text-sm leading-relaxed font-light"
+              style={{ color: "var(--d-ink-muted)" }}
+            >
+              Already have an account?{" "}
+              <a
+                href={LOGIN_URL}
+                className="underline decoration-1 underline-offset-4 hover:opacity-70 transition-opacity"
+                style={{ color: "var(--d-ink)" }}
+              >
+                Sign in here
+              </a>
+              .
             </p>
           </div>
 
@@ -981,7 +1422,7 @@ export default function TestHomePage() {
               <input
                 type="text"
                 name="company"
-                placeholder="Company (optional)"
+                placeholder="Organization (optional)"
                 className="w-full rounded-xl px-5 py-4 text-[15px] focus:outline-none transition-colors"
                 style={{
                   border: "1px solid var(--d-line)",
@@ -1004,13 +1445,17 @@ export default function TestHomePage() {
                 <option value="" disabled>
                   Primary use case
                 </option>
-                <option value="marketplace">Marketplace / platform disputes</option>
+                <option value="public_sector">
+                  Public sector (procurement, grants, permits)
+                </option>
                 <option value="insurance">Insurance / banking decisions</option>
+                <option value="marketplace">Marketplace / platform disputes</option>
                 <option value="arbitration_body">
                   Arbitration body / institutional tribunal
                 </option>
                 <option value="hr">HR / disciplinary</option>
                 <option value="grants">Grants / scholarships / awards</option>
+                <option value="sandbox">Just want to try the sandbox</option>
                 <option value="other">Other</option>
               </select>
 
@@ -1060,10 +1505,7 @@ export default function TestHomePage() {
                 <span aria-hidden>→</span>
               </button>
 
-              <p
-                className="text-xs"
-                style={{ color: "var(--d-ink-muted)" }}
-              >
+              <p className="text-xs" style={{ color: "var(--d-ink-muted)" }}>
                 We respond within two business days. No automated funnel.
               </p>
             </form>
@@ -1076,8 +1518,8 @@ export default function TestHomePage() {
         className="d-rule-top px-6 md:px-10 py-14"
         style={{ background: "var(--d-bone)" }}
       >
-        <div className="mx-auto max-w-[1400px] grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
-          <div>
+        <div className="mx-auto max-w-[1400px] grid grid-cols-1 md:grid-cols-4 gap-10 items-start">
+          <div className="md:col-span-2">
             <p
               className="d-display text-2xl mb-3"
               style={{ color: "var(--d-ink)" }}
@@ -1085,12 +1527,12 @@ export default function TestHomePage() {
               din.org
             </p>
             <p
-              className="text-sm leading-relaxed font-light max-w-xs"
+              className="text-sm leading-relaxed font-light max-w-md"
               style={{ color: "var(--d-ink-muted)" }}
             >
               The decision endpoint. Reasoned, auditable rulings as
-              infrastructure — for the decisions your team no longer wants to
-              own.
+              infrastructure — for the decisions your team, your institution,
+              or your government no longer wants to own.
             </p>
           </div>
 
@@ -1106,20 +1548,27 @@ export default function TestHomePage() {
               style={{ color: "var(--d-ink)" }}
             >
               <li>
+                <a href="#principles" className="hover:opacity-70 transition-opacity">
+                  Three principles
+                </a>
+              </li>
+              <li>
                 <a href="#how" className="hover:opacity-70 transition-opacity">
                   How a decision looks
                 </a>
               </li>
               <li>
-                <a href="#who" className="hover:opacity-70 transition-opacity">
-                  Who uses it
+                <a href="#audit" className="hover:opacity-70 transition-opacity">
+                  Open to audit
                 </a>
               </li>
               <li>
-                <a
-                  href="#pricing"
-                  className="hover:opacity-70 transition-opacity"
-                >
+                <a href="#sandbox" className="hover:opacity-70 transition-opacity">
+                  Sandbox
+                </a>
+              </li>
+              <li>
+                <a href="#pricing" className="hover:opacity-70 transition-opacity">
                   Pricing
                 </a>
               </li>
@@ -1139,7 +1588,7 @@ export default function TestHomePage() {
               className="text-[10px] uppercase tracking-[0.25em] mb-4"
               style={{ color: "var(--d-ink-muted)" }}
             >
-              Contact
+              Get started
             </p>
             <ul
               className="space-y-2 text-sm"
@@ -1150,7 +1599,23 @@ export default function TestHomePage() {
                   href="#access"
                   className="hover:opacity-70 transition-opacity"
                 >
-                  Request API access
+                  Request access
+                </a>
+              </li>
+              <li>
+                <a
+                  href={LOGIN_URL}
+                  className="hover:opacity-70 transition-opacity"
+                >
+                  Login
+                </a>
+              </li>
+              <li>
+                <a
+                  href={LOGIN_URL}
+                  className="hover:opacity-70 transition-opacity"
+                >
+                  Open the sandbox
                 </a>
               </li>
               <li>

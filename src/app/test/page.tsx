@@ -28,8 +28,8 @@ export default function TestHomePage() {
             <a href="#who" className="hover:opacity-100 transition-opacity">
               Who uses it
             </a>
-            <a href="#audit" className="hover:opacity-100 transition-opacity">
-              Audit
+            <a href="#file" className="hover:opacity-100 transition-opacity">
+              File a case
             </a>
             <a href="#pricing" className="hover:opacity-100 transition-opacity">
               Pricing
@@ -110,9 +110,10 @@ export default function TestHomePage() {
               style={{ color: "rgba(245,241,234,0.82)" }}
             >
               din.org renders reasoned, auditable rulings on the disputes,
-              claims, and decisions your organization no longer wants to make
-              in-house — from a marketplace refund to a public procurement
-              award. Submit the case. Receive the verdict. Ship the outcome.
+              claims, and decisions you no longer want to make in-house — from
+              a contract dispute between two people to a marketplace refund to
+              a public procurement award. File the case. Receive the verdict.
+              Ship the outcome.
             </p>
 
             <div className="mt-12 flex flex-col sm:flex-row items-start gap-4">
@@ -275,11 +276,178 @@ export default function TestHomePage() {
         </div>
       </section>
 
+      {/* FOR YOUR OWN DISPUTE — direct filing */}
+      <section
+        id="file"
+        className="px-6 md:px-10 py-28 md:py-40"
+        style={{ background: "var(--d-bone-soft)" }}
+      >
+        <div className="mx-auto max-w-[1400px] grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+          <div className="lg:col-span-7">
+            <p
+              className="text-[11px] uppercase tracking-[0.3em] mb-8"
+              style={{ color: "var(--d-ink-muted)" }}
+            >
+              <span
+                className="inline-block w-8 h-px align-middle mr-3"
+                style={{ background: "var(--d-ink-muted)", opacity: 0.6 }}
+              />
+              For your own dispute
+            </p>
+            <h2 className="d-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1.05] mb-8">
+              The endpoint is also{" "}
+              <span
+                className="italic font-light"
+                style={{ color: "var(--d-ink-muted)" }}
+              >
+                a tribunal you can use yourself.
+              </span>
+            </h2>
+            <p
+              className="text-lg md:text-xl leading-relaxed font-light mb-8"
+              style={{ color: "var(--d-ink-muted)" }}
+            >
+              A contract dispute. A defective product. A landlord refusing to
+              return a deposit. An inheritance disagreement. A B2B contract
+              that&apos;s going sideways. File it directly with din.org — same
+              engine, same three principles, same Big Four audit, same appeal
+              path. No API integration required.
+            </p>
+            <p
+              className="text-base md:text-lg leading-relaxed font-light mb-10"
+              style={{ color: "var(--d-ink-muted)" }}
+            >
+              You invite the other party. Both submit evidence. The engine
+              renders a reasoned ruling, days — not years. Either side can
+              appeal to a human-judge panel. Enforceable internationally under
+              the New York Convention 1958, recognized in 170+ jurisdictions.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/file-a-case"
+                className="inline-flex items-center gap-3 rounded-full px-7 py-4 text-sm font-medium transition-colors"
+                style={{
+                  background: "var(--d-ink)",
+                  color: "var(--d-bone)",
+                }}
+              >
+                File a case
+                <span aria-hidden>→</span>
+              </Link>
+              <Link
+                href="/how-it-works"
+                className="inline-flex items-center gap-3 rounded-full border px-7 py-4 text-sm font-medium transition-colors"
+                style={{
+                  borderColor: "var(--d-ink)",
+                  color: "var(--d-ink)",
+                }}
+              >
+                How filing works
+              </Link>
+            </div>
+          </div>
+
+          <div className="lg:col-span-5">
+            <div
+              className="rounded-2xl p-8 md:p-10"
+              style={{
+                background: "var(--d-bone)",
+                border: "1px solid var(--d-line)",
+              }}
+            >
+              <p
+                className="text-[10px] uppercase tracking-[0.25em] mb-6"
+                style={{ color: "var(--d-accent)" }}
+              >
+                Civil disputes — direct route
+              </p>
+              <ul
+                className="space-y-3 text-[15px] leading-relaxed font-light"
+                style={{ color: "var(--d-ink-muted)" }}
+              >
+                <li>
+                  <span
+                    className="d-mono text-[11px] mr-3"
+                    style={{ color: "var(--d-accent)" }}
+                  >
+                    ·
+                  </span>
+                  Contract disputes (B2C, B2B)
+                </li>
+                <li>
+                  <span
+                    className="d-mono text-[11px] mr-3"
+                    style={{ color: "var(--d-accent)" }}
+                  >
+                    ·
+                  </span>
+                  Tenancy &amp; landlord matters
+                </li>
+                <li>
+                  <span
+                    className="d-mono text-[11px] mr-3"
+                    style={{ color: "var(--d-accent)" }}
+                  >
+                    ·
+                  </span>
+                  Defective-goods claims
+                </li>
+                <li>
+                  <span
+                    className="d-mono text-[11px] mr-3"
+                    style={{ color: "var(--d-accent)" }}
+                  >
+                    ·
+                  </span>
+                  Inheritance &amp; family settlements
+                </li>
+                <li>
+                  <span
+                    className="d-mono text-[11px] mr-3"
+                    style={{ color: "var(--d-accent)" }}
+                  >
+                    ·
+                  </span>
+                  Construction &amp; service work
+                </li>
+                <li>
+                  <span
+                    className="d-mono text-[11px] mr-3"
+                    style={{ color: "var(--d-accent)" }}
+                  >
+                    ·
+                  </span>
+                  Cross-border online transactions
+                </li>
+                <li>
+                  <span
+                    className="d-mono text-[11px] mr-3"
+                    style={{ color: "var(--d-accent)" }}
+                  >
+                    ·
+                  </span>
+                  Small-claims arbitration
+                </li>
+              </ul>
+              <p
+                className="mt-8 pt-6 text-[11px] uppercase tracking-[0.2em]"
+                style={{
+                  color: "var(--d-ink-muted)",
+                  borderTop: "1px solid var(--d-line)",
+                }}
+              >
+                Both parties must consent to arbitration · or a clause must exist
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* WHO USES IT — four pillars, public sector first */}
       <section
         id="who"
         className="px-6 md:px-10 py-28 md:py-40"
-        style={{ background: "var(--d-bone-soft)" }}
+        style={{ background: "var(--d-bone)" }}
       >
         <div className="mx-auto max-w-[1400px]">
           <p
@@ -885,6 +1053,10 @@ export default function TestHomePage() {
             style={{ borderTop: "1px solid var(--d-line)" }}
           >
             {[
+              ["Civil contract disputes", "private · B2C &amp; B2B"],
+              ["Tenancy &amp; landlord disputes", "private · housing"],
+              ["Defective-goods consumer claims", "private · retail"],
+              ["Small-claims arbitration", "private · low value"],
               ["Public procurement / tender awards", "public sector · high-integrity"],
               ["Grant &amp; subsidy allocation", "public sector · selection"],
               ["Building permit appeals", "public sector · regulatory"],
@@ -1327,11 +1499,122 @@ export default function TestHomePage() {
         </div>
       </section>
 
+      {/* WHAT COMES NEXT — roadmap */}
+      <section
+        id="roadmap"
+        className="px-6 md:px-10 py-28 md:py-40"
+        style={{ background: "var(--d-bone)" }}
+      >
+        <div className="mx-auto max-w-[1400px]">
+          <p
+            className="text-[11px] uppercase tracking-[0.3em] mb-8"
+            style={{ color: "var(--d-ink-muted)" }}
+          >
+            <span
+              className="inline-block w-8 h-px align-middle mr-3"
+              style={{ background: "var(--d-ink-muted)", opacity: 0.6 }}
+            />
+            What comes next
+          </p>
+          <h2 className="d-display text-[clamp(2.25rem,5vw,4.5rem)] max-w-[28ch] leading-[1.05] mb-10">
+            Today: organizational decisions and civil arbitration.{" "}
+            <span
+              className="italic font-light"
+              style={{ color: "var(--d-ink-muted)" }}
+            >
+              The architecture extends further — carefully, where regulation
+              permits.
+            </span>
+          </h2>
+          <p
+            className="text-lg md:text-xl leading-relaxed font-light max-w-3xl mb-16 md:mb-20"
+            style={{ color: "var(--d-ink-muted)" }}
+          >
+            The engine that decides a marketplace refund is structurally the
+            same as the one that could decide a parking dispute, a small-claims
+            matter, or — eventually, where law permits — a lower-instance
+            petty-offence case. Three principles, audited mechanism, mandatory
+            human-judge appeal. We extend the surface only where regulators
+            invite it.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                num: "01",
+                status: "In regulatory dialogue",
+                title: "Small-claims &amp; municipal courts",
+                body:
+                  "Many jurisdictions are piloting AI-assisted first-instance review for high-volume, low-value cases. din.org is designed for it — engine, audit trail, mandatory appeal layer, all aligned with what such pilots require.",
+              },
+              {
+                num: "02",
+                status: "Architecturally ready",
+                title: "Administrative offences &amp; traffic",
+                body:
+                  "Speed-camera disputes, parking appeals, low-level municipal penalties. High volume, narrow factual scope, clear statute, low harm of error — the natural testing ground for AI adjudication with strong appeal rights.",
+              },
+              {
+                num: "03",
+                status: "Where law permits",
+                title: "Lower-instance petty offences",
+                body:
+                  "Some jurisdictions are opening regulated experimentation for AI-assisted first-instance decisions in petty criminal matters — under strict appeal guarantees and human oversight. Where they do, the same engine — same three principles, same Big Four audit, same mandatory human-judge appeal — is built to participate.",
+              },
+            ].map((p) => (
+              <article
+                key={p.num}
+                className="rounded-2xl p-7 md:p-9 flex flex-col"
+                style={{
+                  background: "var(--d-bone-soft)",
+                  border: "1px solid var(--d-line)",
+                }}
+              >
+                <div className="flex items-baseline justify-between mb-6">
+                  <p
+                    className="d-display text-3xl md:text-4xl italic"
+                    style={{ color: "var(--d-accent)" }}
+                  >
+                    {p.num}
+                  </p>
+                  <p
+                    className="text-[10px] uppercase tracking-[0.22em]"
+                    style={{ color: "var(--d-ink-muted)" }}
+                  >
+                    {p.status}
+                  </p>
+                </div>
+                <h3
+                  className="d-display text-xl md:text-2xl leading-[1.2] mb-4"
+                  style={{ color: "var(--d-ink)" }}
+                  dangerouslySetInnerHTML={{ __html: p.title }}
+                />
+                <p
+                  className="text-[15px] leading-relaxed font-light"
+                  style={{ color: "var(--d-ink-muted)" }}
+                  dangerouslySetInnerHTML={{ __html: p.body }}
+                />
+              </article>
+            ))}
+          </div>
+
+          <p
+            className="mt-12 text-base md:text-lg leading-relaxed font-light italic max-w-3xl"
+            style={{ color: "var(--d-ink-muted)" }}
+          >
+            din.org makes no claim to replace criminal courts. Where the
+            architecture is invited into regulated experimentation, it is built
+            to participate transparently — and to be removed transparently if a
+            jurisdiction decides it no longer should.
+          </p>
+        </div>
+      </section>
+
       {/* CTA / LEAD FORM */}
       <section
         id="access"
         className="px-6 md:px-10 py-28 md:py-40"
-        style={{ background: "var(--d-bone)" }}
+        style={{ background: "var(--d-bone-soft)" }}
       >
         <div className="mx-auto max-w-[1100px] grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
@@ -1444,6 +1727,9 @@ export default function TestHomePage() {
               >
                 <option value="" disabled>
                   Primary use case
+                </option>
+                <option value="civil_dispute">
+                  Civil dispute — filing my own case
                 </option>
                 <option value="public_sector">
                   Public sector (procurement, grants, permits)
@@ -1563,6 +1849,11 @@ export default function TestHomePage() {
                 </a>
               </li>
               <li>
+                <a href="#file" className="hover:opacity-70 transition-opacity">
+                  For your own dispute
+                </a>
+              </li>
+              <li>
                 <a href="#sandbox" className="hover:opacity-70 transition-opacity">
                   Sandbox
                 </a>
@@ -1570,6 +1861,11 @@ export default function TestHomePage() {
               <li>
                 <a href="#pricing" className="hover:opacity-70 transition-opacity">
                   Pricing
+                </a>
+              </li>
+              <li>
+                <a href="#roadmap" className="hover:opacity-70 transition-opacity">
+                  Roadmap
                 </a>
               </li>
               <li>
@@ -1601,6 +1897,14 @@ export default function TestHomePage() {
                 >
                   Request access
                 </a>
+              </li>
+              <li>
+                <Link
+                  href="/file-a-case"
+                  className="hover:opacity-70 transition-opacity"
+                >
+                  File a case
+                </Link>
               </li>
               <li>
                 <a

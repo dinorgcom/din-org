@@ -160,7 +160,7 @@ export default function DecisionEndpointHome() {
               Ship the outcome.
             </p>
 
-            <div className="mt-12 flex flex-col sm:flex-row items-start gap-4">
+            <div className="mt-12 flex flex-col sm:flex-row sm:flex-wrap items-start gap-4">
               <a
                 href="#access"
                 className="inline-flex items-center gap-3 rounded-full px-7 py-4 text-sm font-medium transition-colors"
@@ -181,6 +181,16 @@ export default function DecisionEndpointHome() {
                 }}
               >
                 Run a case in the sandbox
+              </a>
+              <a
+                href="#appeal"
+                className="inline-flex items-center gap-3 rounded-full border px-7 py-4 text-sm font-medium transition-colors"
+                style={{
+                  borderColor: "rgba(245,241,234,0.4)",
+                  color: "var(--d-bone)",
+                }}
+              >
+                Appeal a ruling
               </a>
             </div>
 
@@ -1128,6 +1138,30 @@ export default function DecisionEndpointHome() {
             panel size and case value. The right to appeal is not optional;
             it is the architecture.
           </p>
+
+          <div className="mt-12 flex flex-col sm:flex-row gap-4">
+            <a
+              href={LOGIN_URL}
+              className="inline-flex items-center gap-3 rounded-full px-7 py-4 text-sm font-medium transition-colors"
+              style={{
+                background: "var(--d-ink)",
+                color: "var(--d-bone)",
+              }}
+            >
+              Start an appeal
+              <span aria-hidden>→</span>
+            </a>
+            <a
+              href="#access"
+              className="inline-flex items-center gap-3 rounded-full border px-7 py-4 text-sm font-medium transition-colors"
+              style={{
+                borderColor: "var(--d-ink)",
+                color: "var(--d-ink)",
+              }}
+            >
+              Ask about institutional appeal terms
+            </a>
+          </div>
         </div>
       </section>
 

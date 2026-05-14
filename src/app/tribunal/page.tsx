@@ -98,11 +98,11 @@ export default function TribunalPage() {
           loop
           muted
           playsInline
-          poster="/videos/mann-office.jpg"
+          poster="/videos/hero.jpg"
           className="absolute inset-0 h-full w-full object-cover"
         >
-          <source src="/videos/mann-office.webm" type="video/webm" />
-          <source src="/videos/mann-office.mp4" type="video/mp4" />
+          <source src="/videos/hero.webm" type="video/webm" />
+          <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
 
         <div

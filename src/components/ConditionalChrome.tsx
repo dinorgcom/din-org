@@ -11,8 +11,18 @@ export function ConditionalChrome({ children }: { children: React.ReactNode }) {
   const isInvitation = pathname.startsWith("/invitation");
   const isSession = pathname.startsWith("/sessions");
   const isVerification = pathname.startsWith("/verification");
-  const isTest = pathname.startsWith("/test");
-  const hideChrome = isDashboard || isLogin || isInvitation || isSession || isVerification || isTest;
+  // The new decision-endpoint homepage ('/') has its own self-contained
+  // header + footer baked into the page, so the main-site Navbar/Footer
+  // must be suppressed there. The previous /tribunal homepage now lives
+  // at /tribunal and continues to use the standard chrome.
+  const isDecisionHome = pathname === "/";
+  const hideChrome =
+    isDashboard ||
+    isLogin ||
+    isInvitation ||
+    isSession ||
+    isVerification ||
+    isDecisionHome;
 
   return (
     <>

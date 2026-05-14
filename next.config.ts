@@ -10,6 +10,12 @@ const config: NextConfig = {
         destination: "/de/early-access",
         permanent: true,
       },
+      {
+        // The /test preview URL is now the production homepage.
+        source: "/test",
+        destination: "/",
+        permanent: true,
+      },
     ];
   },
 };

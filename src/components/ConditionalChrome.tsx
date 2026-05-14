@@ -11,18 +11,18 @@ export function ConditionalChrome({ children }: { children: React.ReactNode }) {
   const isInvitation = pathname.startsWith("/invitation");
   const isSession = pathname.startsWith("/sessions");
   const isVerification = pathname.startsWith("/verification");
-  // The new decision-endpoint homepage ('/') has its own self-contained
-  // header + footer baked into the page, so the main-site Navbar/Footer
-  // must be suppressed there. The previous /tribunal homepage now lives
-  // at /tribunal and continues to use the standard chrome.
-  const isDecisionHome = pathname === "/";
+  // Pages in the new Harvey-tonality design system bring their own
+  // self-contained header + footer baked into the page. The main-site
+  // Navbar/Footer must be suppressed on those routes. As more pages are
+  // ported, add them here.
+  const isHarveyPage = pathname === "/" || pathname === "/tribunal";
   const hideChrome =
     isDashboard ||
     isLogin ||
     isInvitation ||
     isSession ||
     isVerification ||
-    isDecisionHome;
+    isHarveyPage;
 
   return (
     <>

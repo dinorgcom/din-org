@@ -850,7 +850,7 @@ export default function TestHomePage() {
                   num: "03",
                   title: "Appeal built in",
                   body:
-                    "Every ruling is appeal-eligible. Customers and citizens don&apos;t escalate to your CEO; they escalate to a din.org human-judge panel. The conflict leaves your organization.",
+                    "Every ruling is appeal-eligible. Customers and citizens don&apos;t escalate to your CEO; they escalate to a din.org human-judge panel of 1, 3, 5, or 7 jurors — sized for the stakes. The conflict leaves your organization. <a href=&quot;#appeal&quot; style=&quot;text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px;&quot;>See how the appeal works</a>.",
                 },
               ].map((p) => (
                 <div
@@ -925,6 +925,165 @@ export default function TestHomePage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* APPEAL — every ruling appealable, panels of 1/3/5/7 */}
+      <section
+        id="appeal"
+        className="px-6 md:px-10 py-28 md:py-40"
+        style={{ background: "var(--d-bone)" }}
+      >
+        <div className="mx-auto max-w-[1400px]">
+          <p
+            className="text-[11px] uppercase tracking-[0.3em] mb-8"
+            style={{ color: "var(--d-ink-muted)" }}
+          >
+            <span
+              className="inline-block w-8 h-px align-middle mr-3"
+              style={{ background: "var(--d-ink-muted)", opacity: 0.6 }}
+            />
+            The appeal
+          </p>
+          <h2 className="d-display text-[clamp(2.25rem,5vw,4.5rem)] max-w-[28ch] leading-[1.05] mb-10">
+            Every ruling can be appealed.{" "}
+            <span
+              className="italic font-light"
+              style={{ color: "var(--d-ink-muted)" }}
+            >
+              To a human-judge panel — sized for the stakes.
+            </span>
+          </h2>
+          <p
+            className="text-lg md:text-xl leading-relaxed font-light max-w-3xl mb-16 md:mb-20"
+            style={{ color: "var(--d-ink-muted)" }}
+          >
+            Every decision rendered by din.org — base ruling, verified
+            proceeding, civil-dispute verdict, public-sector decision — is
+            appeal-eligible by default. Appeals leave the AI tier entirely.
+            They are decided by a panel of human judges drawn from a vetted
+            roster of trained arbitrators. The panel reviews the record,
+            considers new submissions, and issues a final, binding ruling.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+            {[
+              {
+                seats: 1,
+                eyebrow: "Solo judge",
+                title: "1 juror",
+                body:
+                  "Fast-track. Low-value civil disputes, administrative offences, simple consumer claims. Days from filing to ruling.",
+              },
+              {
+                seats: 3,
+                eyebrow: "Standard chamber",
+                title: "3 jurors",
+                body:
+                  "The default appeal panel. Majority decides. Suitable for most commercial, marketplace, and institutional disputes.",
+              },
+              {
+                seats: 5,
+                eyebrow: "Expanded panel",
+                title: "5 jurors",
+                body:
+                  "For high-value, technically complex, or cross-border disputes. Specialist judges included where the matter requires.",
+              },
+              {
+                seats: 7,
+                eyebrow: "Full bench",
+                title: "7 jurors",
+                body:
+                  "Matters of public significance, precedent-setting cases, or sensitive public-sector decisions. Maximum legitimacy.",
+              },
+            ].map((p) => (
+              <article
+                key={p.title}
+                className="rounded-2xl p-7 md:p-8 flex flex-col"
+                style={{
+                  background: "var(--d-bone-soft)",
+                  border: "1px solid var(--d-line)",
+                }}
+              >
+                <div
+                  className="flex flex-wrap gap-1.5 mb-6"
+                  style={{ minHeight: "0.75rem" }}
+                  aria-hidden
+                >
+                  {[...Array(p.seats)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="w-3 h-3 rounded-full"
+                      style={{ background: "var(--d-accent)" }}
+                    />
+                  ))}
+                </div>
+                <p
+                  className="text-[10px] uppercase tracking-[0.25em] mb-3"
+                  style={{ color: "var(--d-ink-muted)" }}
+                >
+                  {p.eyebrow}
+                </p>
+                <p
+                  className="d-display text-2xl md:text-3xl mb-4"
+                  style={{ color: "var(--d-ink)" }}
+                >
+                  {p.title}
+                </p>
+                <p
+                  className="text-[14px] md:text-[15px] leading-relaxed font-light mt-auto"
+                  style={{ color: "var(--d-ink-muted)" }}
+                >
+                  {p.body}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+            {[
+              {
+                label: "Who decides",
+                body:
+                  "Vetted human arbitrators — trained, conflict-screened, and rotated. Each panel includes specialists where the matter requires it (commercial, public-procurement, technical, etc.).",
+              },
+              {
+                label: "What they review",
+                body:
+                  "The full din.org record — inputs, evidence, the three-principle weighing, the AI ruling, and the audit trail — plus any new submissions either party files on appeal.",
+              },
+              {
+                label: "How it ends",
+                body:
+                  "A final, binding ruling with full reasoning. Enforceable internationally under the New York Convention 1958 in 170+ jurisdictions, or recognized by the institution operating the ruling.",
+              },
+            ].map((f) => (
+              <div key={f.label}>
+                <p
+                  className="text-[10px] uppercase tracking-[0.25em] mb-3"
+                  style={{ color: "var(--d-accent)" }}
+                >
+                  {f.label}
+                </p>
+                <p
+                  className="text-[15px] leading-relaxed font-light"
+                  style={{ color: "var(--d-ink-muted)" }}
+                >
+                  {f.body}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <p
+            className="mt-16 text-base md:text-lg leading-relaxed font-light italic max-w-3xl"
+            style={{ color: "var(--d-ink-muted)" }}
+          >
+            Panel size is chosen by the appealing party — or by the platform
+            when stakes or complexity require it. Appeal pricing scales with
+            panel size and case value. The right to appeal is not optional;
+            it is the architecture.
+          </p>
         </div>
       </section>
 
@@ -1851,6 +2010,11 @@ export default function TestHomePage() {
               <li>
                 <a href="#file" className="hover:opacity-70 transition-opacity">
                   For your own dispute
+                </a>
+              </li>
+              <li>
+                <a href="#appeal" className="hover:opacity-70 transition-opacity">
+                  The appeal
                 </a>
               </li>
               <li>

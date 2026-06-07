@@ -1650,88 +1650,57 @@ export default function DecisionEndpointHome() {
         className="px-6 md:px-10 py-28 md:py-40"
         style={{ background: "var(--d-bone-soft)" }}
       >
-        <div className="mx-auto max-w-[1400px] grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          <div className="lg:col-span-5 order-2 lg:order-1">
-            <div
-              className="relative aspect-[4/3] rounded-2xl overflow-hidden"
+        <div className="mx-auto max-w-[1100px]">
+          <p
+            className="text-[11px] uppercase tracking-[0.3em] mb-8"
+            style={{ color: "var(--d-ink-muted)" }}
+          >
+            <span
+              className="inline-block w-8 h-px align-middle mr-3"
+              style={{ background: "var(--d-ink-muted)", opacity: 0.6 }}
+            />
+            Reference implementation
+          </p>
+          <h2 className="d-display text-[clamp(2.25rem,5vw,4.5rem)] max-w-[26ch] leading-[1.05] mb-8">
+            We run our own AI tribunal{" "}
+            <span
+              className="italic font-light"
+              style={{ color: "var(--d-ink-muted)" }}
+            >
+              on the same API we sell to you.
+            </span>
+          </h2>
+          <p
+            className="text-lg md:text-xl leading-relaxed font-light mb-10 max-w-3xl"
+            style={{ color: "var(--d-ink-muted)" }}
+          >
+            din.org operates the world&apos;s first end-to-end AI arbitration
+            tribunal — case filing, examination, ruling, and appeal — entirely
+            on top of this decision endpoint. You can see how the engine
+            performs at full depth before you wire it into your own product.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              href="/tribunal"
+              className="inline-flex items-center gap-3 rounded-full px-7 py-4 text-sm font-medium transition-colors"
               style={{
-                border: "1px solid var(--d-line)",
                 background: "var(--d-ink)",
+                color: "var(--d-bone)",
               }}
             >
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                poster="/videos/mann-office.jpg"
-                className="absolute inset-0 h-full w-full object-cover"
-              >
-                <source src="/videos/mann-office.webm" type="video/webm" />
-                <source src="/videos/mann-office.mp4" type="video/mp4" />
-              </video>
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(to top, rgba(20,19,15,0.6) 0%, rgba(20,19,15,0.1) 60%)",
-                }}
-              />
-            </div>
-          </div>
-
-          <div className="lg:col-span-7 order-1 lg:order-2">
-            <p
-              className="text-[11px] uppercase tracking-[0.3em] mb-8"
-              style={{ color: "var(--d-ink-muted)" }}
+              Visit the tribunal
+              <span aria-hidden>→</span>
+            </Link>
+            <a
+              href={LOGIN_URL}
+              className="inline-flex items-center gap-3 rounded-full border px-7 py-4 text-sm font-medium transition-colors"
+              style={{
+                borderColor: "var(--d-ink)",
+                color: "var(--d-ink)",
+              }}
             >
-              <span
-                className="inline-block w-8 h-px align-middle mr-3"
-                style={{ background: "var(--d-ink-muted)", opacity: 0.6 }}
-              />
-              Reference implementation
-            </p>
-            <h2 className="d-display text-[clamp(2.25rem,5vw,4.5rem)] max-w-[24ch] leading-[1.05] mb-8">
-              We run our own AI tribunal{" "}
-              <span
-                className="italic font-light"
-                style={{ color: "var(--d-ink-muted)" }}
-              >
-                on the same API we sell to you.
-              </span>
-            </h2>
-            <p
-              className="text-lg md:text-xl leading-relaxed font-light mb-8"
-              style={{ color: "var(--d-ink-muted)" }}
-            >
-              din.org operates the world&apos;s first end-to-end AI arbitration
-              tribunal — case filing, examination, ruling, and appeal — entirely
-              on top of this decision endpoint. You can see how the engine
-              performs at full depth before you wire it into your own product.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/tribunal"
-                className="inline-flex items-center gap-3 rounded-full px-7 py-4 text-sm font-medium transition-colors"
-                style={{
-                  background: "var(--d-ink)",
-                  color: "var(--d-bone)",
-                }}
-              >
-                Visit the tribunal
-                <span aria-hidden>→</span>
-              </Link>
-              <a
-                href={LOGIN_URL}
-                className="inline-flex items-center gap-3 rounded-full border px-7 py-4 text-sm font-medium transition-colors"
-                style={{
-                  borderColor: "var(--d-ink)",
-                  color: "var(--d-ink)",
-                }}
-              >
-                Login
-              </a>
-            </div>
+              Login
+            </a>
           </div>
         </div>
       </section>

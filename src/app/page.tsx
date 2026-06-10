@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Newsreader, Inter, JetBrains_Mono } from "next/font/google";
+import { HarveyNav } from "@/components/HarveyNav";
 import "./decisions.css";
 
 const display = Newsreader({
@@ -40,9 +41,18 @@ export const metadata: Metadata = {
       "Outsource the verdict, keep the relationship. Reasoned, auditable rulings as an API.",
     url: "https://din.org",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "din.org — The decision endpoint",
+    description:
+      "Outsource the verdict, keep the relationship. Reasoned, auditable rulings as an API.",
+  },
 };
 
-const LOGIN_URL = "https://app.din.org/login";
+// app.din.org is not live yet — until it is, every account-style CTA
+// routes to the request-access form. Flip this single constant back to
+// https://app.din.org/login when the app deployment exists.
+const LOGIN_URL = "#access";
 
 export default function DecisionEndpointHome() {
   return (
@@ -50,54 +60,16 @@ export default function DecisionEndpointHome() {
       className={`decisions-site ${display.variable} ${sans.variable} ${mono.variable}`}
     >
       {/* TOP BAR */}
-      <header className="absolute top-0 left-0 right-0 z-30">
-        <div className="mx-auto max-w-[1400px] flex items-center justify-between px-6 md:px-10 py-6">
-          <Link
-            href="/"
-            className="d-display text-xl md:text-2xl tracking-tight hover:opacity-80 transition-opacity"
-            style={{ color: "var(--d-bone)" }}
-          >
-            din.org
-          </Link>
-          <nav
-            className="hidden md:flex items-center gap-8 text-sm"
-            style={{ color: "rgba(245,241,234,0.75)" }}
-          >
-            <a href="#principles" className="hover:opacity-100 transition-opacity">
-              Principles
-            </a>
-            <a href="#how" className="hover:opacity-100 transition-opacity">
-              How it works
-            </a>
-            <a href="#who" className="hover:opacity-100 transition-opacity">
-              Who uses it
-            </a>
-            <a href="#file" className="hover:opacity-100 transition-opacity">
-              File a case
-            </a>
-            <a href="#pricing" className="hover:opacity-100 transition-opacity">
-              Pricing
-            </a>
-            <a
-              href={LOGIN_URL}
-              className="hover:opacity-100 transition-opacity"
-              style={{ color: "rgba(245,241,234,0.65)" }}
-            >
-              Login
-            </a>
-            <a
-              href="#access"
-              className="rounded-full border px-5 py-2 transition-colors"
-              style={{
-                borderColor: "rgba(245,241,234,0.3)",
-                color: "var(--d-bone)",
-              }}
-            >
-              Request access
-            </a>
-          </nav>
-        </div>
-      </header>
+      <HarveyNav
+        links={[
+          { href: "#principles", label: "Principles" },
+          { href: "#how", label: "How it works" },
+          { href: "#who", label: "Who uses it" },
+          { href: "#file", label: "File a case" },
+          { href: "#pricing", label: "Pricing" },
+        ]}
+        cta={{ href: "#access", label: "Request access" }}
+      />
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-end overflow-hidden">
@@ -199,8 +171,8 @@ export default function DecisionEndpointHome() {
               style={{ color: "rgba(245,241,234,0.55)" }}
             >
               Used internally by din.org&apos;s own AI arbitration tribunal ·
-              In design with public-sector pilots, marketplaces, insurers
-              &amp; institutional tribunals
+              Designed for public-sector, marketplace, insurance &amp;
+              institutional decision processes
             </p>
           </div>
         </div>
@@ -211,30 +183,20 @@ export default function DecisionEndpointHome() {
         className="d-rule-top px-6 md:px-10 py-10 md:py-14"
         style={{ borderBottom: "1px solid var(--d-line)" }}
       >
-        <div className="mx-auto max-w-[1400px]">
+        <div className="mx-auto max-w-[1400px] text-center">
           <p
-            className="text-[10px] uppercase tracking-[0.3em] mb-8 text-center"
+            className="text-[10px] uppercase tracking-[0.3em] mb-5"
             style={{ color: "var(--d-ink-muted)" }}
           >
-            Pilot partners and reference implementations
+            Where the engine is headed first
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-10 items-center">
-            {[
-              "Public sector pilot",
-              "Insurer · DACH",
-              "Marketplace · EU",
-              "Arbitration body",
-              "B2B platform",
-            ].map((label) => (
-              <div
-                key={label}
-                className="d-display text-center text-base md:text-lg italic"
-                style={{ color: "var(--d-ink-muted)", opacity: 0.55 }}
-              >
-                {label}
-              </div>
-            ))}
-          </div>
+          <p
+            className="d-display italic text-lg md:text-2xl max-w-3xl mx-auto"
+            style={{ color: "var(--d-ink-muted)" }}
+          >
+            Marketplaces · Insurers · Arbitration bodies · Public-sector
+            decision processes — pilot conversations under way.
+          </p>
         </div>
       </section>
 
@@ -528,7 +490,7 @@ export default function DecisionEndpointHome() {
             {[
               {
                 eyebrow: "Public sector & high-integrity decisions",
-                badge: "In development with municipal pilots",
+                badge: "In design for municipal pilots",
                 title:
                   "Tenders, grants, building permits, public-office vetting.",
                 body:
@@ -537,7 +499,7 @@ export default function DecisionEndpointHome() {
               },
               {
                 eyebrow: "Insurance & banks",
-                badge: "Pilots in DACH",
+                badge: "In dialogue",
                 title:
                   "Claim adjudication, complaint review, fraud-flag escalation.",
                 body:
@@ -555,7 +517,7 @@ export default function DecisionEndpointHome() {
               },
               {
                 eyebrow: "Institutions & tribunals",
-                badge: "Reference partners",
+                badge: "In dialogue",
                 title:
                   "Arbitration bodies, ombudsmen, grant committees, sports tribunals.",
                 body:
@@ -1186,12 +1148,12 @@ export default function DecisionEndpointHome() {
             className="d-display text-[clamp(2.25rem,5vw,4.5rem)] max-w-[24ch] leading-[1.05] mb-10"
             style={{ color: "var(--d-bone)" }}
           >
-            Audited by a Big Four firm.{" "}
+            Built for a Big Four audit.{" "}
             <span
               className="italic font-light"
               style={{ color: "rgba(245,241,234,0.75)" }}
             >
-              The report is yours.
+              The report will be yours.
             </span>
           </h2>
 
@@ -1201,10 +1163,11 @@ export default function DecisionEndpointHome() {
           >
             The decision mechanism — model architecture, training corpus,
             weighting model, per-case reasoning trails, the application of
-            the three principles — is subject to independent annual audit by
-            a Big Four accounting firm. Clients receive the full audit report
-            on request, including findings, exceptions, and management
-            responses.
+            the three principles — is designed end to end for independent
+            annual audit by a Big Four accounting firm. The engagement is in
+            preparation; from the first audit cycle, every client receives
+            the full report on request, including findings, exceptions, and
+            management responses.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-12">
@@ -1217,7 +1180,7 @@ export default function DecisionEndpointHome() {
               {
                 label: "Who audits",
                 body:
-                  "A Big Four firm under formal audit engagement. Auditor identity disclosed in the report. Annual cadence. Findings published to clients verbatim.",
+                  "A Big Four firm under formal audit engagement — engagement in preparation, auditor identity disclosed in the report. Annual cadence. Findings published to clients verbatim.",
               },
               {
                 label: "Why this matters",
@@ -1399,14 +1362,14 @@ export default function DecisionEndpointHome() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href={LOGIN_URL}
+                href="#access"
                 className="inline-flex items-center gap-3 rounded-full px-7 py-4 text-sm font-medium transition-colors"
                 style={{
                   background: "var(--d-ink)",
                   color: "var(--d-bone)",
                 }}
               >
-                Open the sandbox
+                Request sandbox access
                 <span aria-hidden>→</span>
               </a>
               <a
@@ -1529,7 +1492,8 @@ export default function DecisionEndpointHome() {
                 className="text-sm mb-8"
                 style={{ color: "rgba(245,241,234,0.55)" }}
               >
-                Up to ~1,000 tokens per decision
+                Up to ~1,000 tokens per decision — roughly a typical
+                document-based dispute
               </p>
               <ul
                 className="space-y-3 text-[15px] leading-relaxed font-light"
@@ -1692,14 +1656,14 @@ export default function DecisionEndpointHome() {
               <span aria-hidden>→</span>
             </Link>
             <a
-              href={LOGIN_URL}
+              href="#access"
               className="inline-flex items-center gap-3 rounded-full border px-7 py-4 text-sm font-medium transition-colors"
               style={{
                 borderColor: "var(--d-ink)",
                 color: "var(--d-ink)",
               }}
             >
-              Login
+              Request access
             </a>
           </div>
         </div>
@@ -1851,20 +1815,6 @@ export default function DecisionEndpointHome() {
               decision framework for their use case, and lifetime volume terms
               on appeal and verification billing.
             </p>
-            <p
-              className="text-sm leading-relaxed font-light"
-              style={{ color: "var(--d-ink-muted)" }}
-            >
-              Already have an account?{" "}
-              <a
-                href={LOGIN_URL}
-                className="underline decoration-1 underline-offset-4 hover:opacity-70 transition-opacity"
-                style={{ color: "var(--d-ink)" }}
-              >
-                Sign in here
-              </a>
-              .
-            </p>
           </div>
 
           <div className="lg:col-span-7">
@@ -1876,10 +1826,11 @@ export default function DecisionEndpointHome() {
               <input
                 type="hidden"
                 name="_subject"
-                value="Decision API access request — din.org/test"
+                value="Decision API access request — din.org"
               />
               <input type="hidden" name="form_type" value="decision_api_access" />
               <input type="hidden" name="_language" value="en" />
+              <input type="hidden" name="_next" value="https://din.org/thanks" />
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <input
@@ -1937,6 +1888,7 @@ export default function DecisionEndpointHome() {
                 <option value="civil_dispute">
                   Civil dispute — filing my own case
                 </option>
+                <option value="appeal">Appealing a din.org ruling</option>
                 <option value="public_sector">
                   Public sector (procurement, grants, permits)
                 </option>
@@ -2119,18 +2071,10 @@ export default function DecisionEndpointHome() {
               </li>
               <li>
                 <a
-                  href={LOGIN_URL}
+                  href="#sandbox"
                   className="hover:opacity-70 transition-opacity"
                 >
-                  Login
-                </a>
-              </li>
-              <li>
-                <a
-                  href={LOGIN_URL}
-                  className="hover:opacity-70 transition-opacity"
-                >
-                  Open the sandbox
+                  The sandbox
                 </a>
               </li>
               <li>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Newsreader, Inter, JetBrains_Mono } from "next/font/google";
+import { HarveyNav } from "@/components/HarveyNav";
 import "../decisions.css";
 
 const display = Newsreader({
@@ -37,59 +38,20 @@ export const metadata: Metadata = {
   },
 };
 
-const LOGIN_URL = "https://app.din.org/login";
-
 export default function TribunalPage() {
   return (
     <div
       className={`decisions-site ${display.variable} ${sans.variable} ${mono.variable}`}
     >
       {/* TOP BAR */}
-      <header className="absolute top-0 left-0 right-0 z-30">
-        <div className="mx-auto max-w-[1400px] flex items-center justify-between px-6 md:px-10 py-6">
-          <Link
-            href="/"
-            className="d-display text-xl md:text-2xl tracking-tight hover:opacity-80 transition-opacity"
-            style={{ color: "var(--d-bone)" }}
-          >
-            din.org
-          </Link>
-          <nav
-            className="hidden md:flex items-center gap-8 text-sm"
-            style={{ color: "rgba(245,241,234,0.75)" }}
-          >
-            <Link href="/" className="hover:opacity-100 transition-opacity">
-              The decision endpoint
-            </Link>
-            <a href="#principles" className="hover:opacity-100 transition-opacity">
-              Principles
-            </a>
-            <a href="#process" className="hover:opacity-100 transition-opacity">
-              Process
-            </a>
-            <Link href="/file-a-case" className="hover:opacity-100 transition-opacity">
-              File a case
-            </Link>
-            <a
-              href={LOGIN_URL}
-              className="hover:opacity-100 transition-opacity"
-              style={{ color: "rgba(245,241,234,0.65)" }}
-            >
-              Login
-            </a>
-            <Link
-              href="/file-a-case"
-              className="rounded-full border px-5 py-2 transition-colors"
-              style={{
-                borderColor: "rgba(245,241,234,0.3)",
-                color: "var(--d-bone)",
-              }}
-            >
-              File a case
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <HarveyNav
+        links={[
+          { href: "/", label: "The decision endpoint" },
+          { href: "#principles", label: "Principles" },
+          { href: "#process", label: "Process" },
+        ]}
+        cta={{ href: "/file-a-case", label: "File a case" }}
+      />
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-end overflow-hidden">
@@ -330,8 +292,8 @@ export default function TribunalPage() {
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-14">
             {[
-              { value: "< 24h", label: "Avg. AI ruling time" },
-              { value: "100 %", label: "Reasoned, cited rulings" },
+              { value: "< 24h", label: "Target AI ruling time" },
+              { value: "100 %", label: "Reasoned, cited rulings — by design" },
               { value: "€0", label: "Filing fee for base decisions" },
               { value: "170+", label: "Jurisdictions enforceable (NYC 1958)" },
             ].map((s) => (
@@ -683,11 +645,6 @@ export default function TribunalPage() {
                 <Link href="/file-a-case" className="hover:opacity-70 transition-opacity">
                   File a case
                 </Link>
-              </li>
-              <li>
-                <a href={LOGIN_URL} className="hover:opacity-70 transition-opacity">
-                  Login
-                </a>
               </li>
               <li>
                 <Link href="/early-access" className="hover:opacity-70 transition-opacity">

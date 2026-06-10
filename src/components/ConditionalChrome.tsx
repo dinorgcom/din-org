@@ -15,7 +15,8 @@ export function ConditionalChrome({ children }: { children: React.ReactNode }) {
   // self-contained header + footer baked into the page. The main-site
   // Navbar/Footer must be suppressed on those routes. As more pages are
   // ported, add them here.
-  const isHarveyPage = pathname === "/" || pathname === "/tribunal";
+  const isHarveyPage =
+    pathname === "/" || pathname === "/tribunal" || pathname === "/thanks";
   const hideChrome =
     isDashboard ||
     isLogin ||

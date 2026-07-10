@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Newsreader, Inter, JetBrains_Mono } from "next/font/google";
 import { HarveyNav } from "@/components/HarveyNav";
+import { CopyButton } from "@/components/CopyButton";
 import "./decisions.css";
 
 const display = Newsreader({
@@ -49,9 +51,39 @@ export const metadata: Metadata = {
   },
 };
 
-// The Agents Court platform (web channel, agent skill, MCP endpoint).
-const COURT_URL = "https://dinnew4.vercel.app";
+// The Agents Court MCP endpoint — the one URL every agent connects to.
+const MCP_URL = "https://dinnew4.vercel.app/api/mcp/mcp";
 const CASE_EMAIL = "case@din.org";
+
+// Remote-MCP support per assistant (mid-2026): everyone speaks the same
+// protocol, they just hide the "add a connector" switch in different
+// places and behind different plans.
+const PROVIDERS: Array<{ name: string; logo: string; plans: string; how: string }> = [
+  {
+    name: "Claude",
+    logo: "/logos/claude.svg",
+    plans: "All paid plans",
+    how: "Settings → Connectors → Add custom connector → paste the URL.",
+  },
+  {
+    name: "ChatGPT",
+    logo: "/logos/openai.svg",
+    plans: "Plus · Pro · Business",
+    how: "Settings → Apps → Advanced settings → enable Developer mode → Create app → paste the URL.",
+  },
+  {
+    name: "Perplexity",
+    logo: "/logos/perplexity.svg",
+    plans: "Pro · Max · Enterprise",
+    how: "Connectors → + Custom connector → Remote → paste the URL (Streamable HTTP).",
+  },
+  {
+    name: "Grok",
+    logo: "/logos/x.svg",
+    plans: "Paid plans",
+    how: "Connectors → add a remote MCP server → paste the URL.",
+  },
+];
 const CASE_MAILTO = `mailto:${CASE_EMAIL}?subject=${encodeURIComponent(
   "My dispute",
 )}&body=${encodeURIComponent(
@@ -62,7 +94,7 @@ const STEPS: Array<[string, string, string]> = [
   [
     "01",
     "One email starts it",
-    `Describe your dispute in one email to ${CASE_EMAIL} — who, what, how much. No account, no forms. Or let your AI agent open the case, or use the web court.`,
+    `Describe your dispute in one email to ${CASE_EMAIL} — who, what, how much. No account, no forms. Or let your AI agent open the case for you.`,
   ],
   [
     "02",
@@ -175,26 +207,6 @@ export default function AgentsCourtHome() {
               >
                 Email your case — {CASE_EMAIL}
                 <span aria-hidden>→</span>
-              </a>
-              <a
-                href="#agents"
-                className="inline-flex items-center gap-3 rounded-full border px-7 py-4 text-sm font-medium transition-colors"
-                style={{
-                  borderColor: "rgba(245,241,234,0.4)",
-                  color: "var(--d-bone)",
-                }}
-              >
-                Connect your AI agent
-              </a>
-              <a
-                href={COURT_URL}
-                className="inline-flex items-center gap-3 rounded-full border px-7 py-4 text-sm font-medium transition-colors"
-                style={{
-                  borderColor: "rgba(245,241,234,0.4)",
-                  color: "var(--d-bone)",
-                }}
-              >
-                Open the court
               </a>
             </div>
 
@@ -311,82 +323,126 @@ export default function AgentsCourtHome() {
         className="d-rule-top px-6 md:px-10 py-24 md:py-36"
         style={{ background: "var(--d-bone)" }}
       >
-        <div className="mx-auto max-w-[1400px] grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
-          <div>
-            <p
-              className="text-[10px] uppercase tracking-[0.3em] mb-8"
-              style={{ color: "var(--d-ink-muted)" }}
-            >
-              <span
-                className="inline-block w-8 h-px align-middle mr-3"
-                style={{ background: "var(--d-line)" }}
-              />
-              Your AI agent pleads. You decide.
-            </p>
-            <h2
-              className="d-display text-4xl md:text-5xl leading-tight max-w-[18ch]"
-              style={{ color: "var(--d-ink)" }}
-            >
-              Send your agent to court instead of yourself.
-            </h2>
-            <p
-              className="mt-8 text-base md:text-lg leading-relaxed font-light max-w-xl"
-              style={{ color: "var(--d-ink-muted)" }}
-            >
-              Claude and compatible agents connect to the court directly and
-              answer the intake, evaluate proposals, and draft objection
-              grounds on your behalf. Install the free Party Advocate skill
-              and your agent knows the whole procedure — truthful argument
-              rules included. Payments and decisions always stay with you.
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <a
-                href={`${COURT_URL}/skill`}
-                className="inline-flex items-center gap-3 rounded-full px-7 py-4 text-sm font-medium transition-colors"
-                style={{ background: "var(--d-ink)", color: "var(--d-bone)" }}
+        <div className="mx-auto max-w-[1400px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+            <div>
+              <p
+                className="text-[10px] uppercase tracking-[0.3em] mb-8"
+                style={{ color: "var(--d-ink-muted)" }}
               >
-                Get the agent skill <span aria-hidden>→</span>
-              </a>
-              <a
-                href={COURT_URL}
-                className="inline-flex items-center gap-3 rounded-full border px-7 py-4 text-sm font-medium transition-colors"
-                style={{ borderColor: "var(--d-line)", color: "var(--d-ink)" }}
+                <span
+                  className="inline-block w-8 h-px align-middle mr-3"
+                  style={{ background: "var(--d-line)" }}
+                />
+                Your AI agent pleads. You decide.
+              </p>
+              <h2
+                className="d-display text-4xl md:text-5xl leading-tight max-w-[18ch]"
+                style={{ color: "var(--d-ink)" }}
               >
-                Open the web court
-              </a>
+                Send your agent to court instead of yourself.
+              </h2>
+              <p
+                className="mt-8 text-base md:text-lg leading-relaxed font-light max-w-xl"
+                style={{ color: "var(--d-ink-muted)" }}
+              >
+                Claude, ChatGPT, Perplexity and Grok connect to the court
+                directly over MCP: your agent answers the intake questions,
+                evaluates the settlement proposal, and drafts objection
+                grounds on your behalf. Payments and decisions always stay
+                with you.
+              </p>
+              <p
+                className="mt-6 text-sm leading-relaxed font-light max-w-xl"
+                style={{ color: "var(--d-ink-muted)" }}
+              >
+                No agent? The identical process runs over email ({CASE_EMAIL})
+                — all channels write into the same case.
+              </p>
+            </div>
+
+            <div
+              className="rounded-2xl border p-8"
+              style={{ borderColor: "var(--d-line)", background: "var(--d-bone-soft)" }}
+            >
+              <p
+                className="text-[10px] uppercase tracking-[0.25em] mb-5"
+                style={{ color: "var(--d-ink-muted)" }}
+              >
+                MCP connector — one URL for every agent
+              </p>
+              <div
+                className="flex flex-col sm:flex-row sm:items-center gap-4 rounded-xl border px-5 py-4"
+                style={{ borderColor: "var(--d-line)", background: "var(--d-bone)" }}
+              >
+                <p
+                  className="d-mono text-sm break-all flex-1"
+                  style={{ color: "var(--d-ink)" }}
+                >
+                  {MCP_URL}
+                </p>
+                <CopyButton value={MCP_URL} />
+              </div>
+              <ul
+                className="mt-6 space-y-3 text-sm font-light"
+                style={{ color: "var(--d-ink-muted)" }}
+              >
+                <li>· create_dispute — open a case for your principal</li>
+                <li>· send_message — answer the court&apos;s intake questions</li>
+                <li>· respond_to_proposal — accept, or hand the objection to your human</li>
+                <li>· submit_ruling_grounds — file the objection reasons</li>
+              </ul>
+              <p
+                className="mt-6 text-xs leading-relaxed"
+                style={{ color: "var(--d-ink-muted)" }}
+              >
+                No key needed to connect: an unauthenticated agent is walked
+                through the account and token setup by the court itself.
+              </p>
             </div>
           </div>
 
-          <div
-            className="rounded-2xl border p-8"
-            style={{ borderColor: "var(--d-line)", background: "var(--d-bone-soft)" }}
-          >
-            <p
-              className="text-[10px] uppercase tracking-[0.25em] mb-5"
-              style={{ color: "var(--d-ink-muted)" }}
-            >
-              MCP connector
-            </p>
-            <p className="d-mono text-sm break-all" style={{ color: "var(--d-ink)" }}>
-              {COURT_URL}/api/mcp/mcp
-            </p>
-            <ul
-              className="mt-6 space-y-3 text-sm font-light"
-              style={{ color: "var(--d-ink-muted)" }}
-            >
-              <li>· create_dispute — open a case for your principal</li>
-              <li>· send_message — answer the court&apos;s intake questions</li>
-              <li>· respond_to_proposal — accept, or hand the objection to your human</li>
-              <li>· submit_ruling_grounds — file the objection reasons</li>
-            </ul>
-            <p
-              className="mt-6 text-xs leading-relaxed"
-              style={{ color: "var(--d-ink-muted)" }}
-            >
-              No agent? The identical process runs over email ({CASE_EMAIL})
-              or on the web — all channels write into the same case.
-            </p>
+          {/* Works with — provider grid */}
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {PROVIDERS.map((provider) => (
+              <div
+                key={provider.name}
+                className="rounded-2xl border p-6"
+                style={{ borderColor: "var(--d-line)" }}
+              >
+                <div className="flex items-center gap-3 mb-1">
+                  <Image
+                    src={provider.logo}
+                    alt={`${provider.name} logo`}
+                    width={26}
+                    height={26}
+                  />
+                  <p className="text-base font-medium" style={{ color: "var(--d-ink)" }}>
+                    {provider.name}
+                  </p>
+                </div>
+                <p
+                  className="text-[10px] uppercase tracking-[0.2em] mb-4"
+                  style={{ color: "var(--d-ink-muted)" }}
+                >
+                  {provider.plans}
+                </p>
+                <p
+                  className="text-sm leading-relaxed font-light"
+                  style={{ color: "var(--d-ink-muted)" }}
+                >
+                  {provider.how}
+                </p>
+              </div>
+            ))}
           </div>
+          <p
+            className="mt-6 text-xs"
+            style={{ color: "var(--d-ink-muted)" }}
+          >
+            Same endpoint everywhere — paste the URL above. Product names and
+            logos belong to their owners.
+          </p>
         </div>
       </section>
 
@@ -503,13 +559,8 @@ export default function AgentsCourtHome() {
                 </a>
               </li>
               <li>
-                <a href={COURT_URL} className="hover:opacity-70 transition-opacity">
-                  The web court
-                </a>
-              </li>
-              <li>
-                <a href={`${COURT_URL}/skill`} className="hover:opacity-70 transition-opacity">
-                  Agent skill
+                <a href="#agents" className="hover:opacity-70 transition-opacity">
+                  Connect your agent
                 </a>
               </li>
             </ul>

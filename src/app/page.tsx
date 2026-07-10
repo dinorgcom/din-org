@@ -180,7 +180,7 @@ export default function AgentsCourtHome() {
                 className="italic font-light"
                 style={{ color: "rgba(245,241,234,0.85)" }}
               >
-                Let a neutral court settle it.
+                Let us settle it.
               </span>
             </h1>
 

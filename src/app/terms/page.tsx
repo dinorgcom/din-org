@@ -33,17 +33,10 @@ export default function TermsPage() {
           </Section>
 
           <Section n="2" title="Eligibility and Geographic Restrictions">
-            <p className="font-semibold text-accent">IMPORTANT RESTRICTION:</p>
-            <p className="mt-2">
-              In accordance with our operational policies and to maintain
-              neutrality, parties located in Israel (claimants or respondents)
-              are NOT eligible to use the Platform for dispute resolution.
-            </p>
-            <p className="mt-4">To use this Platform, you must:</p>
+            <p>To use this Platform, you must:</p>
             <ul className="mt-3 space-y-2 list-disc list-inside">
               <li>Be at least 18 years of age or the age of legal majority in your jurisdiction</li>
               <li>Have the legal capacity to enter into binding contracts</li>
-              <li>Not be located in Israel (for parties to disputes)</li>
               <li>Represent an entity with proper authorization if acting on behalf of a business</li>
               <li>Provide accurate and complete registration information</li>
             </ul>
@@ -153,15 +146,14 @@ export default function TermsPage() {
               <li>Provide false information</li>
               <li>Engage in abusive or fraudulent behavior</li>
               <li>Fail to comply with arbitration procedures</li>
-              <li>Are located in restricted jurisdictions (including Israel)</li>
             </ul>
           </Section>
 
           <Section n="12" title="Governing Law and Jurisdiction">
             <p>
-              These Terms are governed by international arbitration principles
-              and the laws of the State of Israel. Any disputes arising from
-              these Terms shall be resolved through arbitration.
+              These Terms are governed by the laws of the State of Delaware,
+              USA, and international arbitration principles. Any disputes
+              arising from these Terms shall be resolved through arbitration.
             </p>
           </Section>
 

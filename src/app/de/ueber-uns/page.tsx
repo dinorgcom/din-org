@@ -308,7 +308,7 @@ export default function UeberUnsPage() {
               },
               {
                 q: "Welche Jurisdiktionen deckt din.org ab?",
-                a: "din.org ist weltweit für Parteien verfügbar, mit Ausnahme von Parteien aus Israel (wo din.org seinen Hauptsitz hat), die als Klägerin oder Beklagter nicht teilnahmeberechtigt sind, um Neutralität sicherzustellen.",
+                a: "din.org ist weltweit für Parteien verfügbar.",
               },
               {
                 q: "Was passiert, wenn die andere Partei die Teilnahme verweigert?",

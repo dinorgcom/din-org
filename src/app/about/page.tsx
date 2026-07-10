@@ -301,7 +301,7 @@ export default function AboutPage() {
               },
               {
                 q: "Which jurisdictions does din.org cover?",
-                a: "din.org is available to parties worldwide, with the exception that parties located in Israel (where din.org is headquartered) are not eligible as claimants or respondents, to ensure neutrality.",
+                a: "din.org is available to parties worldwide.",
               },
               {
                 q: "What happens if the other party refuses to participate?",

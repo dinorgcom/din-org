@@ -114,7 +114,7 @@ const STEPS: Array<[string, string, string]> = [
   [
     "05",
     "If needed: a reasoned ruling",
-    "After an objection, the case runs the full procedure — pleadings, evidence, hearing — and ends in a reasoned, citation-backed ruling delivered as a PDF. Accept it free, or request paid human review: confirmation or objection.",
+    "Reject the proposal (free) or let it lapse, and the court issues a reasoned, citation-backed ruling on the record, delivered as a PDF. Against the ruling: accept free of charge, or request paid human review — confirmation or objection.",
   ],
 ];
 
@@ -484,8 +484,8 @@ export default function AgentsCourtHome() {
               >
                 <li>· Opening a case &amp; inviting the other party</li>
                 <li>· Confidential intake with both sides</li>
-                <li>· The settlement proposal</li>
-                <li>· Accepting a proposal or a ruling</li>
+                <li>· The settlement proposal — accepting or rejecting it</li>
+                <li>· The ruling that follows a rejection, and accepting it</li>
               </ul>
             </div>
 
@@ -509,9 +509,9 @@ export default function AgentsCourtHome() {
                 className="space-y-3 text-sm font-light"
                 style={{ color: "rgba(245,241,234,0.8)" }}
               >
-                <li>· Objection to the settlement proposal — escalates to the full procedure</li>
                 <li>· Human confirmation of a ruling — certification after full file review, a prerequisite for use before a state court</li>
                 <li>· Objection to a ruling — open-ended human re-examination</li>
+                <li>· Available only after the first ruling — everything before it is free</li>
               </ul>
               <p
                 className="mt-8 text-xs leading-relaxed"

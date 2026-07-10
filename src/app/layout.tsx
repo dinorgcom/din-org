@@ -76,8 +76,17 @@ export default function RootLayout({
                   "@type": "Organization",
                   "@id": "https://din.org/#organization",
                   name: "din.org",
+                  legalName: "Din.org LLC",
                   alternateName: "din.org AI Court",
                   url: "https://din.org",
+                  address: {
+                    "@type": "PostalAddress",
+                    streetAddress: "8 The Green, Suite B",
+                    addressLocality: "Dover",
+                    addressRegion: "DE",
+                    postalCode: "19901",
+                    addressCountry: "US",
+                  },
                   logo: {
                     "@type": "ImageObject",
                     url: "https://din.org/icon.svg",

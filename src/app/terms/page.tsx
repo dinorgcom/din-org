@@ -20,7 +20,8 @@ export default function TermsPage() {
         <div className="space-y-12 text-bone/80 text-base md:text-lg leading-relaxed">
           <Section n="1" title="Introduction">
             <p>
-              Welcome to DIN.ORG International AI Court (&quot;Platform&quot;,
+              Welcome to din.org, operated by Din.org LLC, 8 The Green,
+              Suite B, Dover, DE 19901, USA (&quot;Platform&quot;,
               &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;). These Terms of
               Service govern your use of our AI-powered arbitration platform.
             </p>
@@ -34,10 +35,9 @@ export default function TermsPage() {
           <Section n="2" title="Eligibility and Geographic Restrictions">
             <p className="font-semibold text-accent">IMPORTANT RESTRICTION:</p>
             <p className="mt-2">
-              DIN.ORG is headquartered in Israel. In accordance with our
-              operational policies and to maintain neutrality, parties located in
-              Israel (claimants or respondents) are NOT eligible to use the
-              Platform for dispute resolution.
+              In accordance with our operational policies and to maintain
+              neutrality, parties located in Israel (claimants or respondents)
+              are NOT eligible to use the Platform for dispute resolution.
             </p>
             <p className="mt-4">To use this Platform, you must:</p>
             <ul className="mt-3 space-y-2 list-disc list-inside">
@@ -179,7 +179,11 @@ export default function TermsPage() {
               at:
             </p>
             <p className="mt-4 font-medium text-bone">
-              DIN.ORG International AI Court
+              Din.org LLC
+              <br />
+              8 The Green, Suite B
+              <br />
+              Dover, DE 19901, USA
               <br />
               Email: legal@din.org
               <br />

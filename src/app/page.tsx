@@ -585,8 +585,11 @@ export default function AgentsCourtHome() {
                 </Link>
               </li>
             </ul>
-            <p className="mt-6 text-xs" style={{ color: "var(--d-ink-muted)" }}>
-              © 2026 din.org
+            <p className="mt-6 text-xs leading-relaxed" style={{ color: "var(--d-ink-muted)" }}>
+              Din.org LLC · 8 The Green, Suite B
+              <br />
+              Dover, DE 19901 · USA
+              <br />© 2026 Din.org LLC
             </p>
           </div>
         </div>

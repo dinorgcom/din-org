@@ -20,10 +20,10 @@ export default function PrivacyPage() {
         <div className="space-y-12 text-bone/80 text-base md:text-lg leading-relaxed">
           <Section n="1" title="Data Controller">
             <p>
-              DIN.ORG International AI Court (&quot;we&quot;, &quot;us&quot;, or
-              &quot;our&quot;) is the data controller for personal data collected
-              through our Platform. We are headquartered in Israel and comply
-              with applicable international data protection laws.
+              Din.org LLC, 8 The Green, Suite B, Dover, DE 19901, USA
+              (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is the data
+              controller for personal data collected through our Platform. We
+              comply with applicable international data protection laws.
             </p>
           </Section>
 
@@ -118,7 +118,11 @@ export default function PrivacyPage() {
           <Section n="10" title="Contact">
             <p>For privacy-related questions, contact:</p>
             <p className="mt-4 font-medium text-bone">
-              DIN.ORG International AI Court
+              Din.org LLC
+              <br />
+              8 The Green, Suite B
+              <br />
+              Dover, DE 19901, USA
               <br />
               Email: privacy@din.org
               <br />

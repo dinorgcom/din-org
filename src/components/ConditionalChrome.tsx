@@ -17,12 +17,14 @@ export function ConditionalChrome({ children }: { children: React.ReactNode }) {
   // ported, add them here.
   const isHarveyPage =
     pathname === "/" || pathname === "/tribunal" || pathname === "/thanks";
+  const isStandaloneLegalPage = pathname === "/terms" || pathname === "/de/agb";
   const hideChrome =
     isDashboard ||
     isLogin ||
     isInvitation ||
     isSession ||
     isVerification ||
+    isStandaloneLegalPage ||
     isHarveyPage;
 
   return (

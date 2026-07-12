@@ -16,6 +16,28 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    date: "July 2026",
+    source: "din.org Research",
+    title: "The Economics of the AI Email War",
+    body: "Generative AI makes legalistic correspondence nearly free to produce. Reading, verifying, and answering it still consumes expensive human attention — creating a new asymmetry in disputes.",
+    hover: "The sender saves minutes. The recipient inherits hours. Structured dispute resolution changes that equation.",
+    tag: "Research",
+    url: "/news/economics-of-the-ai-email-war",
+    image: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?w=400&h=300&fit=crop",
+    internal: true,
+  },
+  {
+    date: "July 2026",
+    source: "din.org Research",
+    title: "From AI Workslop to a Usable Case Record",
+    body: "Why another long AI reply is the wrong answer — and how a structured process turns correspondence into facts, evidence, witnesses, and a finite path to resolution.",
+    hover: "Do not reward volume. Build a record both parties can inspect, answer, and close.",
+    tag: "Process",
+    url: "/news/from-ai-workslop-to-a-usable-case-record",
+    image: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=400&h=300&fit=crop",
+    internal: true,
+  },
+  {
     date: "April 2026",
     source: "European Commission",
     title: "EU AI Act High-Risk Rules Take Effect August 2",
@@ -196,11 +218,11 @@ export default function NewsPage() {
                 </p>
                 <a
                   href={a.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={"internal" in a && a.internal ? undefined : "_blank"}
+                  rel={"internal" in a && a.internal ? undefined : "noopener noreferrer"}
                   className="mt-auto pt-3 inline-flex items-center gap-1 text-accent text-sm font-semibold group-hover:text-ink transition-colors duration-200"
                 >
-                  Read article <span aria-hidden>&rarr;</span>
+                  {"internal" in a && a.internal ? "Read analysis" : "Read article"} <span aria-hidden>&rarr;</span>
                 </a>
               </div>
             </article>

@@ -24,6 +24,28 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    date: "Juli 2026",
+    source: "din.org Research",
+    title: "Die Ökonomie des KI-E-Mail-Kriegs",
+    body: "Generative KI macht juristisch klingende Korrespondenz beinahe kostenlos. Lesen, Prüfen und Beantworten benötigen weiterhin teure menschliche Aufmerksamkeit — eine neue Asymmetrie im Streit.",
+    hover: "Der Absender spart Minuten. Der Empfänger erbt Stunden. Strukturierte Streitbeilegung verändert diese Rechnung.",
+    tag: "Analyse",
+    url: "/de/news/oekonomie-des-ki-email-kriegs",
+    image: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?w=400&h=300&fit=crop",
+    internal: true,
+  },
+  {
+    date: "Juli 2026",
+    source: "din.org Research",
+    title: "Von KI-Workslop zur brauchbaren Fallakte",
+    body: "Warum die nächste lange KI-Antwort falsch ist — und wie ein strukturiertes Verfahren Korrespondenz in Tatsachen, Beweise, Zeugen und einen endlichen Lösungsweg verwandelt.",
+    hover: "Nicht Textmenge belohnen. Eine Akte schaffen, die beide Parteien prüfen, beantworten und schließen können.",
+    tag: "Verfahren",
+    url: "/de/news/von-ki-workslop-zur-brauchbaren-fallakte",
+    image: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=400&h=300&fit=crop",
+    internal: true,
+  },
+  {
     date: "April 2026",
     source: "Europäische Kommission",
     title: "EU-KI-Verordnung: Hochrisiko-Regeln gelten ab 2. August",
@@ -204,11 +226,11 @@ export default function NewsDE() {
                 </p>
                 <a
                   href={a.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={"internal" in a && a.internal ? undefined : "_blank"}
+                  rel={"internal" in a && a.internal ? undefined : "noopener noreferrer"}
                   className="mt-4 inline-flex items-center gap-1 text-xs text-accent group-hover:text-ink hover:underline transition-colors duration-200"
                 >
-                  Quelle lesen
+                  {"internal" in a && a.internal ? "Analyse lesen" : "Quelle lesen"}
                   <span aria-hidden>↗</span>
                 </a>
               </div>

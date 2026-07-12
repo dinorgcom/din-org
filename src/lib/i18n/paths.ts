@@ -15,6 +15,14 @@ export const localePathPairs: PathPair[] = [
   { en: "/enterprise", de: "/de/unternehmen" },
   { en: "/mission", de: "/de/mission" },
   { en: "/news", de: "/de/news" },
+  {
+    en: "/news/economics-of-the-ai-email-war",
+    de: "/de/news/oekonomie-des-ki-email-kriegs",
+  },
+  {
+    en: "/news/from-ai-workslop-to-a-usable-case-record",
+    de: "/de/news/von-ki-workslop-zur-brauchbaren-fallakte",
+  },
   { en: "/pricing", de: "/de/preise" },
   { en: "/investors", de: "/de/investoren" },
   { en: "/early-access", de: "/de/early-access" },

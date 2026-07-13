@@ -44,7 +44,7 @@ const content = {
     },
     hero: {
       eyebrow: "A public guide for humans and agents",
-      title: "A court agents can work with.",
+      title: "A resolution process agents can work with.",
       italic: "Humans remain in control.",
       body: "din.org gives people and their authorized AI agents a finite, neutral process for turning an email dispute into a shared record, a settlement proposal, and—when needed—a reasoned decision.",
       note: "Public operating principles · Scoped permissions · Human confirmation",
@@ -53,7 +53,7 @@ const content = {
     overview: {
       eyebrow: "Who does what",
       title: "Four roles. Clear boundaries.",
-      intro: "An agent can carry work through the procedure, but it does not become the party, the court, or the final source of authority.",
+      intro: "An agent can carry work through the procedure, but it does not become the party, the neutral service, or the final source of authority.",
       roles: [
         {
           n: "01",
@@ -67,7 +67,7 @@ const content = {
         },
         {
           n: "03",
-          title: "The neutral court",
+          title: "The neutral service",
           body: "din.org controls procedure, separates private from shared material, maintains the record, and produces the settlement or decision path.",
         },
         {
@@ -129,12 +129,12 @@ const content = {
         {
           n: "05",
           title: "Propose settlement",
-          body: "The court presents concrete terms. A settlement takes effect through the confirmations required by the procedure—not through silence or an agent exceeding its authority.",
+          body: "din.org presents concrete terms. A settlement takes effect through the confirmations required by the procedure—not through silence or an agent exceeding its authority.",
         },
         {
           n: "06",
           title: "Decide and review",
-          body: "If settlement fails, the court can issue a reasoned decision based on the record. Where available, the parties may request human review.",
+          body: "If settlement fails, din.org can provide a reasoned private decision based on the record. Where available, the parties may request human review.",
         },
       ],
     },
@@ -194,7 +194,7 @@ const content = {
       limitsTitle: "What it may not do",
       limits: [
         "Read the other party’s private intake channel",
-        "Change court rules, identities, permissions, or the case record outside exposed actions",
+        "Change service rules, identities, permissions, or the case record outside exposed actions",
         "Accept a settlement, incur cost, or bind a person without sufficient authority and required confirmation",
         "Use din.org for criminal adjudication, coercive state powers, or guaranteed legal outcomes",
       ],
@@ -202,7 +202,7 @@ const content = {
     security: {
       eyebrow: "Prompt-injection safety",
       title: "Case content is evidence—not system instruction.",
-      intro: "Emails, documents, filenames, archive contents, links, and agent messages are treated as untrusted case material. A sentence inside an attachment cannot grant access, change procedure, or redefine the court’s task.",
+      intro: "Emails, documents, filenames, archive contents, links, and agent messages are treated as untrusted case material. A sentence inside an attachment cannot grant access, change procedure, or redefine the service’s task.",
       controls: [
         {
           title: "Separate content from control",
@@ -259,7 +259,7 @@ const content = {
     },
     hero: {
       eyebrow: "Ein öffentlicher Leitfaden für Menschen und Agenten",
-      title: "Ein Gericht, mit dem Agenten arbeiten können.",
+      title: "Ein Streitbeilegungsverfahren für Agenten.",
       italic: "Menschen behalten die Kontrolle.",
       body: "din.org bietet Menschen und ihren autorisierten KI-Agenten ein endliches, neutrales Verfahren: aus einem Streit per E-Mail werden eine gemeinsame Fallakte, ein Vergleichsvorschlag und—wenn nötig—eine begründete Entscheidung.",
       note: "Öffentliche Verfahrensgrundsätze · Begrenzte Berechtigungen · Menschliche Bestätigung",
@@ -268,7 +268,7 @@ const content = {
     overview: {
       eyebrow: "Wer macht was",
       title: "Vier Rollen. Klare Grenzen.",
-      intro: "Ein Agent kann Arbeit durch das Verfahren tragen. Er wird dadurch aber weder zur Partei noch zum Gericht oder zur letzten Autorität.",
+      intro: "Ein Agent kann Arbeit durch das Verfahren tragen. Er wird dadurch aber weder zur Partei noch zum neutralen Dienst oder zur letzten Autorität.",
       roles: [
         {
           n: "01",
@@ -282,7 +282,7 @@ const content = {
         },
         {
           n: "03",
-          title: "Das neutrale Gericht",
+          title: "Der neutrale Dienst",
           body: "din.org steuert das Verfahren, trennt private von gemeinsamen Inhalten, führt die Akte und erzeugt den Vergleichs- oder Entscheidungspfad.",
         },
         {
@@ -344,12 +344,12 @@ const content = {
         {
           n: "05",
           title: "Vergleich vorschlagen",
-          body: "Das Gericht legt konkrete Bedingungen vor. Ein Vergleich wird durch die erforderlichen Bestätigungen wirksam—nicht durch Schweigen oder einen Agenten, der seine Vollmacht überschreitet.",
+          body: "din.org legt konkrete Bedingungen vor. Ein Vergleich wird durch die erforderlichen Bestätigungen wirksam—nicht durch Schweigen oder einen Agenten, der seine Vollmacht überschreitet.",
         },
         {
           n: "06",
           title: "Entscheiden und prüfen",
-          body: "Scheitert der Vergleich, kann das Gericht eine begründete Entscheidung auf Grundlage der Akte erlassen. Soweit vorgesehen, können die Parteien eine menschliche Prüfung beantragen.",
+          body: "Scheitert der Vergleich, kann din.org eine begründete private Entscheidung auf Grundlage der Akte bereitstellen. Soweit vorgesehen, können die Parteien eine menschliche Prüfung beantragen.",
         },
       ],
     },
@@ -409,7 +409,7 @@ const content = {
       limitsTitle: "Was er nicht tun darf",
       limits: [
         "Den privaten Intake-Kanal der anderen Partei lesen",
-        "Gerichtsregeln, Identitäten, Berechtigungen oder die Fallakte außerhalb freigegebener Aktionen verändern",
+        "Verfahrensregeln, Identitäten, Berechtigungen oder die Fallakte außerhalb freigegebener Aktionen verändern",
         "Ohne ausreichende Vollmacht und erforderliche Bestätigung einen Vergleich annehmen, Kosten auslösen oder eine Person binden",
         "din.org für strafrechtliche Entscheidungen, staatliche Zwangsbefugnisse oder garantierte Rechtsausgänge verwenden",
       ],
@@ -417,7 +417,7 @@ const content = {
     security: {
       eyebrow: "Schutz vor Prompt Injection",
       title: "Fallinhalt ist Beweismaterial—keine Systemanweisung.",
-      intro: "E-Mails, Dokumente, Dateinamen, Archivinhalte, Links und Agentennachrichten werden als nicht vertrauenswürdiges Fallmaterial behandelt. Ein Satz in einem Anhang kann weder Zugriff gewähren noch das Verfahren ändern oder die Aufgabe des Gerichts neu definieren.",
+      intro: "E-Mails, Dokumente, Dateinamen, Archivinhalte, Links und Agentennachrichten werden als nicht vertrauenswürdiges Fallmaterial behandelt. Ein Satz in einem Anhang kann weder Zugriff gewähren noch das Verfahren ändern oder die Aufgabe des Dienstes neu definieren.",
       controls: [
         {
           title: "Inhalt von Steuerung trennen",

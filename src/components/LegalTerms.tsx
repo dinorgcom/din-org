@@ -534,7 +534,7 @@ export function LegalTerms({ locale }: { locale: TermsLocale }) {
               className="d-mono mt-10 text-[11px] uppercase tracking-[0.16em]"
               style={{ color: "rgba(245,241,234,0.6)" }}
             >
-              {copy.updated} <span aria-hidden>\u00b7</span> {copy.version}
+              {copy.updated} <span aria-hidden>·</span> {copy.version}
             </p>
           </div>
         </div>

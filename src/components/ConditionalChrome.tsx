@@ -16,7 +16,12 @@ export function ConditionalChrome({ children }: { children: React.ReactNode }) {
   // Navbar/Footer must be suppressed on those routes. As more pages are
   // ported, add them here.
   const isHarveyPage =
-    pathname === "/" || pathname === "/tribunal" || pathname === "/thanks";
+    pathname === "/" ||
+    pathname === "/de" ||
+    pathname === "/tribunal" ||
+    pathname === "/thanks" ||
+    pathname === "/agents" ||
+    pathname === "/de/agenten";
   const isStandaloneLegalPage = pathname === "/terms" || pathname === "/de/agb";
   const hideChrome =
     isDashboard ||

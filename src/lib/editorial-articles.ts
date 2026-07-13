@@ -213,6 +213,12 @@ const english: EditorialArticle[] = [
     ],
     sources: [
       {
+        source: "OWASP GenAI Security Project",
+        title: "LLM01:2025 Prompt Injection",
+        url: "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+        note: "Security guidance on direct, indirect, and multimodal prompt injection and practical mitigations.",
+      },
+      {
         source: "BetterUp Labs & Stanford Social Media Lab",
         title: "Workslop: The Hidden Cost of AI-Generated Busywork",
         url: "https://www.betterup.com/workslop",
@@ -426,6 +432,12 @@ const german: EditorialArticle[] = [
       },
     ],
     sources: [
+      {
+        source: "OWASP GenAI Security Project",
+        title: "LLM01:2025 Prompt Injection",
+        url: "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+        note: "Sicherheitshinweise zu direkter, indirekter und multimodaler Prompt Injection sowie zu praktikablen Schutzmaßnahmen.",
+      },
       {
         source: "BetterUp Labs & Stanford Social Media Lab",
         title: "Workslop: The Hidden Cost of AI-Generated Busywork",

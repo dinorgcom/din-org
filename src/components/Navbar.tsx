@@ -27,11 +27,13 @@ const moreLinksByLocale = {
   en: [
     { href: "/use-cases", label: "Use cases" },
     { href: "/lawyer-counsel", label: "Lawyer counsel" },
+    { href: "/agents", label: "For AI agents" },
     { href: "/news", label: "News" },
   ],
   de: [
     { href: "/de/anwendungsfaelle", label: "Anwendungsfälle" },
     { href: "/de/anwaltliche-vertretung", label: "Anwaltliche Vertretung" },
+    { href: "/de/agenten", label: "Für KI-Agenten" },
     { href: "/de/news", label: "News" },
   ],
 } as const;
@@ -51,7 +53,7 @@ export function Navbar() {
   const moreLinks = moreLinksByLocale[locale];
   const cta = ctaByLocale[locale];
   const homeHref = locale === "de" ? "/de" : "/";
-  const loginHref = locale === "de" ? "/de/anmelden" : "/login";
+  const loginHref = "https://app.din.org/sign-in";
   const earlyHref = locale === "de" ? "/de/early-access" : "/early-access";
 
   // Close More on outside click

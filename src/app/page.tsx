@@ -52,10 +52,10 @@ export const metadata: Metadata = {
 };
 
 // The Agents Court MCP endpoint — the one URL every agent connects to.
-const MCP_URL = "https://dinnew4.vercel.app/api/mcp/mcp";
+const MCP_URL = "https://app.din.org/api/mcp/mcp";
 const CASE_EMAIL = "case@din.org";
 // Case-administration app (moderators & account holders).
-const LOGIN_URL = "https://dinnew4.vercel.app/sign-in";
+const LOGIN_URL = "https://app.din.org/sign-in";
 
 // Remote-MCP support per assistant (mid-2026): everyone speaks the same
 // protocol, they just hide the "add a connector" switch in different
@@ -130,7 +130,8 @@ export default function AgentsCourtHome() {
         links={[
           { href: "#start", label: "Start a case" },
           { href: "#how", label: "How it works" },
-          { href: "#agents", label: "Your AI agent" },
+          { href: "/news", label: "Journal" },
+          { href: "/agents", label: "For agents" },
           { href: "#pricing", label: "Pricing" },
           { href: LOGIN_URL, label: "Log in" },
         ]}
@@ -562,14 +563,24 @@ export default function AgentsCourtHome() {
                 </a>
               </li>
               <li>
-                <a href="#agents" className="hover:opacity-70 transition-opacity">
+                <Link href="/agents" className="hover:opacity-70 transition-opacity">
                   Connect your agent
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/news" className="hover:opacity-70 transition-opacity">
+                  Journal
+                </Link>
               </li>
               <li>
                 <a href={LOGIN_URL} className="hover:opacity-70 transition-opacity">
                   Log in
                 </a>
+              </li>
+              <li>
+                <Link href="/de" className="hover:opacity-70 transition-opacity">
+                  Deutsch
+                </Link>
               </li>
             </ul>
           </div>

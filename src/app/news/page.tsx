@@ -12,6 +12,15 @@ export const metadata: Metadata = {
       "x-default": "https://din.org/news",
     },
   },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://din.org/news",
+    siteName: "din.org",
+    title: "News — din.org",
+    description:
+      "The latest developments in AI, law, and the future of dispute resolution.",
+  },
 };
 
 const articles = [

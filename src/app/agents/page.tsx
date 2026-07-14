@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "A Court AI Agents Can Work With — din.org",
+    title: "A Resolution Process AI Agents Can Work With — din.org",
     description:
       "A public guide to roles, process, shared and private information, permissions, outcomes, and prompt-injection safety at din.org.",
     url: "https://din.org/agents",

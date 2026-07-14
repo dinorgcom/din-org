@@ -5,7 +5,9 @@ export function EditorialArticlePage({ article }: { article: EditorialArticle })
   const isGerman = article.locale === "de";
   const newsHref = isGerman ? "/de/news" : "/news";
   const relatedHref = `${newsHref}/${article.relatedSlug}`;
-  const fileHref = isGerman ? "/de/fall-einreichen" : "/file-a-case";
+  const caseEmailHref = isGerman
+    ? "mailto:case@din.org?subject=Neuen%20Fall%20starten"
+    : "mailto:case@din.org?subject=Start%20a%20new%20case";
 
   return (
     <div lang={article.locale}>
@@ -123,12 +125,12 @@ export function EditorialArticlePage({ article }: { article: EditorialArticle })
             <p className="display text-2xl font-semibold">
               {isGerman ? "Bringen Sie den Streit in ein strukturiertes Verfahren." : "Move the dispute into a structured process."}
             </p>
-            <Link
-              href={fileHref}
+            <a
+              href={caseEmailHref}
               className="mt-6 inline-flex rounded-full bg-ink text-bone px-5 py-3 text-sm font-medium hover:bg-ink/85 transition-colors"
             >
-              {isGerman ? "Fall einreichen" : "File a case"} <span className="ml-2" aria-hidden>&rarr;</span>
-            </Link>
+              {isGerman ? "Fall per E-Mail starten" : "Start by email"} <span className="ml-2" aria-hidden>&rarr;</span>
+            </a>
           </div>
         </div>
       </section>

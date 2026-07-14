@@ -6,9 +6,9 @@ import { getAlternateLocalePath } from "@/lib/i18n/paths";
 
 const copy = {
   en: {
-    headline: "Justice, without the wait.",
+    headline: "Resolve disputes, without the wait.",
     aboutTitle: "din.org",
-    aboutBody: "A complete AI-based court. Open to everyone, everywhere.",
+    aboutBody: "A neutral, AI-assisted dispute-resolution process with human control and review.",
     navigateTitle: "Navigate",
     investorsTitle: "Investors",
     investorsLink: "Why invest",
@@ -23,7 +23,7 @@ const copy = {
       about: { href: "/about", label: "About" },
       enterprise: { href: "/enterprise", label: "Enterprise" },
       pricing: { href: "/pricing", label: "Pricing" },
-      file: { href: "/file-a-case", label: "File a case" },
+      file: { href: "mailto:case@din.org", label: "Start by email" },
       whyInvest: { href: "/investors", label: "Why invest" },
       privacy: { href: "/privacy", label: "Privacy" },
       terms: { href: "/terms", label: "Terms" },
@@ -31,9 +31,9 @@ const copy = {
     contactLines: ["hello@din.org", "Press · Partnerships"],
   },
   de: {
-    headline: "Recht, ohne Wartezeit.",
+    headline: "Streit lösen, ohne Wartezeit.",
     aboutTitle: "din.org",
-    aboutBody: "Ein vollständiges KI-basiertes Gericht. Offen für alle, überall.",
+    aboutBody: "Ein neutrales, KI-gestütztes Streitbeilegungsverfahren mit menschlicher Kontrolle und Prüfung.",
     navigateTitle: "Navigation",
     investorsTitle: "Investoren",
     investorsLink: "Warum investieren",
@@ -48,7 +48,7 @@ const copy = {
       about: { href: "/de/ueber-uns", label: "Über uns" },
       enterprise: { href: "/de/unternehmen", label: "Unternehmen" },
       pricing: { href: "/de/preise", label: "Preise" },
-      file: { href: "/de/fall-einreichen", label: "Fall einreichen" },
+      file: { href: "mailto:case@din.org", label: "Per E-Mail starten" },
       whyInvest: { href: "/de/investoren", label: "Warum investieren" },
       privacy: { href: "/de/datenschutz", label: "Datenschutz" },
       terms: { href: "/de/agb", label: "AGB" },

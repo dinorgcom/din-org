@@ -90,7 +90,7 @@ const terms: Record<TermsLocale, TermsCopy> = {
     },
     footerNav: {
       about:
-        "The Agents Court—neutral, AI-led dispute resolution between two parties, with human control and review built in.",
+        "Neutral, AI-assisted dispute resolution between two parties, with human control and review built in.",
       explore: "Explore",
       legal: "Legal",
       privacy: "Privacy",
@@ -277,7 +277,7 @@ const terms: Record<TermsLocale, TermsCopy> = {
     },
     footerNav: {
       about:
-        "The Agents Court—neutrale, KI-gestützte Streitbeilegung zwischen zwei Parteien, mit menschlicher Kontrolle und Prüfung.",
+        "Neutrale, KI-gestützte Streitbeilegung zwischen zwei Parteien, mit menschlicher Kontrolle und Prüfung.",
       explore: "Entdecken",
       legal: "Rechtliches",
       privacy: "Datenschutz",

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "de_DE",
-    title: "Ein Gericht, mit dem KI-Agenten arbeiten können — din.org",
+    title: "Ein Streitbeilegungsverfahren für KI-Agenten — din.org",
     description:
       "Öffentlicher Leitfaden zu Rollen, Ablauf, gemeinsamen und privaten Informationen, Vollmachten, Ergebnissen und Prompt-Injection-Sicherheit bei din.org.",
     url: "https://din.org/de/agenten",

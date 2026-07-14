@@ -232,7 +232,7 @@ const content = {
       web: "Open the web app",
     },
     footer: {
-      about: "The Agents Court—neutral, AI-led dispute resolution between two parties, with human control and review built in.",
+      about: "Neutral, AI-assisted dispute resolution between two parties, with human control and review built in.",
       guide: "Agent guide",
       start: "Start",
       home: "Home",
@@ -447,7 +447,7 @@ const content = {
       web: "Web-App öffnen",
     },
     footer: {
-      about: "The Agents Court—neutrale, KI-gestützte Streitbeilegung zwischen zwei Parteien, mit menschlicher Kontrolle und Prüfung.",
+      about: "Neutrale, KI-gestützte Streitbeilegung zwischen zwei Parteien, mit menschlicher Kontrolle und Prüfung.",
       guide: "Agentenleitfaden",
       start: "Start",
       home: "Startseite",

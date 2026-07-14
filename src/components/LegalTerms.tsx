@@ -156,7 +156,7 @@ const terms: Record<TermsLocale, TermsCopy> = {
       {
         title: "8. Private channels and the shared case record",
         paragraphs: [
-          "Each party\u2019s intake conversation with DIN.ORG is private from the other party unless the sender chooses to share it or disclosure is required for a fair process. The court AI may use information from both private channels to identify issues and prepare neutral questions without automatically exposing the private conversation itself.",
+          "Each party\u2019s intake conversation with DIN.ORG is private from the other party unless the sender chooses to share it or disclosure is required for a fair process. The DIN.ORG system may use information from both private channels to identify issues and prepare neutral questions without automatically exposing the private conversation itself.",
           "Evidence, files, and attachments submitted for consideration form part of the shared case record and are accessible to both parties, unless DIN.ORG expressly marks an item as private, restricts it for legal or safety reasons, or removes it. A witness identified by a party, including the witness\u2019s name and submitted email address, is visible to both parties. Parties must submit only contact details reasonably necessary for the case.",
         ],
       },
@@ -213,7 +213,7 @@ const terms: Record<TermsLocale, TermsCopy> = {
         title: "16. Responsible use and manipulation attempts",
         paragraphs: [
           "Users must provide information they reasonably believe to be truthful, respect other participants, keep access links and credentials secure, and use the Platform only for lawful dispute resolution.",
-          "Prompt injection, attempts to manipulate the court AI, impersonation, unauthorised access, malware, fabricated evidence, harassment, and use of the service to facilitate unlawful conduct are prohibited. DIN.ORG may preserve and quarantine apparent manipulation attempts. Their presence does not automatically decide the dispute against either party or result in a win for the other side: DIN.ORG will consider attribution, context, whether the text was merely quoted or forwarded, and any explanation offered before drawing a credibility or procedural inference.",
+          "Prompt injection, attempts to manipulate DIN.ORG\u2019s AI-assisted process, impersonation, unauthorised access, malware, fabricated evidence, harassment, and use of the service to facilitate unlawful conduct are prohibited. DIN.ORG may preserve and quarantine apparent manipulation attempts. Their presence does not automatically decide the dispute against either party or result in a win for the other side: DIN.ORG will consider attribution, context, whether the text was merely quoted or forwarded, and any explanation offered before drawing a credibility or procedural inference.",
         ],
       },
       {
@@ -343,7 +343,7 @@ const terms: Record<TermsLocale, TermsCopy> = {
       {
         title: "8. Private Kanäle und gemeinsame Fallakte",
         paragraphs: [
-          "Das Aufnahmegespräch jeder Partei mit DIN.ORG bleibt gegenüber der anderen Partei privat, sofern der Absender es nicht freigibt oder eine Offenlegung für ein faires Verfahren erforderlich ist. Die Gerichts-KI kann Informationen aus beiden privaten Kanälen nutzen, um Streitpunkte zu erkennen und neutrale Fragen vorzubereiten, ohne das private Gespräch automatisch offenzulegen.",
+          "Das Aufnahmegespräch jeder Partei mit DIN.ORG bleibt gegenüber der anderen Partei privat, sofern der Absender es nicht freigibt oder eine Offenlegung für ein faires Verfahren erforderlich ist. Das DIN.ORG-System kann Informationen aus beiden privaten Kanälen nutzen, um Streitpunkte zu erkennen und neutrale Fragen vorzubereiten, ohne das private Gespräch automatisch offenzulegen.",
           "Zur Prüfung eingereichte Beweismittel, Dateien und Anlagen werden Teil der gemeinsamen Fallakte und sind für beide Parteien zugänglich, sofern DIN.ORG einen Gegenstand nicht ausdrücklich als privat kennzeichnet, aus rechtlichen oder sicherheitsbezogenen Gründen beschränkt oder entfernt. Ein von einer Partei benannter Zeuge ist einschließlich seines Namens und der eingereichten E-Mail-Adresse für beide Parteien sichtbar. Parteien dürfen nur Kontaktdaten einreichen, die für den Fall vernünftigerweise erforderlich sind.",
         ],
       },
@@ -400,7 +400,7 @@ const terms: Record<TermsLocale, TermsCopy> = {
         title: "16. Verantwortungsvolle Nutzung und Manipulationsversuche",
         paragraphs: [
           "Nutzer müssen Informationen bereitstellen, die sie vernünftigerweise für wahr halten, andere Teilnehmer respektieren, Zugangslinks und Zugangsdaten schützen und die Plattform nur zur rechtmäßigen Streitbeilegung verwenden.",
-          "Prompt Injection, Versuche zur Manipulation der Gerichts-KI, Identitätstäuschung, unbefugter Zugriff, Schadsoftware, gefälschte Beweismittel, Belästigung und die Nutzung zur Unterstützung rechtswidrigen Verhaltens sind untersagt. DIN.ORG kann erkennbare Manipulationsversuche sichern und isolieren. Ihr Vorliegen entscheidet den Streit nicht automatisch gegen eine Partei und führt nicht automatisch zum Sieg der Gegenseite: Vor Rückschlüssen auf Glaubwürdigkeit oder Verfahren werden Zurechnung, Kontext, ein bloßes Zitat oder eine Weiterleitung sowie angebotene Erklärungen berücksichtigt.",
+          "Prompt Injection, Versuche zur Manipulation des KI-gestützten DIN.ORG-Verfahrens, Identitätstäuschung, unbefugter Zugriff, Schadsoftware, gefälschte Beweismittel, Belästigung und die Nutzung zur Unterstützung rechtswidrigen Verhaltens sind untersagt. DIN.ORG kann erkennbare Manipulationsversuche sichern und isolieren. Ihr Vorliegen entscheidet den Streit nicht automatisch gegen eine Partei und führt nicht automatisch zum Sieg der Gegenseite: Vor Rückschlüssen auf Glaubwürdigkeit oder Verfahren werden Zurechnung, Kontext, ein bloßes Zitat oder eine Weiterleitung sowie angebotene Erklärungen berücksichtigt.",
         ],
       },
       {

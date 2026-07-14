@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "News — din.org",
+  title: "News & Analysen — din.org",
   description:
-    "Aktuelle Entwicklungen an der Schnittstelle von KI, Recht und der Zukunft der Streitbeilegung.",
+    "Analysen zu KI-generierter Korrespondenz, Beweisverarbeitung, strukturierten Fallakten, Vergleichen und verantwortungsvollen Systemen zur Streitbeilegung.",
   alternates: {
     canonical: "https://din.org/de/news",
     languages: {
@@ -15,10 +15,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "de_DE",
-    title: "News — din.org",
-    description:
-      "Aktuelle Entwicklungen an der Schnittstelle von KI, Recht und der Zukunft der Streitbeilegung.",
+    alternateLocale: ["en_US"],
     url: "https://din.org/de/news",
+    siteName: "din.org",
+    title: "News & Analysen zu KI und Streitbeilegung — din.org",
+    description:
+      "Analysen zu KI-generierter Korrespondenz, Beweisverarbeitung, strukturierten Fallakten, Vergleichen und verantwortungsvollen Systemen zur Streitbeilegung.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "News & Analysen zu KI und Streitbeilegung — din.org",
+    description:
+      "Analysen zu KI-generierter Korrespondenz, Beweisverarbeitung, strukturierten Fallakten, Vergleichen und verantwortungsvollen Streitbeilegungssystemen.",
   },
 };
 

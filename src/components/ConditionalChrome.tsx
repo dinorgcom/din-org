@@ -22,7 +22,11 @@ export function ConditionalChrome({ children }: { children: React.ReactNode }) {
     pathname === "/thanks" ||
     pathname === "/agents" ||
     pathname === "/de/agenten";
-  const isStandaloneLegalPage = pathname === "/terms" || pathname === "/de/agb";
+  const isStandaloneLegalPage =
+    pathname === "/terms" ||
+    pathname === "/de/agb" ||
+    pathname === "/privacy" ||
+    pathname === "/de/datenschutz";
   const hideChrome =
     isDashboard ||
     isLogin ||

@@ -25,9 +25,9 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "din.org — The Agents Court. Email your dispute to case@din.org",
+  title: "din.org — Resolve disputes by email",
   description:
-    "Disputes today are endless AI-written email chains. din.org puts a neutral court between the two sides: confidential AI intake with each party, a free settlement proposal, and a reasoned ruling as a PDF — with paid human review on request. Start by emailing case@din.org.",
+    "Turn an email dispute into a structured resolution process: private intake for both sides, a shared case record, a free settlement proposal, a reasoned private assessment as a PDF, and human review on request. Start at case@din.org.",
   alternates: {
     canonical: "https://din.org",
     languages: {
@@ -38,20 +38,22 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "din.org — The Agents Court",
-    description:
-      "End the email war. Email your dispute to case@din.org — free settlement proposal, reasoned ruling, human review on request.",
+    locale: "en_US",
     url: "https://din.org",
+    siteName: "din.org",
+    title: "din.org — Resolve disputes by email",
+    description:
+      "End the email dispute: private intake, a shared case record, a free settlement proposal, and human review on request.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "din.org — The Agents Court",
+    title: "din.org — Resolve disputes by email",
     description:
-      "End the email war. Email your dispute to case@din.org — free settlement proposal, reasoned ruling, human review on request.",
+      "End the email dispute: private intake, a shared case record, a free settlement proposal, and human review on request.",
   },
 };
 
-// The Agents Court MCP endpoint — the one URL every agent connects to.
+// The dispute-resolution MCP endpoint — the one URL every agent connects to.
 const MCP_URL = "https://app.din.org/api/mcp/mcp";
 const CASE_EMAIL = "case@din.org";
 // Case-administration app (moderators & account holders).
@@ -105,22 +107,22 @@ const STEPS: Array<[string, string, string]> = [
   ],
   [
     "03",
-    "Confidential intake, both sides",
-    "The court interviews each party — or their AI agent — in a private channel the other side never sees: facts, evidence, what you want, what you'd accept.",
+    "Private intake, shared record",
+    "din.org speaks with each party — or their AI agent — in a separate private channel. Intake conversations remain private, while submitted case material is organised into a shared record that both parties can inspect and answer.",
   ],
   [
     "04",
     "A free settlement proposal",
-    "Once both intakes are complete, the court drafts concrete settlement terms both sides can accept. Both accept — the dispute is over. Free of charge.",
+    "Once both intakes are complete, din.org drafts concrete settlement terms. If both parties accept the same terms, the dispute is resolved. This path is free of charge.",
   ],
   [
     "05",
-    "If needed: a reasoned ruling",
-    "Reject the proposal (free) or let it lapse, and the court issues a reasoned, citation-backed ruling on the record, delivered as a PDF. Against the ruling: accept free of charge, or request paid human review — confirmation or objection.",
+    "If needed: a reasoned assessment",
+    "If the proposal is rejected or expires, din.org prepares a reasoned, source-backed private assessment of the shared record as a PDF. It is not a state-court judgment. You can accept it at no charge or request paid human review — as confirmation or objection.",
   ],
 ];
 
-export default function AgentsCourtHome() {
+export default function DisputeResolutionHome() {
   return (
     <div
       className={`decisions-site ${display.variable} ${sans.variable} ${mono.variable}`}
@@ -171,7 +173,7 @@ export default function AgentsCourtHome() {
                 className="inline-block w-8 h-px align-middle mr-3"
                 style={{ background: "rgba(245,241,234,0.5)" }}
               />
-              The Agents Court
+              Dispute resolution for people and AI agents
             </p>
 
             <h1
@@ -192,12 +194,12 @@ export default function AgentsCourtHome() {
               className="mt-10 text-lg md:text-xl max-w-2xl leading-relaxed font-light"
               style={{ color: "rgba(245,241,234,0.82)" }}
             >
-              Disputes today are endless AI-written email chains that nobody
-              reads and nobody wins. din.org puts a neutral court between the
-              two sides: it interviews each party — or their AI agent — in a
-              confidential channel, gathers the facts, and proposes a
-              settlement. Free of charge. If nobody objects, the dispute is
-              over.
+              Disputes today get lost in endless AI-written email chains that
+              nobody reads and nobody wins. din.org works neutrally between
+              both sides: we speak privately with each party — or their AI
+              agent — organise the material into a shared record, and make a
+              concrete settlement proposal. Free of charge. If both parties
+              accept, the dispute is resolved.
             </p>
 
             <div className="mt-12 flex flex-col sm:flex-row sm:flex-wrap items-start gap-4">
@@ -218,8 +220,8 @@ export default function AgentsCourtHome() {
               className="mt-16 text-xs uppercase tracking-[0.25em] max-w-2xl"
               style={{ color: "rgba(245,241,234,0.55)" }}
             >
-              Free settlement proposal · Reasoned ruling as PDF · Human review
-              on request
+              Free settlement proposal · Reasoned private assessment as PDF ·
+              Human review on request
             </p>
           </div>
         </div>
@@ -249,10 +251,10 @@ export default function AgentsCourtHome() {
             className="mt-10 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-light"
             style={{ color: "var(--d-ink-muted)" }}
           >
-            One email. Who is the other party, what happened, what do you
-            want. No account, no forms — the court answers, asks what it
-            needs, and nobody is contacted until you confirm. The entire
-            proceeding can run in your inbox.
+            One email: who is the other party, what happened, and what do you
+            want? No account, no forms. din.org replies, asks focused
+            questions, and contacts nobody until you confirm. The entire
+            process can run in your inbox.
           </p>
         </div>
       </section>
@@ -306,8 +308,8 @@ export default function AgentsCourtHome() {
                 className="d-display italic text-xl md:text-2xl leading-snug"
                 style={{ color: "rgba(245,241,234,0.85)" }}
               >
-                Every ruling is drafted, adversarially self-reviewed against
-                the cited law, and revised — before you ever see it.
+                Every assessment is drafted, checked critically against the
+                cited sources, and revised before you receive it.
               </p>
               <a
                 href={CASE_MAILTO}
@@ -338,30 +340,32 @@ export default function AgentsCourtHome() {
                   className="inline-block w-8 h-px align-middle mr-3"
                   style={{ background: "var(--d-line)" }}
                 />
-                Your AI agent pleads. You decide.
+                Your AI agent handles the correspondence. You decide.
               </p>
               <h2
                 className="d-display text-4xl md:text-5xl leading-tight max-w-[18ch]"
                 style={{ color: "var(--d-ink)" }}
               >
-                Send your agent to court instead of yourself.
+                Send your agent into the resolution process.
               </h2>
               <p
                 className="mt-8 text-base md:text-lg leading-relaxed font-light max-w-xl"
                 style={{ color: "var(--d-ink-muted)" }}
               >
-                Claude, ChatGPT, Perplexity and Grok connect to the court
-                directly over MCP: your agent answers the intake questions,
-                evaluates the settlement proposal, and drafts objection
-                grounds on your behalf. Payments and decisions always stay
-                with you.
+                Claude, ChatGPT, Perplexity and Grok connect directly to
+                din.org over MCP. Within the permissions you grant, your agent
+                can answer intake questions, submit material to the shared
+                record, evaluate a settlement proposal, and draft objections.
+                Payments, settlement acceptance, and final instructions remain
+                with you unless you expressly authorise and confirm them.
               </p>
               <p
                 className="mt-6 text-sm leading-relaxed font-light max-w-xl"
                 style={{ color: "var(--d-ink-muted)" }}
               >
-                No agent? The identical process runs over email ({CASE_EMAIL})
-                — all channels write into the same case.
+                No agent? The same process runs over email ({CASE_EMAIL}). All
+                channels contribute to the same case record without exposing
+                either party&apos;s private intake conversation.
               </p>
             </div>
 
@@ -391,17 +395,19 @@ export default function AgentsCourtHome() {
                 className="mt-6 space-y-3 text-sm font-light"
                 style={{ color: "var(--d-ink-muted)" }}
               >
-                <li>· create_dispute — open a case for your principal</li>
-                <li>· send_message — answer the court&apos;s intake questions</li>
-                <li>· respond_to_proposal — accept, or hand the objection to your human</li>
-                <li>· submit_ruling_grounds — file the objection reasons</li>
+                <li>· create_dispute — open an authorised case for your principal</li>
+                <li>· send_message — answer intake questions and submit material</li>
+                <li>· respond_to_proposal — relay a response within granted authority</li>
+                <li>· submit_ruling_grounds — submit reasons for an objection</li>
               </ul>
               <p
                 className="mt-6 text-xs leading-relaxed"
                 style={{ color: "var(--d-ink-muted)" }}
               >
-                No key needed to connect: an unauthenticated agent is walked
-                through the account and token setup by the court itself.
+                No key is needed for the initial connection. din.org guides an
+                unauthenticated agent through account and access setup. Every
+                case action remains limited to the authenticated actor and the
+                authority available at that stage.
               </p>
             </div>
           </div>
@@ -480,16 +486,16 @@ export default function AgentsCourtHome() {
                 className="text-sm uppercase tracking-[0.2em] mb-8"
                 style={{ color: "rgba(245,241,234,0.5)" }}
               >
-                The whole way to a settlement
+                The whole path to an agreement
               </p>
               <ul
                 className="space-y-3 text-sm font-light"
                 style={{ color: "rgba(245,241,234,0.8)" }}
               >
                 <li>· Opening a case &amp; inviting the other party</li>
-                <li>· Confidential intake with both sides</li>
+                <li>· Private intake and a shared, answerable case record</li>
                 <li>· The settlement proposal — accepting or rejecting it</li>
-                <li>· The ruling that follows a rejection, and accepting it</li>
+                <li>· The private assessment after a rejection, and accepting it</li>
               </ul>
             </div>
 
@@ -513,9 +519,9 @@ export default function AgentsCourtHome() {
                 className="space-y-3 text-sm font-light"
                 style={{ color: "rgba(245,241,234,0.8)" }}
               >
-                <li>· Human confirmation of a ruling — certification after full file review, a prerequisite for use before a state court</li>
-                <li>· Objection to a ruling — open-ended human re-examination</li>
-                <li>· Available only after the first ruling — everything before it is free</li>
+                <li>· Human confirmation of an assessment after full case-file review</li>
+                <li>· Objection to an assessment with open-ended human re-examination</li>
+                <li>· Available only after the first assessment — everything before it is free</li>
               </ul>
               <p
                 className="mt-8 text-xs leading-relaxed"
@@ -544,8 +550,8 @@ export default function AgentsCourtHome() {
               className="text-sm leading-relaxed font-light max-w-md"
               style={{ color: "var(--d-ink-muted)" }}
             >
-              The Agents Court — neutral, AI-led dispute resolution between
-              two parties, with human review built in.
+              Neutral, AI-supported dispute resolution between two parties —
+              with private intake and human review on request.
             </p>
           </div>
 

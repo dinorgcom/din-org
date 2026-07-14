@@ -10,21 +10,15 @@ const copy = {
     aboutTitle: "din.org",
     aboutBody: "A neutral, AI-assisted dispute-resolution process with human control and review.",
     navigateTitle: "Navigate",
-    investorsTitle: "Investors",
-    investorsLink: "Why invest",
+    startTitle: "Start",
     contactTitle: "Contact",
     rights: "All rights reserved.",
     nav: {
       home: { href: "/", label: "Home" },
-      how: { href: "/how-it-works", label: "How it works" },
-      use: { href: "/use-cases", label: "Use cases" },
-      lawyer: { href: "/lawyer-counsel", label: "Lawyer counsel" },
       agents: { href: "/agents", label: "For AI agents" },
-      about: { href: "/about", label: "About" },
-      enterprise: { href: "/enterprise", label: "Enterprise" },
-      pricing: { href: "/pricing", label: "Pricing" },
+      news: { href: "/news", label: "Journal" },
       file: { href: "mailto:case@din.org", label: "Start by email" },
-      whyInvest: { href: "/investors", label: "Why invest" },
+      web: { href: "https://app.din.org/sign-in", label: "Open web app" },
       privacy: { href: "/privacy", label: "Privacy" },
       terms: { href: "/terms", label: "Terms" },
     },
@@ -35,21 +29,15 @@ const copy = {
     aboutTitle: "din.org",
     aboutBody: "Ein neutrales, KI-gestütztes Streitbeilegungsverfahren mit menschlicher Kontrolle und Prüfung.",
     navigateTitle: "Navigation",
-    investorsTitle: "Investoren",
-    investorsLink: "Warum investieren",
+    startTitle: "Start",
     contactTitle: "Kontakt",
     rights: "Alle Rechte vorbehalten.",
     nav: {
       home: { href: "/de", label: "Start" },
-      how: { href: "/de/so-funktionierts", label: "So funktioniert es" },
-      use: { href: "/de/anwendungsfaelle", label: "Anwendungsfälle" },
-      lawyer: { href: "/de/anwaltliche-vertretung", label: "Anwaltliche Vertretung" },
       agents: { href: "/de/agenten", label: "Für KI-Agenten" },
-      about: { href: "/de/ueber-uns", label: "Über uns" },
-      enterprise: { href: "/de/unternehmen", label: "Unternehmen" },
-      pricing: { href: "/de/preise", label: "Preise" },
+      news: { href: "/de/news", label: "Journal" },
       file: { href: "mailto:case@din.org", label: "Per E-Mail starten" },
-      whyInvest: { href: "/de/investoren", label: "Warum investieren" },
+      web: { href: "https://app.din.org/sign-in", label: "Web-App öffnen" },
       privacy: { href: "/de/datenschutz", label: "Datenschutz" },
       terms: { href: "/de/agb", label: "AGB" },
     },
@@ -85,24 +73,18 @@ export function Footer() {
               </p>
               <ul className="space-y-2 text-base">
                 <li><Link href={t.nav.home.href} className="hover:underline">{t.nav.home.label}</Link></li>
-                <li><Link href={t.nav.how.href} className="hover:underline">{t.nav.how.label}</Link></li>
-                <li><Link href={t.nav.use.href} className="hover:underline">{t.nav.use.label}</Link></li>
-                <li><Link href={t.nav.lawyer.href} className="hover:underline">{t.nav.lawyer.label}</Link></li>
+                <li><Link href={t.nav.news.href} className="hover:underline">{t.nav.news.label}</Link></li>
                 <li><Link href={t.nav.agents.href} className="hover:underline">{t.nav.agents.label}</Link></li>
-                <li><Link href={t.nav.about.href} className="hover:underline">{t.nav.about.label}</Link></li>
-                <li><Link href={t.nav.enterprise.href} className="hover:underline">{t.nav.enterprise.label}</Link></li>
-                <li><Link href={t.nav.pricing.href} className="hover:underline">{t.nav.pricing.label}</Link></li>
-                <li><Link href={t.nav.file.href} className="hover:underline">{t.nav.file.label}</Link></li>
               </ul>
             </div>
 
             <div>
               <p className="text-sm font-medium uppercase tracking-wider opacity-60 mb-4">
-                {t.investorsTitle}
+                {t.startTitle}
               </p>
               <ul className="space-y-2 text-base">
-                <li><Link href={t.nav.whyInvest.href} className="hover:underline">{t.nav.whyInvest.label}</Link></li>
-                <li><a href="mailto:investors@din.org" className="hover:underline">investors@din.org</a></li>
+                <li><a href={t.nav.file.href} className="hover:underline">{t.nav.file.label}</a></li>
+                <li><a href={t.nav.web.href} className="hover:underline">{t.nav.web.label}</a></li>
               </ul>
             </div>
 

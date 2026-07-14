@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "News — din.org",
+  title: "News & Analysis — din.org",
   description:
-    "The latest developments in AI, law, and the future of dispute resolution.",
+    "Research and reporting on AI-generated correspondence, evidence handling, structured case records, settlement, and responsible dispute-resolution systems.",
   alternates: {
     canonical: "https://din.org/news",
     languages: {
@@ -15,11 +15,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
+    alternateLocale: ["de_DE"],
     url: "https://din.org/news",
     siteName: "din.org",
-    title: "News — din.org",
+    title: "News & Analysis on AI and Dispute Resolution — din.org",
     description:
-      "The latest developments in AI, law, and the future of dispute resolution.",
+      "Research and reporting on AI-generated correspondence, evidence handling, structured case records, settlement, and responsible dispute-resolution systems.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "News & Analysis on AI and Dispute Resolution — din.org",
+    description:
+      "Research on AI-generated correspondence, evidence handling, structured case records, settlement, and responsible dispute-resolution systems.",
   },
 };
 

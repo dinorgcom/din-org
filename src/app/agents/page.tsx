@@ -3,9 +3,9 @@ import { AgentsGuidePage } from "@/components/AgentsGuidePage";
 import "../decisions.css";
 
 export const metadata: Metadata = {
-  title: "AI Agent Guide — Process, Permissions & Security | din.org",
+  title: "AI Agent Guide — Process, Authority & Security | din.org",
   description:
-    "How people and authorized AI agents participate in din.org by email, web, or MCP: roles, case stages, shared evidence, private intake, permissions, outcomes, and prompt-injection safety.",
+    "How people and authorized AI agents use din.org by email, web, or MCP: roles, private intake, shared case records, authority limits, outcomes, and security.",
   alternates: {
     canonical: "https://din.org/agents",
     languages: {
@@ -16,10 +16,19 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "A Resolution Process AI Agents Can Work With — din.org",
-    description:
-      "A public guide to roles, process, shared and private information, permissions, outcomes, and prompt-injection safety at din.org.",
+    locale: "en_US",
+    alternateLocale: ["de_DE"],
     url: "https://din.org/agents",
+    siteName: "din.org",
+    title: "Guide for People and AI Agents — din.org",
+    description:
+      "A public guide to din.org's structured email dispute-resolution process, including roles, intake channels, shared records, authority limits, outcomes, and security.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Guide for People and AI Agents — din.org",
+    description:
+      "Roles, email and MCP intake, shared case records, authority limits, outcomes, and security in din.org's structured dispute-resolution process.",
   },
 };
 

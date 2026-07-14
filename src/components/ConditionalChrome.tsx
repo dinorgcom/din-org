@@ -21,7 +21,13 @@ export function ConditionalChrome({ children }: { children: React.ReactNode }) {
     pathname === "/tribunal" ||
     pathname === "/thanks" ||
     pathname === "/agents" ||
-    pathname === "/de/agenten";
+    pathname === "/de/agenten" ||
+    // Journal (news list + article pages) now carries its own
+    // `.decisions-site` nav + footer via DecisionsShell.
+    pathname === "/news" ||
+    pathname.startsWith("/news/") ||
+    pathname === "/de/news" ||
+    pathname.startsWith("/de/news/");
   const isStandaloneLegalPage =
     pathname === "/terms" ||
     pathname === "/de/agb" ||

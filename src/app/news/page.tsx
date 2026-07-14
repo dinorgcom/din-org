@@ -55,6 +55,14 @@ const featured = [
 // A short curated set of the most current, on-topic developments.
 const inTheNews = [
   {
+    date: "June 2026",
+    source: "MIT Technology Review",
+    tag: "AI Courts",
+    title: "How Courts Are Coping with a Flood of AI-Generated Lawsuits",
+    note: "Court documents flagged as AI-written rose from 1% in 2023 to 18% in 2026; one defendant sent over 300 AI-generated accusatory emails. The email war, arriving in court.",
+    url: "https://www.technologyreview.com/2026/06/04/1138391/courts-coping-ai-lawsuits/",
+  },
+  {
     date: "April 2026",
     source: "European Commission",
     tag: "Regulation",
@@ -87,6 +95,93 @@ const inTheNews = [
     url: "https://www.adr.org/ai-arbitrator/",
   },
 ];
+
+// Primary research and soft-law instruments — the reference shelf behind
+// the email-war thesis.
+const studies = [
+  {
+    date: "September 2025",
+    source: "Harvard Business Review · BetterUp Labs & Stanford",
+    tag: "Study",
+    title: "AI-Generated “Workslop” Is Destroying Productivity",
+    note: "The study that named the phenomenon: 41% of workers received AI workslop within a month, each incident taking nearly two hours to untangle — about $186 per employee per month.",
+    url: "https://hbr.org/2025/09/ai-generated-workslop-is-destroying-productivity",
+  },
+  {
+    date: "September 2025",
+    source: "Ciarb",
+    tag: "Guideline",
+    title: "Guideline on the Use of AI in Arbitration",
+    note: "The Chartered Institute of Arbitrators' framework: benefits and risks, recommendations for parties and tribunals, and arbitrators' powers over AI use — with a model agreement and sample procedural orders.",
+    url: "https://www.ciarb.org/news-listing/ciarb-launches-guideline-on-the-use-of-ai-in-arbitration/",
+  },
+  {
+    date: "June 2025",
+    source: "Microsoft WorkLab",
+    tag: "Study",
+    title: "Work Trend Index: Breaking Down the Infinite Workday",
+    note: "117 emails and 153 chat messages per worker per day, an interruption every two minutes — the baseline inbox into which AI-generated dispute correspondence now lands.",
+    url: "https://www.microsoft.com/en-us/worklab/work-trend-index/breaking-down-infinite-workday",
+  },
+  {
+    date: "April 2024",
+    source: "SVAMC",
+    tag: "Guideline",
+    title: "Guidelines on the Use of Artificial Intelligence in Arbitration",
+    note: "The Silicon Valley Arbitration & Mediation Center's first-edition best practices: confidentiality, case-by-case disclosure, and the rule that arbitrators may not delegate their mandate to AI.",
+    url: "https://svamc.org/svamc-publishes-guidelines-on-the-use-of-artificial-intelligence-in-arbitration/",
+  },
+];
+
+type ExternalItem = (typeof inTheNews)[number];
+
+function ExternalRow({ item }: { item: ExternalItem }) {
+  return (
+    <a
+      href={item.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group grid grid-cols-1 md:grid-cols-[130px_1fr_auto] gap-2 md:gap-8 py-7 items-start"
+      style={{ borderBottom: "1px solid var(--d-line)" }}
+    >
+      <div
+        className="text-xs uppercase tracking-[0.15em] pt-1"
+        style={{ color: "var(--d-ink-muted)" }}
+      >
+        {item.date}
+      </div>
+      <div>
+        <div
+          className="flex items-center gap-3 text-[11px] uppercase tracking-[0.18em] mb-2"
+          style={{ color: "var(--d-ink-muted)" }}
+        >
+          <span style={{ color: "var(--d-accent)" }}>{item.tag}</span>
+          <span className="h-px w-5" style={{ background: "var(--d-line)" }} />
+          <span>{item.source}</span>
+        </div>
+        <h3
+          className="d-display text-xl md:text-2xl leading-snug transition-opacity group-hover:opacity-70"
+          style={{ color: "var(--d-ink)" }}
+        >
+          {item.title}
+        </h3>
+        <p
+          className="mt-2 text-sm leading-relaxed font-light max-w-2xl"
+          style={{ color: "var(--d-ink-muted)" }}
+        >
+          {item.note}
+        </p>
+      </div>
+      <div
+        className="hidden md:block text-lg pt-1 transition-transform group-hover:translate-x-0.5"
+        style={{ color: "var(--d-accent)" }}
+        aria-hidden
+      >
+        ↗
+      </div>
+    </a>
+  );
+}
 
 export default function NewsPage() {
   return (
@@ -167,7 +262,7 @@ export default function NewsPage() {
       </section>
 
       {/* In the news — curated external context */}
-      <section className="px-6 md:px-10 pt-12 pb-32" style={{ background: "var(--d-bone)" }}>
+      <section className="px-6 md:px-10 pt-12 pb-4" style={{ background: "var(--d-bone)" }}>
         <div className="mx-auto max-w-[1400px]">
           <p
             className="text-[11px] uppercase tracking-[0.25em] mb-2 d-rule-top pt-10"
@@ -177,50 +272,24 @@ export default function NewsPage() {
           </p>
           <div>
             {inTheNews.map((a) => (
-              <a
-                key={a.url}
-                href={a.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group grid grid-cols-1 md:grid-cols-[130px_1fr_auto] gap-2 md:gap-8 py-7 items-start"
-                style={{ borderBottom: "1px solid var(--d-line)" }}
-              >
-                <div
-                  className="text-xs uppercase tracking-[0.15em] pt-1"
-                  style={{ color: "var(--d-ink-muted)" }}
-                >
-                  {a.date}
-                </div>
-                <div>
-                  <div
-                    className="flex items-center gap-3 text-[11px] uppercase tracking-[0.18em] mb-2"
-                    style={{ color: "var(--d-ink-muted)" }}
-                  >
-                    <span style={{ color: "var(--d-accent)" }}>{a.tag}</span>
-                    <span className="h-px w-5" style={{ background: "var(--d-line)" }} />
-                    <span>{a.source}</span>
-                  </div>
-                  <h3
-                    className="d-display text-xl md:text-2xl leading-snug transition-opacity group-hover:opacity-70"
-                    style={{ color: "var(--d-ink)" }}
-                  >
-                    {a.title}
-                  </h3>
-                  <p
-                    className="mt-2 text-sm leading-relaxed font-light max-w-2xl"
-                    style={{ color: "var(--d-ink-muted)" }}
-                  >
-                    {a.note}
-                  </p>
-                </div>
-                <div
-                  className="hidden md:block text-lg pt-1 transition-transform group-hover:translate-x-0.5"
-                  style={{ color: "var(--d-accent)" }}
-                  aria-hidden
-                >
-                  ↗
-                </div>
-              </a>
+              <ExternalRow key={a.url} item={a} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Studies & guidelines — whitepapers and soft law */}
+      <section className="px-6 md:px-10 pt-12 pb-32" style={{ background: "var(--d-bone)" }}>
+        <div className="mx-auto max-w-[1400px]">
+          <p
+            className="text-[11px] uppercase tracking-[0.25em] mb-2 pt-10"
+            style={{ color: "var(--d-ink-muted)" }}
+          >
+            Studies &amp; guidelines
+          </p>
+          <div>
+            {studies.map((a) => (
+              <ExternalRow key={a.url} item={a} />
             ))}
           </div>
           <p className="mt-8 text-xs leading-5 max-w-3xl" style={{ color: "var(--d-ink-muted)" }}>

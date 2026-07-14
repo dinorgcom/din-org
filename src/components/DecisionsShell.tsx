@@ -46,6 +46,8 @@ export function DecisionsShell({
     { href: journal, label: "Journal" },
     { href: agents, label: isGerman ? "Für Agenten" : "For agents" },
     { href: LOGIN_URL, label: isGerman ? "Anmelden" : "Log in" },
+    // Language toggle → the other locale's journal.
+    { href: isGerman ? "/news" : "/de/news", label: isGerman ? "English" : "Deutsch" },
   ];
 
   return (

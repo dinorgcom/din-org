@@ -136,6 +136,7 @@ export default function DisputeResolutionHome() {
           { href: "/agents", label: "For agents" },
           { href: "#pricing", label: "Pricing" },
           { href: LOGIN_URL, label: "Log in" },
+          { href: "/de", label: "Deutsch" },
         ]}
         cta={{ href: CASE_MAILTO, label: "Email your case" }}
       />
@@ -180,7 +181,9 @@ export default function DisputeResolutionHome() {
               className="d-display text-[clamp(3rem,8vw,7.5rem)] leading-[0.96] max-w-[16ch]"
               style={{ color: "var(--d-bone)" }}
             >
-              End the email war.
+              End the
+              <br />
+              <span className="whitespace-nowrap">email war.</span>
               <br />
               <span
                 className="italic font-light"

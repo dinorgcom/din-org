@@ -40,6 +40,7 @@ const featured = [
     lead: "Generative KI macht juristisch anmutende Korrespondenz nahezu kostenlos. Sie zu lesen, zu prüfen und zu beantworten kostet weiterhin teure menschliche Aufmerksamkeit — eine neue Asymmetrie im Streit.",
     pull: "Der Absender spart Minuten. Der Empfänger erbt Stunden. Strukturierte Beilegung ändert diese Rechnung.",
     href: "/de/news/oekonomie-des-ki-email-kriegs",
+    image: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?w=1200&h=675&fit=crop",
   },
   {
     eyebrow: "Verfahren",
@@ -48,6 +49,7 @@ const featured = [
     lead: "Warum eine weitere lange KI-Antwort die falsche Reaktion ist — und wie ein strukturiertes Verfahren Korrespondenz in Fakten, Beweise, Zeugen und einen endlichen Weg zur Lösung überführt.",
     pull: "Belohnen Sie nicht das Volumen. Bauen Sie eine Akte, die beide Seiten prüfen, beantworten und schließen können.",
     href: "/de/news/von-ki-workslop-zur-brauchbaren-fallakte",
+    image: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=1200&h=675&fit=crop",
   },
 ];
 
@@ -59,6 +61,7 @@ const inTheNews = [
     title: "Wie Gerichte mit der Flut KI-generierter Klagen umgehen",
     note: "Der Anteil als KI-geschrieben erkannter Gerichtsdokumente stieg von 1 % (2023) auf 18 % (2026); ein Beklagter verschickte über 300 KI-generierte Vorwurfs-E-Mails. Der E-Mail-Krieg, angekommen vor Gericht.",
     url: "https://www.technologyreview.com/2026/06/04/1138391/courts-coping-ai-lawsuits/",
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=320&h=320&fit=crop",
   },
   {
     date: "April 2026",
@@ -67,6 +70,7 @@ const inTheNews = [
     title: "EU-KI-Verordnung: Hochrisiko-Regeln ab 2. August",
     note: "Anhang III stuft KI, die Justizbehörden unterstützt — auch Schiedsverfahren — als hochriskant ein: dokumentierte Aufsicht, Transparenz und Konformitätsbewertungen sind Pflicht.",
     url: "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+    image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=320&h=320&fit=crop",
   },
   {
     date: "März 2026",
@@ -75,6 +79,7 @@ const inTheNews = [
     title: "AAA startet Resolution Simulator und erweitert ihren KI-Schiedsrichter",
     note: "Ein Ein-Parteien-Simulator erzeugt eine unverbindliche KI-Entscheidung zur Einschätzung des Falls vor dem Verfahren. Vorprozessuale Bewertung wird zur Produktkategorie.",
     url: "https://www.lawnext.com/2026/03/american-arbitration-association-launches-resolution-simulator-expanding-its-ai-arbitrator-tool.html",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=320&h=320&fit=crop",
   },
   {
     date: "Februar 2026",
@@ -83,6 +88,7 @@ const inTheNews = [
     title: "Roboter-Schiedsrichter lösen Konflikte über KI in der Streitbeilegung aus",
     note: "Verzerrung, undurchsichtige Begründungen, Vollstreckbarkeit, Zustimmung. Plattformen, die „Wie genau hat die KI entschieden?“ beantworten können, führen; andere kassieren Einsprüche.",
     url: "https://news.bloomberglaw.com/daily-labor-report/robot-arbitrators-spark-conflicts-over-ai-in-dispute-resolution",
+    image: "https://images.unsplash.com/photo-1593115057322-e94b77572f20?w=320&h=320&fit=crop",
   },
   {
     date: "November 2025",
@@ -91,6 +97,7 @@ const inTheNews = [
     title: "AAA startet KI-Schiedsrichter für Baustreitigkeiten",
     note: "Reine Dokumentenfälle: 25–35 % schneller, 30–50 % günstiger — jeder Urteilsentwurf von einem menschlichen Schiedsrichter geprüft. Beleg auf institutioneller Ebene, dass das Modell trägt.",
     url: "https://www.adr.org/ai-arbitrator/",
+    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=320&h=320&fit=crop",
   },
 ];
 
@@ -131,7 +138,16 @@ const studies = [
   },
 ];
 
-type ExternalItem = (typeof inTheNews)[number];
+type ExternalItem = {
+  date: string;
+  source: string;
+  tag: string;
+  title: string;
+  note: string;
+  url: string;
+  // Optionales Thumbnail — nur "In den Medien"; das Studienregal bleibt textbasiert.
+  image?: string;
+};
 
 function ExternalRow({ item }: { item: ExternalItem }) {
   return (
@@ -139,7 +155,11 @@ function ExternalRow({ item }: { item: ExternalItem }) {
       href={item.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group grid grid-cols-1 md:grid-cols-[130px_1fr_auto] gap-2 md:gap-8 py-7 items-start"
+      className={`group grid grid-cols-1 ${
+        item.image
+          ? "md:grid-cols-[130px_120px_1fr_auto]"
+          : "md:grid-cols-[130px_1fr_auto]"
+      } gap-2 md:gap-8 py-7 items-start`}
       style={{ borderBottom: "1px solid var(--d-line)" }}
     >
       <div
@@ -148,6 +168,20 @@ function ExternalRow({ item }: { item: ExternalItem }) {
       >
         {item.date}
       </div>
+      {item.image ? (
+        <div
+          className="hidden md:block overflow-hidden rounded-xl"
+          style={{ border: "1px solid var(--d-line)" }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={item.image}
+            alt=""
+            className="h-24 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            style={{ filter: "saturate(0.82)" }}
+          />
+        </div>
+      ) : null}
       <div>
         <div
           className="flex items-center gap-3 text-[11px] uppercase tracking-[0.18em] mb-2"
@@ -214,9 +248,22 @@ export default function NewsDE() {
             <Link
               key={a.href}
               href={a.href}
-              className="group block rounded-2xl p-8 md:p-10 transition-colors"
+              className="group block overflow-hidden rounded-2xl transition-colors"
               style={{ background: "var(--d-bone-soft)", border: "1px solid var(--d-line)" }}
             >
+              <div
+                className="relative h-52 md:h-60 overflow-hidden"
+                style={{ borderBottom: "1px solid var(--d-line)" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={a.image}
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  style={{ filter: "saturate(0.82)" }}
+                />
+              </div>
+              <div className="p-8 md:p-10">
               <div
                 className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em]"
                 style={{ color: "var(--d-ink-muted)" }}
@@ -252,6 +299,7 @@ export default function NewsDE() {
                   →
                 </span>
               </span>
+              </div>
             </Link>
           ))}
         </div>

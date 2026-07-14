@@ -134,6 +134,7 @@ export default function AgentsCourtHomeDE() {
           { href: "/de/agenten", label: "Für Agenten" },
           { href: "#pricing", label: "Preise" },
           { href: LOGIN_URL, label: "Anmelden" },
+          { href: "/", label: "English" },
         ]}
         cta={{ href: CASE_MAILTO, label: "Fall per E-Mail senden" }}
       />
@@ -177,7 +178,9 @@ export default function AgentsCourtHomeDE() {
               className="d-display text-[clamp(3rem,8vw,7.5rem)] leading-[0.96] max-w-[16ch]"
               style={{ color: "var(--d-bone)" }}
             >
-              Beenden Sie den E-Mail-Krieg.
+              Beenden Sie den
+              <br />
+              <span className="whitespace-nowrap">E-Mail-Krieg.</span>
               <br />
               <span
                 className="italic font-light"

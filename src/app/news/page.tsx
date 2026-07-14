@@ -41,6 +41,7 @@ const featured = [
     lead: "Generative AI makes legalistic correspondence nearly free to produce. Reading, verifying, and answering it still consumes expensive human attention — a new asymmetry in disputes.",
     pull: "The sender saves minutes. The recipient inherits hours. Structured resolution changes that equation.",
     href: "/news/economics-of-the-ai-email-war",
+    image: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?w=1200&h=675&fit=crop",
   },
   {
     eyebrow: "Process",
@@ -49,6 +50,7 @@ const featured = [
     lead: "Why another long AI reply is the wrong answer — and how a structured process turns correspondence into facts, evidence, witnesses, and a finite path to resolution.",
     pull: "Don't reward volume. Build a record both parties can inspect, answer, and close.",
     href: "/news/from-ai-workslop-to-a-usable-case-record",
+    image: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=1200&h=675&fit=crop",
   },
 ];
 
@@ -61,6 +63,7 @@ const inTheNews = [
     title: "How Courts Are Coping with a Flood of AI-Generated Lawsuits",
     note: "Court documents flagged as AI-written rose from 1% in 2023 to 18% in 2026; one defendant sent over 300 AI-generated accusatory emails. The email war, arriving in court.",
     url: "https://www.technologyreview.com/2026/06/04/1138391/courts-coping-ai-lawsuits/",
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=320&h=320&fit=crop",
   },
   {
     date: "April 2026",
@@ -69,6 +72,7 @@ const inTheNews = [
     title: "EU AI Act High-Risk Rules Take Effect August 2",
     note: "Annex III classifies AI assisting judicial authorities — including arbitration — as high-risk, requiring documented oversight, transparency, and conformity assessments.",
     url: "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+    image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=320&h=320&fit=crop",
   },
   {
     date: "March 2026",
@@ -77,6 +81,7 @@ const inTheNews = [
     title: "AAA Launches Resolution Simulator, Expanding Its AI Arbitrator",
     note: "A one-party simulator that produces a non-binding AI decision to help parties evaluate a case before formal proceedings. Pre-litigation assessment is becoming a product category.",
     url: "https://www.lawnext.com/2026/03/american-arbitration-association-launches-resolution-simulator-expanding-its-ai-arbitrator-tool.html",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=320&h=320&fit=crop",
   },
   {
     date: "February 2026",
@@ -85,6 +90,7 @@ const inTheNews = [
     title: "Robot Arbitrators Spark Conflicts Over AI in Dispute Resolution",
     note: "Bias, opacity of reasoning, enforceability, and consent. Platforms that can answer 'how exactly did the AI decide this?' will lead; those that can't will face appeals.",
     url: "https://news.bloomberglaw.com/daily-labor-report/robot-arbitrators-spark-conflicts-over-ai-in-dispute-resolution",
+    image: "https://images.unsplash.com/photo-1593115057322-e94b77572f20?w=320&h=320&fit=crop",
   },
   {
     date: "November 2025",
@@ -93,6 +99,7 @@ const inTheNews = [
     title: "AAA Launches AI Arbitrator for Construction Disputes",
     note: "Documents-only cases resolved 25–35% faster at 30–50% lower cost, with a human arbitrator reviewing every draft award. Institutional-scale proof the model works.",
     url: "https://www.adr.org/ai-arbitrator/",
+    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=320&h=320&fit=crop",
   },
 ];
 
@@ -133,7 +140,16 @@ const studies = [
   },
 ];
 
-type ExternalItem = (typeof inTheNews)[number];
+type ExternalItem = {
+  date: string;
+  source: string;
+  tag: string;
+  title: string;
+  note: string;
+  url: string;
+  // Optional thumbnail — used for "In the news"; the studies shelf stays text-only.
+  image?: string;
+};
 
 function ExternalRow({ item }: { item: ExternalItem }) {
   return (
@@ -141,7 +157,11 @@ function ExternalRow({ item }: { item: ExternalItem }) {
       href={item.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group grid grid-cols-1 md:grid-cols-[130px_1fr_auto] gap-2 md:gap-8 py-7 items-start"
+      className={`group grid grid-cols-1 ${
+        item.image
+          ? "md:grid-cols-[130px_120px_1fr_auto]"
+          : "md:grid-cols-[130px_1fr_auto]"
+      } gap-2 md:gap-8 py-7 items-start`}
       style={{ borderBottom: "1px solid var(--d-line)" }}
     >
       <div
@@ -150,6 +170,20 @@ function ExternalRow({ item }: { item: ExternalItem }) {
       >
         {item.date}
       </div>
+      {item.image ? (
+        <div
+          className="hidden md:block overflow-hidden rounded-xl"
+          style={{ border: "1px solid var(--d-line)" }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={item.image}
+            alt=""
+            className="h-24 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            style={{ filter: "saturate(0.82)" }}
+          />
+        </div>
+      ) : null}
       <div>
         <div
           className="flex items-center gap-3 text-[11px] uppercase tracking-[0.18em] mb-2"
@@ -218,9 +252,22 @@ export default function NewsPage() {
             <Link
               key={a.href}
               href={a.href}
-              className="group block rounded-2xl p-8 md:p-10 transition-colors"
+              className="group block overflow-hidden rounded-2xl transition-colors"
               style={{ background: "var(--d-bone-soft)", border: "1px solid var(--d-line)" }}
             >
+              <div
+                className="relative h-52 md:h-60 overflow-hidden"
+                style={{ borderBottom: "1px solid var(--d-line)" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={a.image}
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  style={{ filter: "saturate(0.82)" }}
+                />
+              </div>
+              <div className="p-8 md:p-10">
               <div
                 className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em]"
                 style={{ color: "var(--d-ink-muted)" }}
@@ -256,6 +303,7 @@ export default function NewsPage() {
                   →
                 </span>
               </span>
+              </div>
             </Link>
           ))}
         </div>

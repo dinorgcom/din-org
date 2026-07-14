@@ -133,9 +133,9 @@ export default function AgentsCourtHomeDE() {
           { href: "/de/news", label: "Journal" },
           { href: "/de/agenten", label: "Für Agenten" },
           { href: "#pricing", label: "Preise" },
-          { href: LOGIN_URL, label: "Anmelden" },
           { href: "/", label: "English" },
         ]}
+        secondaryCta={{ href: LOGIN_URL, label: "Anmelden" }}
         cta={{ href: CASE_MAILTO, label: "Fall per E-Mail senden" }}
       />
 

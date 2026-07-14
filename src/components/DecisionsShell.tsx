@@ -45,7 +45,6 @@ export function DecisionsShell({
     { href: `${home}#how`, label: isGerman ? "So funktioniert es" : "How it works" },
     { href: journal, label: "Journal" },
     { href: agents, label: isGerman ? "Für Agenten" : "For agents" },
-    { href: LOGIN_URL, label: isGerman ? "Anmelden" : "Log in" },
     // Language toggle → the other locale's journal.
     { href: isGerman ? "/news" : "/de/news", label: isGerman ? "English" : "Deutsch" },
   ];
@@ -54,6 +53,7 @@ export function DecisionsShell({
     <div className={`decisions-site ${display.variable} ${sans.variable} ${mono.variable}`}>
       <HarveyNav
         links={links}
+        secondaryCta={{ href: LOGIN_URL, label: isGerman ? "Anmelden" : "Log in" }}
         cta={{ href: mailto, label: isGerman ? "Fall per E-Mail" : "Email your case" }}
       />
 

@@ -135,9 +135,9 @@ export default function DisputeResolutionHome() {
           { href: "/news", label: "Journal" },
           { href: "/agents", label: "For agents" },
           { href: "#pricing", label: "Pricing" },
-          { href: LOGIN_URL, label: "Log in" },
           { href: "/de", label: "Deutsch" },
         ]}
+        secondaryCta={{ href: LOGIN_URL, label: "Log in" }}
         cta={{ href: CASE_MAILTO, label: "Email your case" }}
       />
 

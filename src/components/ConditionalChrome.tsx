@@ -16,13 +16,30 @@ export function ConditionalChrome({ children }: { children: React.ReactNode }) {
   // Navbar/Footer must be suppressed on those routes. As more pages are
   // ported, add them here.
   const isHarveyPage =
-    pathname === "/" || pathname === "/tribunal" || pathname === "/thanks";
+    pathname === "/" ||
+    pathname === "/de" ||
+    pathname === "/tribunal" ||
+    pathname === "/thanks" ||
+    pathname === "/agents" ||
+    pathname === "/de/agenten" ||
+    // Journal (news list + article pages) now carries its own
+    // `.decisions-site` nav + footer via DecisionsShell.
+    pathname === "/news" ||
+    pathname.startsWith("/news/") ||
+    pathname === "/de/news" ||
+    pathname.startsWith("/de/news/");
+  const isStandaloneLegalPage =
+    pathname === "/terms" ||
+    pathname === "/de/agb" ||
+    pathname === "/privacy" ||
+    pathname === "/de/datenschutz";
   const hideChrome =
     isDashboard ||
     isLogin ||
     isInvitation ||
     isSession ||
     isVerification ||
+    isStandaloneLegalPage ||
     isHarveyPage;
 
   return (

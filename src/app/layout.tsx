@@ -4,6 +4,7 @@ import "./globals.css";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Providers } from "@/components/Providers";
 import { ConditionalChrome } from "@/components/ConditionalChrome";
+import { DocumentLocale } from "@/components/DocumentLocale";
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -13,19 +14,20 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
-  title: "din.org — AI Arbitration & Online Dispute Resolution",
+  title: "din.org — Structured Email Dispute Resolution",
   description:
-    "din.org is the AI arbitration platform for fast, fair online dispute resolution. File a case, present evidence, receive a reasoned AI ruling — with human appeal built in. Days, not years. 1–5% of court costs.",
+    "din.org helps both sides turn an email dispute into a structured case record and work toward a clear settlement proposal through private intake and shared evidence.",
   keywords: [
-    "AI arbitration",
-    "AI court",
-    "AI judge",
-    "online arbitration",
+    "email dispute resolution",
+    "structured dispute resolution",
     "online dispute resolution",
-    "AI dispute resolution",
-    "arbitration software",
-    "virtual court",
-    "ODR",
+    "AI-assisted dispute resolution",
+    "settlement support",
+    "settlement proposal",
+    "shared case record",
+    "evidence management for disputes",
+    "consumer dispute resolution",
+    "commercial dispute resolution",
     "alternative dispute resolution",
   ],
   metadataBase: new URL("https://din.org"),
@@ -40,17 +42,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
+    alternateLocale: ["de_DE"],
     url: "https://din.org",
     siteName: "din.org",
-    title: "din.org — AI Arbitration & Online Dispute Resolution",
+    title: "din.org — Structured Email Dispute Resolution",
     description:
-      "The AI arbitration platform. File a case, present evidence, receive a reasoned AI ruling — with human appeal built in. Days, not years.",
+      "Turn an email dispute into a structured, reviewable case record and a clear path toward settlement, with private intake for both parties and shared evidence.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "din.org — AI Arbitration & Online Dispute Resolution",
+    title: "din.org — Structured Email Dispute Resolution",
     description:
-      "The AI arbitration platform. File a case, present evidence, receive a reasoned AI ruling — with human appeal built in. Days, not years.",
+      "Turn an email dispute into a structured, reviewable case record and a clear path toward settlement, with private intake for both parties and shared evidence.",
   },
   other: {
     "theme-color": "#0a0a0a",
@@ -63,8 +66,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={orbitron.variable}>
+    <html lang="en" className={orbitron.variable} suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'document.documentElement.lang=location.pathname==="/de"||location.pathname.startsWith("/de/")?"de":"en";',
+          }}
+        />
         <link rel="apple-touch-icon" href="/icon.svg" />
         <script
           type="application/ld+json"
@@ -77,7 +86,6 @@ export default function RootLayout({
                   "@id": "https://din.org/#organization",
                   name: "din.org",
                   legalName: "Din.org LLC",
-                  alternateName: "din.org AI Court",
                   url: "https://din.org",
                   address: {
                     "@type": "PostalAddress",
@@ -92,7 +100,7 @@ export default function RootLayout({
                     url: "https://din.org/icon.svg",
                   },
                   description:
-                    "din.org is an AI arbitration and online dispute resolution platform delivering fair, fast, and affordable rulings end-to-end, with human-judge appeal panels built in.",
+                    "din.org provides an AI-supported private dispute-resolution service that receives disputes by email or web, gathers each party's account, organises shared case material, and helps the parties work toward settlement.",
                   foundingDate: "2024",
                   founders: [
                     { "@type": "Person", name: "Michael Marcovici" },
@@ -104,12 +112,13 @@ export default function RootLayout({
                     contactType: "customer service",
                   },
                   knowsAbout: [
-                    "AI arbitration",
+                    "Structured dispute resolution",
                     "Online dispute resolution",
-                    "Alternative dispute resolution",
-                    "AI court",
-                    "Arbitration software",
-                    "EU AI Act compliance",
+                    "Email-based dispute intake",
+                    "AI-assisted dispute resolution",
+                    "Settlement support",
+                    "Shared case records",
+                    "Evidence organisation",
                   ],
                 },
                 {
@@ -118,25 +127,19 @@ export default function RootLayout({
                   url: "https://din.org",
                   name: "din.org",
                   description:
-                    "AI arbitration and online dispute resolution platform.",
+                    "Website for din.org's email-first, structured private dispute-resolution service.",
                   publisher: { "@id": "https://din.org/#organization" },
-                  inLanguage: "en",
+                  inLanguage: ["en", "de"],
                 },
                 {
-                  "@type": "SoftwareApplication",
-                  name: "din.org",
-                  applicationCategory: "BusinessApplication",
-                  applicationSubCategory: "Arbitration software",
-                  operatingSystem: "Web",
+                  "@type": "Service",
+                  "@id": "https://din.org/#service",
+                  name: "din.org structured dispute resolution",
+                  serviceType: "Structured private dispute resolution and settlement support",
+                  provider: { "@id": "https://din.org/#organization" },
+                  url: "https://din.org",
                   description:
-                    "End-to-end AI arbitration platform: file a case, present evidence, examine witnesses by AI-led video, receive a reasoned AI ruling, optional human-judge appeal.",
-                  offers: {
-                    "@type": "Offer",
-                    priceCurrency: "EUR",
-                    price: "0",
-                    description:
-                      "Free to send invitations. Token-based pricing per action.",
-                  },
+                    "An AI-supported service that receives disputes, gathers each party's account through private intake, organises shared case material, and supports a structured path toward settlement.",
                 },
               ],
             }),
@@ -144,6 +147,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-ink text-bone antialiased">
+        <DocumentLocale />
         <Providers>
           <a
             href="#main-content"

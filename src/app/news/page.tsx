@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { DecisionsShell } from "@/components/DecisionsShell";
 
 export const metadata: Metadata = {
-  title: "News — din.org",
+  title: "Journal — din.org",
   description:
-    "The latest developments in AI, law, and the future of dispute resolution.",
+    "din.org research on the AI email war: why AI-generated correspondence overwhelms disputes, and how a structured case record turns it into facts, evidence, and a path to resolution.",
   alternates: {
     canonical: "https://din.org/news",
     languages: {
@@ -12,201 +14,338 @@ export const metadata: Metadata = {
       "x-default": "https://din.org/news",
     },
   },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    alternateLocale: ["de_DE"],
+    url: "https://din.org/news",
+    siteName: "din.org",
+    title: "Journal — the AI email war, and how to end it — din.org",
+    description:
+      "Research on AI-generated correspondence, structured case records, evidence, and settlement.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Journal — the AI email war — din.org",
+    description:
+      "Research on AI-generated correspondence, structured case records, evidence, and settlement.",
+  },
 };
 
-const articles = [
+// The core concept: din.org's own research on the AI email war.
+const featured = [
+  {
+    eyebrow: "Research",
+    date: "July 2026",
+    title: "The Economics of the AI Email War",
+    lead: "Generative AI makes legalistic correspondence nearly free to produce. Reading, verifying, and answering it still consumes expensive human attention — a new asymmetry in disputes.",
+    pull: "The sender saves minutes. The recipient inherits hours. Structured resolution changes that equation.",
+    href: "/news/economics-of-the-ai-email-war",
+    image: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?w=1200&h=675&fit=crop",
+  },
+  {
+    eyebrow: "Process",
+    date: "July 2026",
+    title: "From AI Workslop to a Usable Case Record",
+    lead: "Why another long AI reply is the wrong answer — and how a structured process turns correspondence into facts, evidence, witnesses, and a finite path to resolution.",
+    pull: "Don't reward volume. Build a record both parties can inspect, answer, and close.",
+    href: "/news/from-ai-workslop-to-a-usable-case-record",
+    image: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=1200&h=675&fit=crop",
+  },
+];
+
+// A short curated set of the most current, on-topic developments.
+const inTheNews = [
+  {
+    date: "June 2026",
+    source: "MIT Technology Review",
+    tag: "AI Courts",
+    title: "How Courts Are Coping with a Flood of AI-Generated Lawsuits",
+    note: "Court documents flagged as AI-written rose from 1% in 2023 to 18% in 2026; one defendant sent over 300 AI-generated accusatory emails. The email war, arriving in court.",
+    url: "https://www.technologyreview.com/2026/06/04/1138391/courts-coping-ai-lawsuits/",
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=320&h=320&fit=crop",
+  },
   {
     date: "April 2026",
     source: "European Commission",
-    title: "EU AI Act High-Risk Rules Take Effect August 2",
-    body: "Article 6 obligations on high-risk AI systems become enforceable August 2, 2026. Annex III explicitly classifies AI assisting judicial authorities — including arbitration — as high-risk, requiring documented oversight, transparency, and conformity assessments.",
-    hover: "The countdown is on. Any AI arbitration platform operating in the EU after August 2 must prove it meets the high-risk standard — or face exclusion from enforcement.",
     tag: "Regulation",
+    title: "EU AI Act High-Risk Rules Take Effect August 2",
+    note: "Annex III classifies AI assisting judicial authorities — including arbitration — as high-risk, requiring documented oversight, transparency, and conformity assessments.",
     url: "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
-    image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=320&h=320&fit=crop",
   },
   {
     date: "March 2026",
     source: "LawSites",
-    title: "AAA Launches Resolution Simulator, Expanding Its AI Arbitrator",
-    body: "The American Arbitration Association expanded its AI Arbitrator with a one-party Resolution Simulator that produces a non-binding AI-generated decision — designed to help parties evaluate their case before formal proceedings.",
-    hover: "The world's largest ADR institution is doubling down on AI. Pre-litigation case assessment is becoming a product category, not a curiosity.",
     tag: "Industry",
+    title: "AAA Launches Resolution Simulator, Expanding Its AI Arbitrator",
+    note: "A one-party simulator that produces a non-binding AI decision to help parties evaluate a case before formal proceedings. Pre-litigation assessment is becoming a product category.",
     url: "https://www.lawnext.com/2026/03/american-arbitration-association-launches-resolution-simulator-expanding-its-ai-arbitrator-tool.html",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=320&h=320&fit=crop",
   },
   {
     date: "February 2026",
     source: "Bloomberg Law",
+    tag: "Legitimacy",
     title: "Robot Arbitrators Spark Conflicts Over AI in Dispute Resolution",
-    body: "Bloomberg investigates the rapid adoption of AI arbitrators: concerns include bias in training data, opacity of reasoning, enforceability under the New York Convention, and questions of party consent when AI replaces human deliberation.",
-    hover: "The legitimacy debate has begun. Platforms that can answer 'how exactly did the AI decide this?' will lead. Those that can't will face appeals — and headlines.",
-    tag: "Cautionary",
+    note: "Bias, opacity of reasoning, enforceability, and consent. Platforms that can answer 'how exactly did the AI decide this?' will lead; those that can't will face appeals.",
     url: "https://news.bloomberglaw.com/daily-labor-report/robot-arbitrators-spark-conflicts-over-ai-in-dispute-resolution",
-    image: "https://images.unsplash.com/photo-1593115057322-e94b77572f20?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1593115057322-e94b77572f20?w=320&h=320&fit=crop",
   },
   {
     date: "November 2025",
     source: "AAA-ICDR",
+    tag: "AI Courts",
     title: "AAA Launches AI Arbitrator for Construction Disputes",
-    body: "The American Arbitration Association launched its first AI arbitrator, handling documents-only construction defect cases. Early data: 25–35% faster resolution, 30–50% cost reduction. Human arbitrators review every draft award before issuance.",
-    hover: "30–50% cheaper, 35% faster, with human-in-the-loop validation. The AAA proved AI arbitration works at institutional scale — the question for the industry is no longer if, but when and how.",
-    tag: "AI Courts",
+    note: "Documents-only cases resolved 25–35% faster at 30–50% lower cost, with a human arbitrator reviewing every draft award. Institutional-scale proof the model works.",
     url: "https://www.adr.org/ai-arbitrator/",
-    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=300&fit=crop",
-  },
-  {
-    date: "August 2024",
-    source: "European Parliament",
-    title: "EU AI Act Enters into Force — Legal AI Classified High-Risk",
-    body: "The world's first comprehensive AI law took effect, classifying AI in law enforcement and judicial decisions as high-risk with strict transparency requirements.",
-    hover: "AI in courtrooms now faces the highest regulatory bar in Europe. Transparency and human oversight are mandatory, not optional.",
-    tag: "Regulation",
-    url: "https://www.europarl.europa.eu/topics/en/article/20230601STO93804/eu-ai-act-first-regulation-on-artificial-intelligence",
-    image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=400&h=300&fit=crop",
-  },
-  {
-    date: "March 2026",
-    source: "CNBC",
-    title: "Harvey AI Valued at $11 Billion in Latest Funding Round",
-    body: "Legal AI startup Harvey raised $200M at an $11B valuation, proving that AI-powered legal tools have become a major enterprise category.",
-    hover: "From $1.5B to $11B in under two years. Harvey's meteoric rise proves legal AI is the fastest-growing enterprise AI vertical.",
-    tag: "Industry",
-    url: "https://www.cnbc.com/2026/03/25/legal-ai-startup-harvey-raises-200-million-at-11-billion-valuation.html",
-    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=300&fit=crop",
-  },
-  {
-    date: "May 2024",
-    source: "LawSites",
-    title: "AAA Acquires ODR.com and Mediate.com to Expand Online Dispute Resolution",
-    body: "The American Arbitration Association acquired two major ODR platforms, signaling institutional commitment to online dispute resolution at scale.",
-    hover: "The world's largest private ADR provider is going digital. Online dispute resolution is becoming the industry standard, not the exception.",
-    tag: "Access to Justice",
-    url: "https://www.lawnext.com/2024/05/american-arbitration-association-acquires-odr-com-and-mediate-com-to-expand-online-dispute-resolution.html",
-    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=300&fit=crop",
-  },
-  {
-    date: "December 2024",
-    source: "Xinhua / Supreme People's Court",
-    title: "China Launches National AI Platform to Boost Judicial Efficiency",
-    body: "China's Supreme Court unveiled a national AI platform built on 320 million pieces of legal data, piloted across six provinces to assist judges.",
-    hover: "320 million legal records powering AI judges across six provinces. China is building the infrastructure for AI-driven justice at national scale.",
-    tag: "AI Courts",
-    url: "https://english.news.cn/20250101/94c58c6b4ae544f8b5840c835a2eff34/c.html",
-    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&h=300&fit=crop",
-  },
-  {
-    date: "December 2023",
-    source: "UK Courts & Tribunals Judiciary",
-    title: "UK Publishes First Official AI Guidance for Judges",
-    body: "The UK Judiciary published guidance permitting AI for summaries and admin tasks, but recommending against its use for legal research or analysis.",
-    hover: "UK judges can use AI as a tool — but not as a decision-maker. The line between assistance and autonomy is being drawn in law.",
-    tag: "Regulation",
-    url: "https://www.judiciary.uk/wp-content/uploads/2023/12/AI-Judicial-Guidance.pdf",
-    image: "https://images.unsplash.com/photo-1575505586569-646b2ca898fc?w=400&h=300&fit=crop",
-  },
-  {
-    date: "May 2016",
-    source: "ProPublica",
-    title: "Machine Bias: AI Risk Scores in Criminal Sentencing Show Racial Disparity",
-    body: "ProPublica's landmark investigation found that the COMPAS algorithm was biased against Black defendants, mislabeling them as higher risk at nearly twice the rate.",
-    hover: "The investigation that changed everything. COMPAS is used in 46 states — and it gets it wrong along racial lines. Fair AI demands better.",
-    tag: "AI Ethics",
-    url: "https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing",
-    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=300&fit=crop",
-  },
-  {
-    date: "June 2023",
-    source: "CNBC",
-    title: "Judge Sanctions Lawyers for Brief Written by AI with Fake Citations",
-    body: "Attorney Steven Schwartz was fined $5,000 after submitting a legal brief with fictitious case citations fabricated by ChatGPT in Mata v. Avianca.",
-    hover: "ChatGPT invented six court cases that never existed — and a lawyer filed them. This is why AI legal tools need built-in citation verification.",
-    tag: "Cautionary",
-    url: "https://www.cnbc.com/2023/06/22/judge-sanctions-lawyers-whose-ai-written-filing-contained-fake-citations.html",
-    image: "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=400&h=300&fit=crop",
-  },
-  {
-    date: "February 2025",
-    source: "Federal Trade Commission",
-    title: "FTC Finalizes Order Against DoNotPay's 'AI Lawyer' Claims",
-    body: "The FTC fined DoNotPay $193,000 and prohibited deceptive AI lawyer claims after finding the company never tested whether its AI performed like a real lawyer.",
-    hover: "Overpromising AI capabilities has real consequences. The FTC made clear: if you call it a lawyer, it must perform like one.",
-    tag: "Regulation",
-    url: "https://www.ftc.gov/news-events/news/press-releases/2025/02/ftc-finalizes-order-donotpay-prohibits-deceptive-ai-lawyer-claims-imposes-monetary-relief-requires",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=320&h=320&fit=crop",
   },
 ];
 
+// Primary research and soft-law instruments — the reference shelf behind
+// the email-war thesis.
+const studies = [
+  {
+    date: "September 2025",
+    source: "Harvard Business Review · BetterUp Labs & Stanford",
+    tag: "Study",
+    title: "AI-Generated “Workslop” Is Destroying Productivity",
+    note: "The study that named the phenomenon: 41% of workers received AI workslop within a month, each incident taking nearly two hours to untangle — about $186 per employee per month.",
+    url: "https://hbr.org/2025/09/ai-generated-workslop-is-destroying-productivity",
+  },
+  {
+    date: "September 2025",
+    source: "Ciarb",
+    tag: "Guideline",
+    title: "Guideline on the Use of AI in Arbitration",
+    note: "The Chartered Institute of Arbitrators' framework: benefits and risks, recommendations for parties and tribunals, and arbitrators' powers over AI use — with a model agreement and sample procedural orders.",
+    url: "https://www.ciarb.org/news-listing/ciarb-launches-guideline-on-the-use-of-ai-in-arbitration/",
+  },
+  {
+    date: "June 2025",
+    source: "Microsoft WorkLab",
+    tag: "Study",
+    title: "Work Trend Index: Breaking Down the Infinite Workday",
+    note: "117 emails and 153 chat messages per worker per day, an interruption every two minutes — the baseline inbox into which AI-generated dispute correspondence now lands.",
+    url: "https://www.microsoft.com/en-us/worklab/work-trend-index/breaking-down-infinite-workday",
+  },
+  {
+    date: "April 2024",
+    source: "SVAMC",
+    tag: "Guideline",
+    title: "Guidelines on the Use of Artificial Intelligence in Arbitration",
+    note: "The Silicon Valley Arbitration & Mediation Center's first-edition best practices: confidentiality, case-by-case disclosure, and the rule that arbitrators may not delegate their mandate to AI.",
+    url: "https://svamc.org/svamc-publishes-guidelines-on-the-use-of-artificial-intelligence-in-arbitration/",
+  },
+];
+
+type ExternalItem = {
+  date: string;
+  source: string;
+  tag: string;
+  title: string;
+  note: string;
+  url: string;
+  // Optional thumbnail — used for "In the news"; the studies shelf stays text-only.
+  image?: string;
+};
+
+function ExternalRow({ item }: { item: ExternalItem }) {
+  return (
+    <a
+      href={item.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`group grid grid-cols-1 ${
+        item.image
+          ? "md:grid-cols-[130px_120px_1fr_auto]"
+          : "md:grid-cols-[130px_1fr_auto]"
+      } gap-2 md:gap-8 py-7 items-start`}
+      style={{ borderBottom: "1px solid var(--d-line)" }}
+    >
+      <div
+        className="text-xs uppercase tracking-[0.15em] pt-1"
+        style={{ color: "var(--d-ink-muted)" }}
+      >
+        {item.date}
+      </div>
+      {item.image ? (
+        <div
+          className="hidden md:block overflow-hidden rounded-xl"
+          style={{ border: "1px solid var(--d-line)" }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={item.image}
+            alt=""
+            className="h-24 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            style={{ filter: "saturate(0.82)" }}
+          />
+        </div>
+      ) : null}
+      <div>
+        <div
+          className="flex items-center gap-3 text-[11px] uppercase tracking-[0.18em] mb-2"
+          style={{ color: "var(--d-ink-muted)" }}
+        >
+          <span style={{ color: "var(--d-accent)" }}>{item.tag}</span>
+          <span className="h-px w-5" style={{ background: "var(--d-line)" }} />
+          <span>{item.source}</span>
+        </div>
+        <h3
+          className="d-display text-xl md:text-2xl leading-snug transition-opacity group-hover:opacity-70"
+          style={{ color: "var(--d-ink)" }}
+        >
+          {item.title}
+        </h3>
+        <p
+          className="mt-2 text-sm leading-relaxed font-light max-w-2xl"
+          style={{ color: "var(--d-ink-muted)" }}
+        >
+          {item.note}
+        </p>
+      </div>
+      <div
+        className="hidden md:block text-lg pt-1 transition-transform group-hover:translate-x-0.5"
+        style={{ color: "var(--d-accent)" }}
+        aria-hidden
+      >
+        ↗
+      </div>
+    </a>
+  );
+}
+
 export default function NewsPage() {
   return (
-    <>
+    <DecisionsShell locale="en">
       {/* Hero */}
-      <section className="reveal px-6 md:px-10 pt-24 pb-16 md:pt-32 md:pb-24">
-        <div className="max-w-6xl">
-          <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-accent mb-6">
-            News
+      <section className="px-6 md:px-10 pt-40 pb-16 md:pb-24" style={{ background: "var(--d-bone)" }}>
+        <div className="mx-auto max-w-[1400px]">
+          <p
+            className="text-[11px] uppercase tracking-[0.3em] mb-6"
+            style={{ color: "var(--d-accent)" }}
+          >
+            Journal
           </p>
-          <h1 className="display text-5xl md:text-8xl font-semibold max-w-5xl">
-            AI &amp; Law: The landscape is shifting.
+          <h1
+            className="d-display text-5xl md:text-7xl leading-[1.03] max-w-4xl"
+            style={{ color: "var(--d-ink)" }}
+          >
+            The email war, and how to end it.
           </h1>
-          <p className="mt-10 text-lg md:text-2xl max-w-3xl text-bone/80">
-            Key developments at the intersection of artificial intelligence,
-            legal systems, and the future of dispute resolution.
+          <p
+            className="mt-8 text-lg md:text-xl max-w-2xl font-light leading-relaxed"
+            style={{ color: "var(--d-ink-muted)" }}
+          >
+            Research on AI-generated correspondence, evidence handling, structured
+            case records, and the path to settlement.
           </p>
         </div>
       </section>
 
-      {/* Articles — card grid */}
-      <section className="px-6 md:px-10 pb-32">
-        <h2 className="sr-only">Latest articles</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
-          {articles.map((a) => (
-            <article
-              key={a.title}
-              className="reveal group rounded-3xl bg-ink-card border border-bone/15 hover:bg-accent hover:border-accent transition-all duration-200 cursor-default overflow-hidden"
+      {/* Featured — din.org research */}
+      <section className="px-6 md:px-10 pb-8" style={{ background: "var(--d-bone)" }}>
+        <div className="mx-auto max-w-[1400px] grid grid-cols-1 md:grid-cols-2 gap-6">
+          {featured.map((a) => (
+            <Link
+              key={a.href}
+              href={a.href}
+              className="group block overflow-hidden rounded-2xl transition-colors"
+              style={{ background: "var(--d-bone-soft)", border: "1px solid var(--d-line)" }}
             >
-              {/* Thumbnail */}
-              <div className="relative w-full h-40 overflow-hidden bg-ink-soft">
+              <div
+                className="relative h-52 md:h-60 overflow-hidden"
+                style={{ borderBottom: "1px solid var(--d-line)" }}
+              >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={a.image}
-                  alt={a.title}
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  style={{ filter: "saturate(0.82)" }}
                 />
-                <span className="absolute bottom-2 left-2 inline-block rounded-full bg-ink/70 backdrop-blur-sm text-accent text-[10px] font-medium px-2.5 py-0.5 group-hover:bg-accent group-hover:text-ink transition-colors duration-200">
-                  {a.tag}
+              </div>
+              <div className="p-8 md:p-10">
+              <div
+                className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em]"
+                style={{ color: "var(--d-ink-muted)" }}
+              >
+                <span style={{ color: "var(--d-accent)" }}>{a.eyebrow}</span>
+                <span className="h-px w-6" style={{ background: "var(--d-line)" }} />
+                <span>{a.date}</span>
+              </div>
+              <h2
+                className="d-display mt-5 text-2xl md:text-3xl leading-tight"
+                style={{ color: "var(--d-ink)" }}
+              >
+                {a.title}
+              </h2>
+              <p
+                className="mt-4 text-base leading-relaxed font-light"
+                style={{ color: "var(--d-ink-muted)" }}
+              >
+                {a.lead}
+              </p>
+              <p
+                className="d-display mt-5 text-lg italic leading-snug"
+                style={{ color: "var(--d-ink-soft)" }}
+              >
+                “{a.pull}”
+              </p>
+              <span
+                className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium"
+                style={{ color: "var(--d-accent)" }}
+              >
+                Read the analysis{" "}
+                <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
+                  →
                 </span>
+              </span>
               </div>
-
-              {/* Content */}
-              <div className="p-6 flex flex-col flex-1">
-                <div className="flex items-center gap-3 text-xs text-bone/55 mb-2 group-hover:text-ink/40 transition-colors duration-200">
-                  <span>{a.source}</span>
-                  <span className="w-1 h-1 rounded-full bg-bone/30 group-hover:bg-ink/30" />
-                  <span>{a.date}</span>
-                </div>
-                <h3 className="display text-base md:text-lg font-semibold mb-2 group-hover:text-ink transition-colors duration-200">
-                  {a.title}
-                </h3>
-                <p className="text-bone/60 text-sm group-hover:text-ink/70 transition-colors duration-200">
-                  {a.body}
-                </p>
-                <p className="mt-2 text-sm text-ink font-medium italic invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  {a.hover}
-                </p>
-                <a
-                  href={a.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-auto pt-3 inline-flex items-center gap-1 text-accent text-sm font-semibold group-hover:text-ink transition-colors duration-200"
-                >
-                  Read article <span aria-hidden>&rarr;</span>
-                </a>
-              </div>
-            </article>
+            </Link>
           ))}
         </div>
       </section>
-    </>
+
+      {/* In the news — curated external context */}
+      <section className="px-6 md:px-10 pt-12 pb-4" style={{ background: "var(--d-bone)" }}>
+        <div className="mx-auto max-w-[1400px]">
+          <p
+            className="text-[11px] uppercase tracking-[0.25em] mb-2 d-rule-top pt-10"
+            style={{ color: "var(--d-ink-muted)" }}
+          >
+            In the news
+          </p>
+          <div>
+            {inTheNews.map((a) => (
+              <ExternalRow key={a.url} item={a} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Studies & guidelines — whitepapers and soft law */}
+      <section className="px-6 md:px-10 pt-12 pb-32" style={{ background: "var(--d-bone)" }}>
+        <div className="mx-auto max-w-[1400px]">
+          <p
+            className="text-[11px] uppercase tracking-[0.25em] mb-2 pt-10"
+            style={{ color: "var(--d-ink-muted)" }}
+          >
+            Studies &amp; guidelines
+          </p>
+          <div>
+            {studies.map((a) => (
+              <ExternalRow key={a.url} item={a} />
+            ))}
+          </div>
+          <p className="mt-8 text-xs leading-5 max-w-3xl" style={{ color: "var(--d-ink-muted)" }}>
+            Editorial note: external sources are linked for context. Figures and claims
+            should be read in light of each source’s methodology and publication date.
+          </p>
+        </div>
+      </section>
+    </DecisionsShell>
   );
 }

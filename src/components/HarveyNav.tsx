@@ -13,9 +13,17 @@ type NavLink = { href: string; label: string };
 export function HarveyNav({
   links,
   cta,
+  secondaryCta,
+  homeHref = "/",
+  menuLabels = { open: "Open menu", close: "Close menu" },
 }: {
   links: NavLink[];
   cta: NavLink;
+  // Rendered as a second pill next to the CTA (e.g. "Log in") — always
+  // visible, on mobile even outside the hamburger overlay.
+  secondaryCta?: NavLink;
+  homeHref?: string;
+  menuLabels?: { open: string; close: string };
 }) {
   const [open, setOpen] = useState(false);
 
@@ -40,7 +48,7 @@ export function HarveyNav({
     <header className="absolute top-0 left-0 right-0 z-30">
       <div className="mx-auto max-w-[1400px] flex items-center justify-between px-6 md:px-10 py-6">
         <Link
-          href="/"
+          href={homeHref}
           className="d-display text-xl md:text-2xl tracking-tight hover:opacity-80 transition-opacity"
           style={{ color: "var(--d-bone)" }}
         >
@@ -55,6 +63,15 @@ export function HarveyNav({
           {links.map((l) =>
             renderLink(l, "hover:opacity-100 transition-opacity", {})
           )}
+          {secondaryCta &&
+            renderLink(
+              secondaryCta,
+              "rounded-full border px-5 py-2 transition-colors hover:opacity-80",
+              {
+                borderColor: "rgba(245,241,234,0.18)",
+                color: "rgba(245,241,234,0.9)",
+              }
+            )}
           {renderLink(
             cta,
             "rounded-full border px-5 py-2 transition-colors",
@@ -65,29 +82,40 @@ export function HarveyNav({
           )}
         </nav>
 
-        {/* Mobile hamburger */}
-        <button
-          type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen(!open)}
-          className="md:hidden flex flex-col items-center justify-center w-10 h-10 gap-1.5"
-        >
-          <span
-            className="block h-px w-6 transition-transform duration-200"
-            style={{
-              background: "var(--d-bone)",
-              transform: open ? "translateY(3.5px) rotate(45deg)" : "none",
-            }}
-          />
-          <span
-            className="block h-px w-6 transition-transform duration-200"
-            style={{
-              background: "var(--d-bone)",
-              transform: open ? "translateY(-3.5px) rotate(-45deg)" : "none",
-            }}
-          />
-        </button>
+        {/* Mobile: login pill stays visible outside the overlay */}
+        <div className="md:hidden flex items-center gap-3">
+          {secondaryCta &&
+            renderLink(
+              secondaryCta,
+              "rounded-full border px-4 py-1.5 text-xs",
+              {
+                borderColor: "rgba(245,241,234,0.25)",
+                color: "var(--d-bone)",
+              }
+            )}
+          <button
+            type="button"
+            aria-label={open ? menuLabels.close : menuLabels.open}
+            aria-expanded={open}
+            onClick={() => setOpen(!open)}
+            className="flex flex-col items-center justify-center w-10 h-10 gap-1.5"
+          >
+            <span
+              className="block h-px w-6 transition-transform duration-200"
+              style={{
+                background: "var(--d-bone)",
+                transform: open ? "translateY(3.5px) rotate(45deg)" : "none",
+              }}
+            />
+            <span
+              className="block h-px w-6 transition-transform duration-200"
+              style={{
+                background: "var(--d-bone)",
+                transform: open ? "translateY(-3.5px) rotate(-45deg)" : "none",
+              }}
+            />
+          </button>
+        </div>
       </div>
 
       {/* Mobile overlay */}
@@ -98,7 +126,7 @@ export function HarveyNav({
         >
           <div className="flex items-center justify-between px-6 py-6">
             <Link
-              href="/"
+              href={homeHref}
               className="d-display text-xl tracking-tight"
               style={{ color: "var(--d-bone)" }}
               onClick={() => setOpen(false)}
@@ -107,7 +135,7 @@ export function HarveyNav({
             </Link>
             <button
               type="button"
-              aria-label="Close menu"
+              aria-label={menuLabels.close}
               onClick={() => setOpen(false)}
               className="flex flex-col items-center justify-center w-10 h-10"
             >
@@ -136,15 +164,27 @@ export function HarveyNav({
                 () => setOpen(false)
               )
             )}
-            {renderLink(
-              cta,
-              "mt-8 inline-flex w-fit items-center gap-3 rounded-full border px-7 py-4 text-sm font-medium",
-              {
-                borderColor: "rgba(245,241,234,0.4)",
-                color: "var(--d-bone)",
-              },
-              () => setOpen(false)
-            )}
+            <div className="mt-8 flex flex-wrap gap-3">
+              {secondaryCta &&
+                renderLink(
+                  secondaryCta,
+                  "inline-flex w-fit items-center gap-3 rounded-full border px-7 py-4 text-sm font-medium",
+                  {
+                    borderColor: "rgba(245,241,234,0.22)",
+                    color: "rgba(245,241,234,0.9)",
+                  },
+                  () => setOpen(false)
+                )}
+              {renderLink(
+                cta,
+                "inline-flex w-fit items-center gap-3 rounded-full border px-7 py-4 text-sm font-medium",
+                {
+                  borderColor: "rgba(245,241,234,0.4)",
+                  color: "var(--d-bone)",
+                },
+                () => setOpen(false)
+              )}
+            </div>
           </nav>
         </div>
       )}

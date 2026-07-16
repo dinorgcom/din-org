@@ -15,6 +15,14 @@ export const localePathPairs: PathPair[] = [
   { en: "/enterprise", de: "/de/unternehmen" },
   { en: "/mission", de: "/de/mission" },
   { en: "/news", de: "/de/news" },
+  {
+    en: "/news/economics-of-the-ai-email-war",
+    de: "/de/news/oekonomie-des-ki-email-kriegs",
+  },
+  {
+    en: "/news/from-ai-workslop-to-a-usable-case-record",
+    de: "/de/news/von-ki-workslop-zur-brauchbaren-fallakte",
+  },
   { en: "/pricing", de: "/de/preise" },
   { en: "/investors", de: "/de/investoren" },
   { en: "/early-access", de: "/de/early-access" },
@@ -23,6 +31,7 @@ export const localePathPairs: PathPair[] = [
   { en: "/what-is-arbitration", de: "/de/was-ist-schiedsgerichtsbarkeit" },
   { en: "/eu-ai-act-arbitration", de: "/de/ki-verordnung-schiedsgerichtsbarkeit" },
   { en: "/lawyer-counsel", de: "/de/anwaltliche-vertretung" },
+  { en: "/agents", de: "/de/agenten" },
   { en: "/privacy", de: "/de/datenschutz" },
   { en: "/terms", de: "/de/agb" },
 ];
